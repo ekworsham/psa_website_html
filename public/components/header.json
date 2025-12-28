@@ -1,0 +1,51 @@
+{
+  "meta": {
+    "title": "ProScapes of Atlanta",
+    "charset": "utf-8"
+  },
+  "styles": [
+    "/public/css/style2.css"
+  ],
+  "analytics": {
+    "gaAccount": "UA-1811627-18"
+  },
+  "branding": {
+    "logo": {
+      "href": "/",
+      "src": "/public/images/logo2.png"
+    }
+  },
+  "topnav": [
+    { "text": "404-514-6254" },
+    { "text": "Billing", "href": "/view/billing" },
+    { "text": "Contact Us", "href": "/view/contact_us" }
+  ],
+  "nav": {
+    "items": [
+      {
+        "class": "about_us",
+        "href": "/view/about_us",
+        "title": "About Us",
+        "label": "About Us"
+      },
+      {
+        "class": "commercial",
+        "href": "/view/commercial",
+        "title": "Commercial",
+        "label": "About Us"
+      },
+      {
+        "class": "services",
+        "href": "/view/services",
+        "title": "Services",
+        "label": "Services"
+      },
+      {
+        "class": "contact",
+        "href": "/view/estimate",
+        "title": "Contact",
+        "label": "Get a Free Estimate"
+      }
+    ]
+  }
+}

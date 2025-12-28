@@ -29,8 +29,8 @@
 <div class="clear-right"></div>
 <div class="nav">
 <ul class="cssmenu">
-	<li class="home"><a href="/index.html" title="Home"><span class="displace">Home</span></a></li>
 	<li class="about_us"><a href="/view/about_us" title="About Us"><span class="displace">About Us</span></a></li>
+	<li class="commercial"><a href="/view/commercial" title="Commercial"><span class="displace">About Us</span></a></li>
 	<li class="services"><a href="/view/services" title="Services"><span class="displace">Services</span></a></li>
   <li class="contact"><a href="/view/estimate" title="Contact"><span class="displace">Get a Free Estimate</span></a></li>
 </ul>

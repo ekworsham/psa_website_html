@@ -1,0 +1,26 @@
+{
+  "classes": {
+    "container": "container_12",
+    "id": "footer"
+  },
+  "nav": {
+    "links": [
+      { "label": "Home", "href": "/" },
+      { "label": "Commercial", "href": "/view/commercial" },
+      { "label": "Services", "href": "/view/services" },
+      { "label": "Billing", "href": "/view/billing" },
+      { "label": "Free Estimate", "href": "/view/estimate" },
+      { "label": "Contact Us", "href": "/view/contact_us" }
+    ]
+  },
+  "contact": {
+    "company": "ProScapes of Atlanta",
+    "phone": "404-514-6254",
+    "emailLabel": "contact@ProScapesOfAtlanta.com",
+    "emailHref": "mailto:proscapesofatl.kw@gmail.com"
+  },
+  "scripts": {
+    "banner": true,
+    "intervalMs": 5000
+  }
+}
