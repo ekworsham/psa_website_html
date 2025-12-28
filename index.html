@@ -20,135 +20,117 @@
 </head>
 
 <body>
-<div id="container">
-<div class="container_12">
-<span style="float:left"><a href="/"><img src="/public/images/logo2.png" alt="logo"></a></span>
+	<div id="container">
+		<div id="site-header"></div>
+		<script src="/public/components/header.js"></script>
 
-<div class="topnav">404-514-6254 | <a href="/view/billing">Billing</a> | <a href="/view/contact_us">Contact Us</a></div>
-
-<div class="clear-right"></div>
-<div class="nav">
-<ul class="cssmenu">
-	<li class="about_us"><a href="/view/about_us" title="About Us"><span class="displace">About Us</span></a></li>
-	<li class="commercial"><a href="/view/commercial" title="Commercial"><span class="displace">Commercial</span></a></li>
-	<li class="services"><a href="/view/services" title="Services"><span class="displace">Services</span></a></li>
-  <li class="contact"><a href="/view/estimate" title="Contact"><span class="displace">Get a Free Estimate</span></a></li>
-</ul>
-</div> <!-- END nav -->
-
-</div> <!-- END container12 -->
-
-<div class="clear"></div>
-<div class="container_12">
-	<div class="grid_9" id="banner_container">
-		<div id="photo_banner">
-			<div class="banner-slide active">
-				<img src="/public/images/CollinsFront.JPEG" alt="Collins Front" />
+		<div class="clear"></div>
+		<div class="container_12">
+			<div class="grid_9" id="banner_container">
+				<div id="photo_banner">
+					<div class="banner-slide active">
+						<img src="/public/images/CollinsFront.JPEG" alt="Collins Front" />
+					</div>
+					<div class="banner-slide">
+						<img src="/public/images/CollinsInstall.JPEG" alt="Collins Install" />
+					</div>
+					<div class="banner-slide">
+						<img src="/public/images/CollinsIrr.JPEG" alt="Collins Irrigation" />
+					</div>
+					<div class="banner-slide">
+						<img src="/public/images/background.jpg" alt="Background" />
+					</div>
+					<div class="banner-slide">
+						<img src="/public/images/flowers3.JPEG" alt="Flowers" />
+					</div>
+					<button class="banner-prev" onclick="changeBannerSlide(-1)">❮</button>
+					<button class="banner-next" onclick="changeBannerSlide(1)">❯</button>
+					<div class="banner-dots">
+						<span class="dot active" onclick="currentBannerSlide(0)"></span>
+						<span class="dot" onclick="currentBannerSlide(1)"></span>
+						<span class="dot" onclick="currentBannerSlide(2)"></span>
+						<span class="dot" onclick="currentBannerSlide(3)"></span>
+						<span class="dot" onclick="currentBannerSlide(4)"></span>
+					</div>
+				</div>
 			</div>
-			<div class="banner-slide">
-				<img src="/public/images/CollinsInstall.JPEG" alt="Collins Install" />
+		</div> <!-- END container12 -->
+
+		<div class="clear"></div>
+
+		<div class="container_12">
+			<div class="grid_9" id="content_box">
+				<div id="content">
+					<h2>Welcome to ProScapes</h2>
+					<p style="text-align:left;font-weight:bold;font-size:1.2em;margin-bottom:5px;">Misson Statement</p>
+					<p style="text-align:left;">At ProScapes of Atlanta, our mission is to enhance, protect, and elevate the value of HOA, commercial, and mixed-use communities through consistent, professional landscape management. We are committed to treating every property as if it were our own—delivering dependable service, clear communication, and disciplined execution on every visit.</p>
+				</div>
 			</div>
-			<div class="banner-slide">
-				<img src="/public/images/CollinsIrr.JPEG" alt="Collins Irrigation" />
+		</div> <!-- END container12 -->
+
+		<div class="clear"></div>
+
+		<div class="container_12">
+			<div class="grid_3">&nbsp;</div>
+			<div class="grid_9" id="content_box_commercial">
+				<div id="content">
+					<a href="view/services"><h2 class="services_1">Looking for Landscape Services?</h2>
+					<p>Proscapes of Atlanta Commercial Services specializes in Office, Industrial, Retail, HOA, and Hotel landscape needs.</p></a>
+				</div>
 			</div>
-			<div class="banner-slide">
-				<img src="/public/images/background.jpg" alt="Background" />
-			</div>
-			<div class="banner-slide">
-				<img src="/public/images/flowers3.JPEG" alt="Flowers" />
-			</div>
-			<button class="banner-prev" onclick="changeBannerSlide(-1)">❮</button>
-			<button class="banner-next" onclick="changeBannerSlide(1)">❯</button>
-			<div class="banner-dots">
-				<span class="dot active" onclick="currentBannerSlide(0)"></span>
-				<span class="dot" onclick="currentBannerSlide(1)"></span>
-				<span class="dot" onclick="currentBannerSlide(2)"></span>
-				<span class="dot" onclick="currentBannerSlide(3)"></span>
-				<span class="dot" onclick="currentBannerSlide(4)"></span>
-			</div>
-		</div>
-	</div>
-</div> <!-- END container12 -->
+		</div> <!-- END container12 -->
 
-<div class="clear"></div>
-<div class="container_12">
-	<div class="grid_9" id="content_box">
-		<div id="content">
-			<h2>Welcome to ProScapes</h2>
-			<p style="text-align:left;font-weight:bold;font-size:1.2em;margin-bottom:5px;">Misson Statement</p>
-			<p style="text-align:left;">At ProScapes of Atlanta, our mission is to enhance, protect, and elevate the value of HOA, commercial, and mixed-use communities through consistent, professional landscape management. We are committed to treating every property as if it were our own—delivering dependable service, clear communication, and disciplined execution on every visit.</p>
-			
-		</div>
-	</div>
-</div> <!-- END container12 -->
+		<div class="clear"></div>
+	</div> <!-- END container -->
 
-<div class="clear"></div>
-<div class="container_12">
-	<div class="grid_3">&nbsp;</div>
-	<div class="grid_9" id="content_box_commercial">
-		<div id="content">
-			<a href="view/services"><h2 class="services_1">Looking for Landscape Services?</h2>
-			<p>Proscapes of Atlanta Commercial Services specializes in Office, Industrial, Retail, HOA, and Hotel landscape needs.</p></a>
-		</div>
-	</div>
-</div> <!-- END container12 -->
+	<script>
+	let bannerSlideIndex = 1;
+	let bannerAutoPlayTimeout;
 
-<div class="clear"></div>
-
-<div class="container_12" id="footer">
-	<a href="/">Home</a> | <a href="/view/commercial">Commercial</a> | <a href="/view/services">Services</a> | <a href="/view/billing">Billing</a> | <a href="/view/estimate">Free Estimate</a> | <a href="/view/estimate">Contact Us</a>
-<p>ProScapes of Atlanta | 404-514-6254 |<a href="mailto:proscapesofatl.kw@gmail.com">contact@ProScapesOfAtlanta.com</a>
-
-</div> <!-- END container12 -->
-
-</div> <!-- END container -->
-
-<script>
-let bannerSlideIndex = 1;
-let bannerAutoPlayTimeout;
-
-function changeBannerSlide(n) {
-	clearTimeout(bannerAutoPlayTimeout);
-	showBannerSlides(bannerSlideIndex += n);
-	startBannerAutoPlay();
-}
-
-function currentBannerSlide(n) {
-	clearTimeout(bannerAutoPlayTimeout);
-	showBannerSlides(bannerSlideIndex = n + 1);
-	startBannerAutoPlay();
-}
-
-function showBannerSlides(n) {
-	let slides = document.getElementsByClassName("banner-slide");
-	let dots = document.getElementsByClassName("dot");
-	
-	if (n > slides.length) { bannerSlideIndex = 1; }
-	if (n < 1) { bannerSlideIndex = slides.length; }
-	
-	for (let i = 0; i < slides.length; i++) {
-		slides[i].classList.remove("active");
-	}
-	for (let i = 0; i < dots.length; i++) {
-		dots[i].classList.remove("active");
-	}
-	
-	slides[bannerSlideIndex - 1].classList.add("active");
-	dots[bannerSlideIndex - 1].classList.add("active");
-}
-
-function startBannerAutoPlay() {
-	bannerAutoPlayTimeout = setTimeout(() => {
-		bannerSlideIndex++;
-		showBannerSlides(bannerSlideIndex);
+	function changeBannerSlide(n) {
+		clearTimeout(bannerAutoPlayTimeout);
+		showBannerSlides(bannerSlideIndex += n);
 		startBannerAutoPlay();
-	}, 5000);
-}
+	}
 
-// Initialize carousel immediately
-showBannerSlides(bannerSlideIndex);
-startBannerAutoPlay();
-</script>
+	function currentBannerSlide(n) {
+		clearTimeout(bannerAutoPlayTimeout);
+		showBannerSlides(bannerSlideIndex = n + 1);
+		startBannerAutoPlay();
+	}
 
+	function showBannerSlides(n) {
+		let slides = document.getElementsByClassName("banner-slide");
+		let dots = document.getElementsByClassName("dot");
+		
+		if (n > slides.length) { bannerSlideIndex = 1; }
+		if (n < 1) { bannerSlideIndex = slides.length; }
+		
+		for (let i = 0; i < slides.length; i++) {
+			slides[i].classList.remove("active");
+		}
+		for (let i = 0; i < dots.length; i++) {
+			dots[i].classList.remove("active");
+		}
+		
+		slides[bannerSlideIndex - 1].classList.add("active");
+		dots[bannerSlideIndex - 1].classList.add("active");
+	}
+
+	function startBannerAutoPlay() {
+		bannerAutoPlayTimeout = setTimeout(() => {
+			bannerSlideIndex++;
+			showBannerSlides(bannerSlideIndex);
+			startBannerAutoPlay();
+		}, 5000);
+	}
+
+	// Initialize carousel immediately
+	showBannerSlides(bannerSlideIndex);
+	startBannerAutoPlay();
+	</script>
+
+	<div id="site-footer"></div>
+	<script src="/public/components/footer.js"></script>
 </body>
 </html>

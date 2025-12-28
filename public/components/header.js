@@ -9,7 +9,7 @@
       return '<li class="'+i.class+'"><a href="'+i.href+'" title="'+i.title+'"><span class="displace">'+i.label+'</span></a></li>';
     }).join('');
     container.innerHTML = ''+
-      '<span style="float:left"><a href="'+data.branding.logo.href+'"><img src="'+data.branding.logo.src+'"></a></span>'+
+      '<span style="float:left"><a href="'+data.branding.logo.href+'"><img src="'+data.branding.logo.src+'" alt="ProScapes of Atlanta Logo"></a></span>'+
       '<div class="topnav">'+topnav+'</div>'+
       '<div class="clear-right"></div>'+
       '<div class="nav">'+

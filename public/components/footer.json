@@ -6,10 +6,10 @@
   "nav": {
     "links": [
       { "label": "Home", "href": "/" },
-      { "label": "Commercial", "href": "/view/commercial" },
+      { "label": "About Us", "href": "/view/about_us" },
       { "label": "Services", "href": "/view/services" },
-      { "label": "Billing", "href": "/view/billing" },
       { "label": "Free Estimate", "href": "/view/estimate" },
+      { "label": "Billing", "href": "/view/billing" },
       { "label": "Contact Us", "href": "/view/contact_us" }
     ]
   },

@@ -23,15 +23,15 @@
   "nav": {
     "items": [
       {
+        "class": "home",
+        "href": "/index.html",
+        "title": "Home",
+        "label": "Home"
+      },
+      {
         "class": "about_us",
         "href": "/view/about_us",
         "title": "About Us",
-        "label": "About Us"
-      },
-      {
-        "class": "commercial",
-        "href": "/view/commercial",
-        "title": "Commercial",
         "label": "About Us"
       },
       {

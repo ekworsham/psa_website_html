@@ -22,7 +22,7 @@
 <body>
 <div id="container">
 <div class="container_12">
-<span style="float:left"><a href="/"><img src="/public/images/logo2.png"></a></span>
+<span style="float:left"><a href="/"><img src="/public/images/logo2.png" alt="ProScapes of Atlanta Logo"></a></span>
 
 <div class="topnav">404-514-6254 | <a href="/view/billing">Billing</a> | <a href="/view/contact_us">Contact Us</a></div>
 
