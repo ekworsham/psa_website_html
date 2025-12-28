@@ -7,6 +7,7 @@
     "serve:public": "http-server public -p 5500 -c-1"
   },
   "devDependencies": {
+    "@ljharb/tsconfig": "^0.3.2",
     "http-server": "^14.1.1"
   }
 }
