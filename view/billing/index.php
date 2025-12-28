@@ -1,0 +1,144 @@
+<?php include '../layouts/header.php'; ?>
+
+<style>
+.payment-container {
+	width: 600px;
+	margin: 20px auto;
+}
+
+.payment-title {
+	text-align: left;
+	font-weight: bold;
+	font-size: 1.2em;
+	margin-bottom: 5px;
+}
+
+.payment-form-wrapper {
+	text-align: left;
+	margin-left: 30px;
+	border-radius: 10px;
+	background-color: #caedca;
+	width: 450px;
+	padding: 20px 50px;
+	line-height: 1.3em;
+}
+
+.payment-form table {
+	width: 100%;
+}
+
+.payment-form label {
+	display: inline-block;
+	font-weight: 500;
+	margin-bottom: 5px;
+}
+
+.payment-form input[type="text"] {
+	width: 100%;
+	padding: 8px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+
+.payment-form input[type="submit"] {
+	background-color: #0070ba;
+	color: white;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	font-size: 1em;
+	transition: background-color 0.3s;
+}
+
+.payment-form input[type="submit"]:hover {
+	background-color: #073f6bff;
+}
+
+.thank-you-text {
+	font-weight: bold;
+	margin-top: 20px;
+}
+
+.contact-info {
+	margin: 10px 0 0 0;
+}
+
+.phone-number {
+	font-weight: bold;
+	color: #ff4c00;
+}
+
+.email-link {
+	font-weight: bold;
+}
+
+
+</style>
+
+<div class="clear"></div>
+<div class="container_12">
+	<div class="grid_3">&nbsp;</div>
+	<div class="grid_9" id="content_box">
+		<div id="content">
+			<h2>Payment Information</h2>
+			<div class="payment-container">
+				<p class="payment-title">Pay your invoice:</p>
+				<div class="payment-form-wrapper">
+					<form name="_xclick" class="payment-form" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+						<input type="hidden" name="cmd" value="_xclick">
+						<input type="hidden" name="business" value="proscapesofatl.kw@gmail.com">
+						<input type="hidden" name="currency_code" value="USD">
+						<input type="hidden" name="item_name" value="Proscapes of Atlanta - Payment">
+						<input type="hidden" name="return" value="<?php echo htmlspecialchars($_SERVER['HTTP_HOST'] . '/billing/thank-you', ENT_QUOTES, 'UTF-8'); ?>">
+						<input type="hidden" name="cancel_return" value="<?php echo htmlspecialchars($_SERVER['HTTP_HOST'] . '/billing', ENT_QUOTES, 'UTF-8'); ?>">
+						
+						<table>
+							<tr>
+								<td>
+									<label for="invoice_number">Invoice #</label>
+								</td>
+								<td>
+									<input type="hidden" name="on0" value="invoice">
+									<input type="text" id="invoice_number" name="os0" required aria-required="true" placeholder="Enter invoice number">
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<label for="payment_amount">Amount</label>
+								</td>
+								<td>
+									<input type="text" id="payment_amount" name="amount" required aria-required="true" pattern="^\d+(\.\d{1,2})?$" placeholder="0.00" title="Enter amount in format: 0.00">
+								</td>
+							</tr>
+							<tr>
+								<td>&nbsp;</td>
+								<td>
+									<input type="submit" value="Continue to Pay" name="submit">
+								</td>
+							</tr>
+						</table>
+					</form>
+				</div>
+			</div>
+			<p class="thank-you-text">Thank you for being our customer.</p>
+			<p>Please let us know if there's anything else we can do for you. <a href="../estimate">Contact Us</a></p>
+			<p class="contact-info">You can also call <span class="phone-number">404-514-6254</span> or email us at <a href="mailto:proscapesofatl.kw@gmail.com" class="email-link">contact@ProScapesOfAtlanta.com</a></p>
+		</div>
+	</div>
+</div> <!-- END container12 -->
+
+<div class="clear"></div>
+<div class="container_12">
+	<div class="grid_3">&nbsp;</div>
+	<div class="grid_9" id="content_box_commercial">
+		<div id="content">
+			<a href="/view/services"><h2>Looking for Commercial Services?</h2>
+			<p>Proscapes of Atlanta Commercial Services specializes in Office, Industrial, Retail, HOA, and Hotel landscape management needs.</p></a>
+		</div>
+	</div>
+</div> <!-- END container12 -->
+
+<?php include '../layouts/footer.php'; ?>
+

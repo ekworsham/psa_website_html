@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+THIS SOFTWARE AND DOCUMENTATION ARE PROVIDED BY HP "AS IS" WITH ALL FAULTS AND WITHOUT 
+WARRANTY OF ANY KIND OR DESCRIPTION.  HP MAKES NO EXPRESS WARRANTY WITH RESPECT 
+THERETO AND SPECIFICALLY DISCLAIMS ALL IMPLIED WARRANTIES INCLUDING, WITHOUT LIMITATION, 
+ANY IMPLIED WARRANTY OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, 
+NONINFRINGEMENT, QUALITY, LACK OF VIRUSES, TITLE, QUIET ENJOYMENT, OR QUIET POSSESSION 
+WITH RESPECT THERETO.
+
+IN NO EVENT WILL HP BE LIABLE TO ANY PARTY FOR ANY INDIRECT, INCIDENTAL, CONSEQUENTIAL, SPECIAL, 
+OR PUNITIVE DAMAGES ARISING OUT OF ANY USE, SALE, OFFER FOR SALE, MANUFACTURE, IMPORTATION,
+REPRODUCTION, MODIFICATION, DISTRIBUTION, PERFORMANCE, DISPLAY, DERIVATIVE WORK, 
+COMPILATION, OR DISCLOSURE OF SOFTWARE OR DOCUMENTATION, WHETHER THE CLAIM IS BASED IN 
+TORT (INCLUDING NEGLIGENCE OR STRICT LIABILITY), CONTRACT, OR STATUTE, AT LAW OR EQUITY, 
+INCLUDING, WITHOUT LIMITATION, LOSS OF PROFIT, INCOME, OR SAVINGS, EVEN IF ADVISED OF THE 
+POSSIBILITY THEREOF.
+
+(c) Copyright 2003 Hewlett-Packard Company, All rights reserved
+-->
+
+<!--Auto-generated from hpodai in memory representation-->
+
+<file:Manifest mpvd:documentIdRef="ID_THISDOC" mpvd:writtenBy="http://www.hp.com/schemas/di/memdisc/2.0/" mpv:dummy="" md2:docIdRef="ID_THISDOC" xmlns:mpvd="http://ns.osta.org/mpv/document/1.0/" xmlns:mpv="http://ns.osta.org/mpv/1.0/" xmlns:md2="http://www.hp.com/schemas/di/memdisc/2.0/" xmlns:file="http://ns.osta.org/manifest/1.0/"><!--==-->
+
+<Metadata xmlns="http://ns.osta.org/nmf/1.0/"><ManifestProperties xmlns="http://ns.osta.org/manifest/1.0/"><ProfileBag><Profile>http://ns.osta.org/mpv/presentation/1.0/</Profile><Profile>http://www.hp.com/schemas/di/memdisc/2.0/</Profile></ProfileBag></ManifestProperties></Metadata>
+
+<Album mpv:id="IDADAAAH" xmlns="http://ns.osta.org/mpv/presentation/1.0/">
+<Metadata xmlns="http://ns.osta.org/nmf/1.0/"><AlbumProperties xmlns="http://www.hp.com/schemas/di/memdisc/2.0/nmf/album/"><CaptionDuration>3</CaptionDuration>					<PaperSize>HPODPaperSizeLetter</PaperSize><SuppressAudioAnnotations>false</SuppressAudioAnnotations><SuppressCaptions>false</SuppressCaptions><TVSystem>HPODTVNTSC</TVSystem>	</AlbumProperties><ControlProperties xmlns="http://ns.osta.org/mpv/presentation/1.0/Control/"><StillDur>3</StillDur></ControlProperties></Metadata>
+
+<Background/><Foreground><StillRef mpv:idRef="IDAQAAAH_Source" xmlns="http://ns.osta.org/mpv/1.0/"/><StillRef mpv:idRef="IDAYAAAH_Source" xmlns="http://ns.osta.org/mpv/1.0/"/><StillRef mpv:idRef="IDAABAAH_Source" xmlns="http://ns.osta.org/mpv/1.0/"/><StillRef mpv:idRef="IDAIBAAH_Source" xmlns="http://ns.osta.org/mpv/1.0/"/><StillRef mpv:idRef="IDAQBAAH_Source" xmlns="http://ns.osta.org/mpv/1.0/"/><StillRef mpv:idRef="IDAYBAAH_Source" xmlns="http://ns.osta.org/mpv/1.0/"/><StillRef mpv:idRef="IDAACAAH_Source" xmlns="http://ns.osta.org/mpv/1.0/"/><StillRef mpv:idRef="IDAICAAH_Source" xmlns="http://ns.osta.org/mpv/1.0/"/></Foreground></Album>
+
+	<AssetList xmlns="http://ns.osta.org/mpv/1.0/">
+		<Still mpv:id="IDAQAAAH_Source"><LastURL>file:///C:/Documents%20and%20Settings/HP_Owner/My%20Documents/My%20Pictures/2004-01%20(Jan)/IMG_0001.JPG</LastURL>
+			<Metadata xmlns="http://ns.osta.org/nmf/1.0/"><Properties xmlns="http://purl.org/dc/elements/1.1/"/><ControlProperties xmlns="http://www.hp.com/schemas/di/memdisc/2.0/nmf/control/"><SuppressAudio>false</SuppressAudio><SuppressCaption>false</SuppressCaption></ControlProperties></Metadata><!--hpodai_2_md2_denorm_GenSimpleAsset_Source::OriginalFile is not set--></Still>
+			
+		<Still mpv:id="IDAYAAAH_Source"><LastURL>file:///C:/Documents%20and%20Settings/HP_Owner/My%20Documents/My%20Pictures/2004-01%20(Jan)/IMG_0005.JPG</LastURL>
+			<Metadata xmlns="http://ns.osta.org/nmf/1.0/"><Properties xmlns="http://purl.org/dc/elements/1.1/"/><ControlProperties xmlns="http://www.hp.com/schemas/di/memdisc/2.0/nmf/control/"><SuppressAudio>false</SuppressAudio><SuppressCaption>false</SuppressCaption></ControlProperties></Metadata>
+		<!--hpodai_2_md2_denorm_GenSimpleAsset_Source::OriginalFile is not set--></Still>
+
+		<Still mpv:id="IDAABAAH_Source"><LastURL>file:///C:/Documents%20and%20Settings/HP_Owner/My%20Documents/My%20Pictures/2004-01%20(Jan)/IMG_0006.JPG</LastURL><Metadata xmlns="http://ns.osta.org/nmf/1.0/"><Properties xmlns="http://purl.org/dc/elements/1.1/"/><ControlProperties xmlns="http://www.hp.com/schemas/di/memdisc/2.0/nmf/control/"><SuppressAudio>false</SuppressAudio><SuppressCaption>false</SuppressCaption></ControlProperties></Metadata><!--hpodai_2_md2_denorm_GenSimpleAsset_Source::OriginalFile is not set--></Still>
+
+		<Still mpv:id="IDAIBAAH_Source"><LastURL>file:///C:/Documents%20and%20Settings/HP_Owner/My%20Documents/My%20Pictures/2004-01%20(Jan)/IMG_0007.JPG</LastURL><Metadata xmlns="http://ns.osta.org/nmf/1.0/"><Properties xmlns="http://purl.org/dc/elements/1.1/"/><ControlProperties xmlns="http://www.hp.com/schemas/di/memdisc/2.0/nmf/control/"><SuppressAudio>false</SuppressAudio><SuppressCaption>false</SuppressCaption></ControlProperties></Metadata><!--hpodai_2_md2_denorm_GenSimpleAsset_Source::OriginalFile is not set--></Still>
+
+		<Still mpv:id="IDAQBAAH_Source"><LastURL>file:///C:/Documents%20and%20Settings/HP_Owner/My%20Documents/My%20Pictures/2004-01%20(Jan)/IMG_0008.JPG</LastURL><Metadata xmlns="http://ns.osta.org/nmf/1.0/"><Properties xmlns="http://purl.org/dc/elements/1.1/"/><ControlProperties xmlns="http://www.hp.com/schemas/di/memdisc/2.0/nmf/control/"><SuppressAudio>false</SuppressAudio><SuppressCaption>false</SuppressCaption></ControlProperties></Metadata><!--hpodai_2_md2_denorm_GenSimpleAsset_Source::OriginalFile is not set--></Still>
+
+		<Still mpv:id="IDAYBAAH_Source"><LastURL>file:///C:/Documents%20and%20Settings/HP_Owner/My%20Documents/My%20Pictures/2004-01%20(Jan)/IMG_0013.JPG</LastURL><Metadata xmlns="http://ns.osta.org/nmf/1.0/"><Properties xmlns="http://purl.org/dc/elements/1.1/"/><ControlProperties xmlns="http://www.hp.com/schemas/di/memdisc/2.0/nmf/control/"><SuppressAudio>false</SuppressAudio><SuppressCaption>false</SuppressCaption></ControlProperties></Metadata><!--hpodai_2_md2_denorm_GenSimpleAsset_Source::OriginalFile is not set--></Still>
+
+		<Still mpv:id="IDAACAAH_Source"><LastURL>file:///C:/Documents%20and%20Settings/HP_Owner/My%20Documents/My%20Pictures/2004-01%20(Jan)/IMG_0014.JPG</LastURL><Metadata xmlns="http://ns.osta.org/nmf/1.0/"><Properties xmlns="http://purl.org/dc/elements/1.1/"/><ControlProperties xmlns="http://www.hp.com/schemas/di/memdisc/2.0/nmf/control/"><SuppressAudio>false</SuppressAudio><SuppressCaption>false</SuppressCaption></ControlProperties></Metadata><!--hpodai_2_md2_denorm_GenSimpleAsset_Source::OriginalFile is not set--></Still>
+
+		<Still mpv:id="IDAICAAH_Source"><LastURL>file:///C:/Documents%20and%20Settings/HP_Owner/My%20Documents/My%20Pictures/2004-01%20(Jan)/IMG_0015.JPG</LastURL><Metadata xmlns="http://ns.osta.org/nmf/1.0/"><Properties xmlns="http://purl.org/dc/elements/1.1/"/><ControlProperties xmlns="http://www.hp.com/schemas/di/memdisc/2.0/nmf/control/"><SuppressAudio>false</SuppressAudio><SuppressCaption>false</SuppressCaption></ControlProperties></Metadata><!--hpodai_2_md2_denorm_GenSimpleAsset_Source::OriginalFile is not set--></Still>
+
+		<Document mpv:id="ID_THISDOC"><Metadata xmlns="http://ns.osta.org/nmf/1.0/"><Properties xmlns="http://purl.org/dc/terms/"><created>2005-09-13T00:14:09Z</created></Properties><Properties xmlns="http://purl.org/dc/elements/1.1/"><creator>hpodai_2_md2</creator><description>This document was generated by the MPV Sub-system of Memories Disc 2.0 at "2005-09-13T00:14:09Z" using the stylesheet named "hpodai_2_md2"</description></Properties></Metadata><!--no SourceInfo properties specified--></Document>
+
+	</AssetList>
+</file:Manifest>
