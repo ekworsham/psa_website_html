@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>ProScapes of Atlanta</title>
+    <link rel="stylesheet" type="text/css" href="/public/css/style2.css" />
+    <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-1811627-18']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</head>
+
+<body>
+<div id="container">
+<div class="container_12">
+<span style="float:left"><a href="/"><img src="/public/images/logo2.png"></a></span>
+
+<div class="topnav">404-514-6254 | <a href="/view/billing">Billing</a> | <a href="/view/contact_us">Contact Us</a></div>
+
+<div class="clear-right"></div>
+<div class="nav">
+<ul class="cssmenu">
+	<li class="about_us"><a href="/view/about_us" title="About Us"><span class="displace">About Us</span></a></li>
+	<li class="commercial"><a href="/view/commercial" title="Commercial"><span class="displace">Commercial</span></a></li>
+	<li class="services"><a href="/view/services" title="Services"><span class="displace">Services</span></a></li>
+  <li class="contact"><a href="/view/estimate" title="Contact"><span class="displace">Get a Free Estimate</span></a></li>
+</ul>
+</div> <!-- END nav -->
+
+</div> <!-- END container12 -->
+
+<main>
+    <h1>Welcome to ProScapes</h1>
+    <h2>Misson Statement</h2>
+    <p>At ProScapes of Atlanta, our mission is to enhance, protect, and elevate the value of HOA, commercial, and mixed-use communities through consistent, professional landscape management. We are committed to treating every property as if it were our own—delivering dependable service, clear communication, and disciplined execution on every visit.</p>
+    <h2>Company Overview:<br> 
+<p>ProScapes of Atlanta, LLC is a premier landscape contracting company dedicated to excellence in landscape installation, design, and maintenance. Established with a commitment to quality and professionalism, we have earned a reputation as one of the leading landscape contractors in
+the Atlanta area.
+
+Company History: 
+Founded by John Estes, ProScapes of Atlanta, LLC began as a residential landscape maintenance company specializing in plant and lawn care. In 2005, the company expanded into landscape installation and was officially incorporated under its current name. Over the years, ProScapes of Atlanta has grown into an award-winning enterprise, renowned for its exceptional craftsmanship and commitment to customer satisfaction.
+
+In 2014, Keith Worsham joined ProScapes of Atlanta as a 50/50 partner, bringing with him a wealth of experience in the landscape industry. With a career that began in 1988, Keith spent 17 years at Post Properties/HighGrove Partners LLC and five years at Georgia's largest privately owned landscape company, The Brickman Group. His professional journey—from entry-level roles to senior management, career development manager, wholesale store manager for Pike Family Nursery, and Vice President at Freeman's Tree Care—has provided him with extensive industry expertise. His leadership and strong reputation have been instrumental in shaping ProScapes of Atlanta's HOA and residential services while driving the company's expansion into the commercial sector.
+</h2>
+        
+
+We believe successful communities are built on accountability, proactive care, and long-term stewardship. By partnering closely with property managers and boards, we ensure landscapes are not only well maintained, but thoughtfully managed to reflect pride, safety, and excellence year-round.</p>
+  <nav aria-label="Primary">
+    <ul>
+      <li><a href="/view/commercial/index.html">WTF Commercial</a></li>
+      <li><a href="/view/services/index.html">Services</a></li>
+      <li><a href="/view/billing/index.html">Billing</a></li>
+      <li><a href="/view/estimate/index.html">Free Estimate</a></li>
+      <li><a href="/view/contact_us/index.html">Contact Us</a></li>
+    </ul>
+  </nav>
+</main>
+
+<div class="clear"></div>
+
+<div class="container_12" id="footer">
+	<a href="/">Home</a> | <a href="/view/commercial">Commercial</a> | <a href="/view/services">Services</a> | <a href="/view/billing">Billing</a> | <a href="/view/estimate">Free Estimate</a> | <a href="/view/estimate">Contact Us</a>
+<p>ProScapes of Atlanta | 404-514-6254 |<a href="mailto:proscapesofatl.kw@gmail.com">contact@ProScapesOfAtlanta.com</a>
+
+</div> <!-- END container12 -->
+
+</div> <!-- END container -->
+
+<script>
+let bannerSlideIndex = 1;
+let bannerAutoPlayTimeout;
+
+function changeBannerSlide(n) {
+	clearTimeout(bannerAutoPlayTimeout);
+	showBannerSlides(bannerSlideIndex += n);
+	startBannerAutoPlay();
+}
+
+function currentBannerSlide(n) {
+	clearTimeout(bannerAutoPlayTimeout);
+	showBannerSlides(bannerSlideIndex = n + 1);
+	startBannerAutoPlay();
+}
+
+function showBannerSlides(n) {
+	let slides = document.getElementsByClassName("banner-slide");
+	let dots = document.getElementsByClassName("dot");
+	
+	if (n > slides.length) { bannerSlideIndex = 1; }
+	if (n < 1) { bannerSlideIndex = slides.length; }
+	
+	for (let i = 0; i < slides.length; i++) {
+		slides[i].classList.remove("active");
+	}
+	for (let i = 0; i < dots.length; i++) {
+		dots[i].classList.remove("active");
+	}
+	
+	slides[bannerSlideIndex - 1].classList.add("active");
+	dots[bannerSlideIndex - 1].classList.add("active");
+}
+
+function startBannerAutoPlay() {
+	bannerAutoPlayTimeout = setTimeout(() => {
+		bannerSlideIndex++;
+		showBannerSlides(bannerSlideIndex);
+		startBannerAutoPlay();
+	}, 5000);
+}
+
+// Initialize carousel immediately
+showBannerSlides(bannerSlideIndex);
+startBannerAutoPlay();
+</script>
+
+</body>
+</html>
