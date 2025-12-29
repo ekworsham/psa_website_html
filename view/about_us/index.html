@@ -2,7 +2,9 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ProScapes of Atlanta</title>
+    <link rel="preload" href="/public/css/style2.css" as="style">
     <link rel="stylesheet" type="text/css" href="/public/css/style2.css" />
     <script type="text/javascript">
 
@@ -22,7 +24,7 @@
 <body>
 <div id="container">
 	<div id="site-header"></div>
-	<script src="/public/components/header.js"></script>
+	<script src="/public/components/header.js" defer></script>
 
 	<div class="clear"></div>
 	<div class="container_12">
@@ -31,11 +33,11 @@
 				<h2>Our Company</h2>
 				<div class="grid_3" id="about_photos">
 					<figure class="about-photo">
-					<img src="/public/images/john.jpg" alt="John Estes" />
+					<img src="/public/images/john.jpg" alt="John Estes" width="200" height="200" loading="eager" />
 					<figcaption>John Estes</figcaption>
 					</figure>
 					<figure class="about-photo">
-					<img src="/public/images/keith.webp" alt="Keith Worsham" />
+					<img src="/public/images/keith.webp" alt="Keith Worsham" width="200" height="200" loading="eager" />
 					<figcaption>Keith Worsham</figcaption>
 					</figure>
 				</div>
@@ -65,53 +67,7 @@
 
 </div> <!-- END container -->
 
-<script>
-let bannerSlideIndex = 1;
-let bannerAutoPlayTimeout;
-
-function changeBannerSlide(n) {
-	clearTimeout(bannerAutoPlayTimeout);
-	showBannerSlides(bannerSlideIndex += n);
-	startBannerAutoPlay();
-}
-
-function currentBannerSlide(n) {
-	clearTimeout(bannerAutoPlayTimeout);
-	showBannerSlides(bannerSlideIndex = n + 1);
-	startBannerAutoPlay();
-}
-
-function showBannerSlides(n) {
-	let slides = document.getElementsByClassName("banner-slide");
-	let dots = document.getElementsByClassName("dot");
-	
-	if (n > slides.length) { bannerSlideIndex = 1; }
-	if (n < 1) { bannerSlideIndex = slides.length; }
-	
-	for (let i = 0; i < slides.length; i++) {
-		slides[i].classList.remove("active");
-	}
-	for (let i = 0; i < dots.length; i++) {
-		dots[i].classList.remove("active");
-	}
-	
-	slides[bannerSlideIndex - 1].classList.add("active");
-	dots[bannerSlideIndex - 1].classList.add("active");
-}
-
-function startBannerAutoPlay() {
-	bannerAutoPlayTimeout = setTimeout(() => {
-		bannerSlideIndex++;
-		showBannerSlides(bannerSlideIndex);
-		startBannerAutoPlay();
-	}, 5000);
-}
-
-// Initialize carousel immediately
-showBannerSlides(bannerSlideIndex);
-startBannerAutoPlay();
-</script>
 <div id="site-footer"></div>
-<script src="/public/components/footer.js"></script>
+<script src="/public/components/footer.js" defer></script>
 </body>
 </html>
