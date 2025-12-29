@@ -27,8 +27,11 @@ body {
 	line-height: 1;
 	color:#000;
 	font-family:Arial, Helvetica, sans-serif;
+	font-display: swap;
 	margin:0;
 	padding:0;
+	touch-action: manipulation;
+	-ms-touch-action: manipulation;
 }
 ol, ul {
 	list-style: none;
@@ -172,6 +175,7 @@ ul li {
 a, a:active {
 	color:#ff4c00;
 	text-decoration:none;
+	touch-action: manipulation;
 }
 
 a:hover {
@@ -227,6 +231,8 @@ ul.cssmenu li a {
 	text-decoration: none;
 	border-radius: 8px;
 	transition: background 0.3s;
+	touch-action: manipulation;
+	-ms-touch-action: manipulation;
 	}
 
 ul.cssmenu li a span {

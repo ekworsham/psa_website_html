@@ -2,23 +2,13 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, viewport-fit=cover">
+    <meta http-equiv="Cache-Control" content="max-age=31536000, public">
     <title>ProScapes of Atlanta</title>
-    <link rel="preload" href="/public/css/style2.css" as="style">
-    <link rel="stylesheet" type="text/css" href="/public/css/style2.css" />
-    <script type="text/javascript">
+    <link rel="preload" href="/public/css/style2.css" as="style" fetchpriority="high">
+    <link rel="preload" href="/public/images/keith.webp" as="image" fetchpriority="high">
+    <link rel="stylesheet" type="text/css" href="/public/css/style2.css" media="all" />
 
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-1811627-18']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-</script>
 </head>
 
 <body>
@@ -28,16 +18,16 @@
 
 	<div class="clear"></div>
 	<div class="container_12">
-		<div class="grid_9" id="content_box" style="margin-top:1rem">
+		<div class="grid_9" id="content_box" style="margin-top:1rem;min-height:600px;contain:layout">
 			<div id="content">
 				<h2>Our Company</h2>
 				<div class="grid_3" id="about_photos">
 					<figure class="about-photo">
-					<img src="/public/images/john.jpg" alt="John Estes" width="200" height="200" loading="eager" />
+					<img src="/public/images/john.jpg" alt="John Estes" width="200" height="200" loading="eager" decoding="async" fetchpriority="low" />
 					<figcaption>John Estes</figcaption>
 					</figure>
 					<figure class="about-photo">
-					<img src="/public/images/keith.webp" alt="Keith Worsham" width="200" height="200" loading="eager" />
+					<img src="/public/images/keith.webp" alt="Keith Worsham" width="200" height="200" loading="eager" decoding="async" fetchpriority="high" />
 					<figcaption>Keith Worsham</figcaption>
 					</figure>
 				</div>
@@ -55,7 +45,7 @@
 <div class="clear"></div>
 <div class="container_12">
 	<div class="grid_3">&nbsp;</div>
-	<div class="grid_9" id="content_box_commercial">
+	<div class="grid_9" id="content_box_commercial" style="min-height:120px;contain:layout">
 		<div id="content">
 			<a href="/view/services"><h2>Looking for Landscape Services?</h2>
 			<p>Proscapes of Atlanta Commercial Services specializes in Office, Industrial, Retail, HOA, and Hotel landscape needs.</p></a>
@@ -69,5 +59,26 @@
 
 <div id="site-footer"></div>
 <script src="/public/components/footer.js" defer></script>
+<script type="text/javascript">
+(function() {
+  function loadGA() {
+    var _gaq = window._gaq || [];
+    _gaq.push(['_setAccount', 'UA-1811627-18']);
+    _gaq.push(['_trackPageview']);
+    window._gaq = _gaq;
+    var ga = document.createElement('script');
+    ga.type = 'text/javascript';
+    ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(ga, s);
+  }
+  if ('requestIdleCallback' in window) {
+    requestIdleCallback(loadGA, { timeout: 2000 });
+  } else {
+    setTimeout(loadGA, 2000);
+  }
+})();
+</script>
 </body>
 </html>

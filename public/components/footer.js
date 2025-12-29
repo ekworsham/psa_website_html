@@ -3,6 +3,7 @@
     var target = document.getElementById('site-footer');
     if(!target){ return; }
 
+    var fragment = document.createDocumentFragment();
     var clearDiv = document.createElement('div');
     clearDiv.className = 'clear';
 
@@ -18,25 +19,28 @@
 
     container.innerHTML = linksHtml + '\n' + contactHtml;
 
-    target.appendChild(clearDiv);
-    target.appendChild(container);
+    fragment.appendChild(clearDiv);
+    fragment.appendChild(container);
+    target.appendChild(fragment);
 
     if(data.scripts && data.scripts.banner){
       var bannerSlideIndex = 1;
       var bannerAutoPlayTimeout;
 
       function showBannerSlides(n){
-        var slides = document.getElementsByClassName('banner-slide');
-        var dots = document.getElementsByClassName('dot');
-        if(!slides.length){ return; }
-        if(n > slides.length){ bannerSlideIndex = 1; }
-        if(n < 1){ bannerSlideIndex = slides.length; }
-        for(var i=0;i<slides.length;i++){ slides[i].classList.remove('active'); }
-        for(var j=0;j<dots.length;j++){ dots[j].classList.remove('active'); }
-        var s = slides[bannerSlideIndex - 1];
-        if(s){ s.classList.add('active'); }
-        var d = dots[bannerSlideIndex - 1];
-        if(d){ d.classList.add('active'); }
+        requestAnimationFrame(function(){
+          var slides = document.getElementsByClassName('banner-slide');
+          var dots = document.getElementsByClassName('dot');
+          if(!slides.length){ return; }
+          if(n > slides.length){ bannerSlideIndex = 1; }
+          if(n < 1){ bannerSlideIndex = slides.length; }
+          for(var i=0;i<slides.length;i++){ slides[i].classList.remove('active'); }
+          for(var j=0;j<dots.length;j++){ dots[j].classList.remove('active'); }
+          var s = slides[bannerSlideIndex - 1];
+          if(s){ s.classList.add('active'); }
+          var d = dots[bannerSlideIndex - 1];
+          if(d){ d.classList.add('active'); }
+        });
       }
 
       function startBannerAutoPlay(){
@@ -67,6 +71,8 @@
 
   fetch('/public/components/footer.json')
     .then(function(r){ return r.json(); })
-    .then(function(data){ renderFooter(data); })
+    .then(function(data){ 
+      requestAnimationFrame(function(){ renderFooter(data); });
+    })
     .catch(function(err){ console.error('Footer load error:', err); });
 })();
