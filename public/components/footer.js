@@ -1,4 +1,32 @@
 (function(){
+  // Inlined footer data to avoid additional network request
+  var footerData = {
+    "classes": {
+      "container": "container_12",
+      "id": "footer"
+    },
+    "nav": {
+      "links": [
+        { "label": "Home", "href": "/" },
+        { "label": "About Us", "href": "/view/about_us" },
+        { "label": "Services", "href": "/view/services" },
+        { "label": "Free Estimate", "href": "/view/estimate" },
+        { "label": "Billing", "href": "/view/billing" },
+        { "label": "Contact Us", "href": "/view/contact_us" }
+      ]
+    },
+    "contact": {
+      "company": "ProScapes of Atlanta",
+      "phone": "404-514-6254",
+      "emailLabel": "contact@ProScapesOfAtlanta.com",
+      "emailHref": "mailto:proscapesofatl.kw@gmail.com"
+    },
+    "scripts": {
+      "banner": true,
+      "intervalMs": 5000
+    }
+  };
+
   function renderFooter(data){
     var target = document.getElementById('site-footer');
     if(!target){ return; }
@@ -23,56 +51,8 @@
     fragment.appendChild(container);
     target.appendChild(fragment);
 
-    if(data.scripts && data.scripts.banner){
-      var bannerSlideIndex = 1;
-      var bannerAutoPlayTimeout;
 
-      function showBannerSlides(n){
-        requestAnimationFrame(function(){
-          var slides = document.getElementsByClassName('banner-slide');
-          var dots = document.getElementsByClassName('dot');
-          if(!slides.length){ return; }
-          if(n > slides.length){ bannerSlideIndex = 1; }
-          if(n < 1){ bannerSlideIndex = slides.length; }
-          for(var i=0;i<slides.length;i++){ slides[i].classList.remove('active'); }
-          for(var j=0;j<dots.length;j++){ dots[j].classList.remove('active'); }
-          var s = slides[bannerSlideIndex - 1];
-          if(s){ s.classList.add('active'); }
-          var d = dots[bannerSlideIndex - 1];
-          if(d){ d.classList.add('active'); }
-        });
-      }
-
-      function startBannerAutoPlay(){
-        clearTimeout(bannerAutoPlayTimeout);
-        bannerAutoPlayTimeout = setTimeout(function(){
-          bannerSlideIndex++;
-          showBannerSlides(bannerSlideIndex);
-          startBannerAutoPlay();
-        }, data.scripts.intervalMs || 5000);
-      }
-
-      window.changeBannerSlide = function(n){
-        clearTimeout(bannerAutoPlayTimeout);
-        showBannerSlides(bannerSlideIndex += n);
-        startBannerAutoPlay();
-      };
-
-      window.currentBannerSlide = function(n){
-        clearTimeout(bannerAutoPlayTimeout);
-        showBannerSlides(bannerSlideIndex = n + 1);
-        startBannerAutoPlay();
-      };
-
-      showBannerSlides(bannerSlideIndex);
-      startBannerAutoPlay();
-    }
   }
 
-  fetch('/public/components/footer.json')
-    .then(function(r){ return r.json(); })
-    .then(function(data){ 
-      requestAnimationFrame(function(){ renderFooter(data); });
-    })
-    .catch(function(err){ console.error('Footer load error:', err); });
+  requestAnimationFrame(function(){ renderFooter(footerData); });
 })();

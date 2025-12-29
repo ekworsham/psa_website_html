@@ -1,4 +1,57 @@
 (function(){
+  // Inlined header data to avoid additional network request
+  var headerData = {
+    "meta": {
+      "title": "ProScapes of Atlanta",
+      "charset": "utf-8"
+    },
+    "styles": [
+      "/public/css/style2.css"
+    ],
+    "analytics": {
+      "gaAccount": "UA-1811627-18"
+    },
+    "branding": {
+      "logo": {
+        "href": "/",
+        "src": "/public/images/logo2.png"
+      }
+    },
+    "topnav": [
+      { "text": "404-514-6254" },
+      { "text": "Billing", "href": "/view/billing" },
+      { "text": "Contact Us", "href": "/view/contact_us" }
+    ],
+    "nav": {
+      "items": [
+        {
+          "class": "home",
+          "href": "/index.html",
+          "title": "Home",
+          "label": "Home"
+        },
+        {
+          "class": "about_us",
+          "href": "/view/about_us",
+          "title": "About Us",
+          "label": "About Us"
+        },
+        {
+          "class": "services",
+          "href": "/view/services",
+          "title": "Services",
+          "label": "Services"
+        },
+        {
+          "class": "contact",
+          "href": "/view/estimate",
+          "title": "Contact",
+          "label": "Get a Free Estimate"
+        }
+      ]
+    }
+  };
+
   function renderHeader(data){
     var fragment = document.createDocumentFragment();
     var container = document.createElement('div');
@@ -12,8 +65,20 @@
       return '<li class="'+i.class+'"><a href="'+i.href+'" title="'+i.title+'"><span class="displace">'+i.label+'</span></a></li>';
     }).join('');
     
+    var logoSrc = (data.branding && data.branding.logo && data.branding.logo.src) ? data.branding.logo.src : '/public/images/logo2.png';
+    var logoHref = (data.branding && data.branding.logo && data.branding.logo.href) ? data.branding.logo.href : '/';
+    var logoFile = logoSrc.split('/').pop();
+    var logoBase = logoFile.replace(/\.[^.]+$/, '');
+    var optimizedPrefix = '/public/images/optimized/' + logoBase + '-150';
+
     container.innerHTML = ''+
-      '<span style="float:left"><a href="'+data.branding.logo.href+'"><img src="'+data.branding.logo.src+'" alt="ProScapes of Atlanta Logo" width="150" height="60"></a></span>'+
+      '<span style="float:left"><a href="'+logoHref+'">'+
+        '<picture>'+
+          '<source type="image/avif" srcset="'+optimizedPrefix+'.avif" />'+
+          '<source type="image/webp" srcset="'+optimizedPrefix+'.webp" />'+
+          '<img src="'+logoSrc+'" alt="ProScapes of Atlanta Logo" width="150" height="60" decoding="async" loading="eager" fetchpriority="high" />'+
+        '</picture>'+
+      '</a></span>'+
       '<div class="topnav">'+topnav+'</div>'+
       '<div class="clear-right"></div>'+
       '<div class="nav">'+
@@ -30,12 +95,7 @@
   }
   
   function load(){
-    fetch('/public/components/header.json')
-      .then(function(r){ return r.json(); })
-      .then(function(json){ 
-        requestAnimationFrame(function(){ renderHeader(json); });
-      })
-      .catch(function(err){ console.error('header load failed', err); });
+    requestAnimationFrame(function(){ renderHeader(headerData); });
   }
   
   if(document.readyState === 'loading'){

@@ -3,7 +3,16 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>ProScapes of Atlanta - Services</title>
-    <link rel="stylesheet" type="text/css" href="/public/css/style2.css" />
+    <link rel="preconnect" href="https://ssl.google-analytics.com" crossorigin />
+    <link rel="dns-prefetch" href="https://ssl.google-analytics.com" />
+    <link rel="preload" href="/public/css/style2.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="/public/css/style2.css"></noscript>
+    <style>
+        body{margin:0;padding:0;font-family:Arial,Helvetica,sans-serif;color:#000}
+        #container{width:960px;margin:0 auto}
+        .container_12{margin:0 auto;width:960px}
+        .clear{clear:both}
+    </style>
     <script type="text/javascript">
 
   var _gaq = _gaq || [];
@@ -22,7 +31,7 @@
 <body>
 <div id="container">
 <div id="site-header"></div>
-<script src="/public/components/header.js"></script>
+<script src="/public/components/header.js" async></script>
 
 <div class="clear"></div>
 <div class="container_12">
@@ -73,7 +82,13 @@
 				</p>
                 <p style="text-align:left;">Protect your poperty from water damage with our comprehensive drainage solutions. Our team can assist with grading to address any problematic areas, install underground drainage pipes, and to mitigate and  redirection the runoff water away from your property.</p>
 
-			<p><a href="/view/contact_us"><img src="/public/images/contactus_estimate.jpg" alt="Contact Us for Free Estimate"></a></p>
+			<p><a href="/view/contact_us">
+			  <picture>
+			    <source type="image/avif" srcset="/public/images/optimized/contactus_estimate-300.avif 300w, /public/images/optimized/contactus_estimate-600.avif 600w" sizes="(max-width: 700px) 100vw, 300px" />
+			    <source type="image/webp" srcset="/public/images/optimized/contactus_estimate-300.webp 300w, /public/images/optimized/contactus_estimate-600.webp 600w" sizes="(max-width: 700px) 100vw, 300px" />
+			    <img src="/public/images/contactus_estimate.jpg" alt="Contact Us for Free Estimate" loading="lazy" decoding="async" />
+			  </picture>
+			</a></p>
 
 			<p style="margin-bottom:1rem;">You can also call <span style="font-weight:bold; color:#ff4c00">404-514-6254</span> or email us at <span style="font-weight:bold"><a href="mailto:proscapesofatl.kw@gmail.com">contact@ProScapesOfAtlanta.com</a></span></p>
 		</div>
@@ -91,7 +106,7 @@
 </div>
 
 <div id="site-footer"></div>
-<script src="/public/components/footer.js"></script>
+<script src="/public/components/footer.js" defer></script>
 
 </div> <!-- END container -->
 
