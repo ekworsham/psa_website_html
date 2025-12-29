@@ -11,7 +11,7 @@
         { "label": "About Us", "href": "/view/about_us" },
         { "label": "Services", "href": "/view/services" },
         { "label": "Free Estimate", "href": "/view/estimate" },
-        { "label": "Billing", "href": "/view/billing" },
+        // { "label": "Billing", "href": "/view/billing" },
         { "label": "Contact Us", "href": "/view/contact_us" }
       ]
     },

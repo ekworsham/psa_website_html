@@ -182,6 +182,17 @@ a:hover {
 	text-decoration:underline;
 }
 
+/* Headline links hover (e.g., Landscape Services) */
+a h2 {
+	color: inherit;
+	text-decoration: none;
+	transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+a:hover h2 {
+	color: #1a7d31;
+	text-decoration: underline;
+}
+
 .nav {
 	margin:0;
 	padding:0;
@@ -189,13 +200,15 @@ a:hover {
 }
 .topnav {
 	float:right;
-	margin:0 0 15px 0;
+	margin:1rem 0 1rem 0;
 	padding:10px;
 	color:#000000;
 	font-weight:bold;
 	font-size:1rem;
-	background-color:#28a745;
-	border-radius: 5px;
+	background: linear-gradient(to top,#1a7d31, #c1ffb4);
+	border-radius: 8px;
+	box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+	transition: background 0.3s, box-shadow 0.2s;
 }
 .topnav a {
 	color:#000000;
@@ -203,6 +216,10 @@ a:hover {
 }
 .topnav a:hover {
 	text-decoration:underline;
+}
+.topnav:hover {
+	background: linear-gradient(to top,#1f8d3a, #d5ffd0);
+	box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 ul.cssmenu {
 	list-style: none;
@@ -218,12 +235,24 @@ ul.cssmenu li {
 	margin-right: 10px;
 	}
 
+/* Header spacing tightening */
+#site-header { margin: 0; padding: 0; }
+#site-header .container_12 { 
+	display: flex; 
+	flex-direction: column; 
+	align-items: center; 
+	justify-content: flex-start; 
+	gap: 0.05rem; 
+}
+#header-logo { display:inline-block; margin:0.05rem 0; line-height:0; }
+#header-logo picture, #header-logo img { display:block; }
+
 ul.cssmenu li a {
 	display: block;
 	width: 175px;
 	height: 50px;
 	background: #28a745;
-	color: white;
+	color: #000000;
 	text-align: center;
 	line-height: 50px;
 	font-weight: bold;
@@ -243,27 +272,28 @@ ul.cssmenu li a span {
 /*
 *	Normal Links
 */
+ul.cssmenu li.home a,
 ul.cssmenu li.about_us a {
-	background: #28a745;
+	background: linear-gradient(to top,#1a7d31, #c1ffb4);
 	}
 
 ul.cssmenu li.commercial a {
-	background: #28a745;
+	background: linear-gradient(to top,#1a7d31, #c1ffb4);
 	}
 
 ul.cssmenu li.services a {
-	background: #28a745;
+	background: linear-gradient(to top,#1a7d31, #c1ffb4);
 	}
 
 ul.cssmenu li.contact a {
-	background: #28a745;
+	background: linear-gradient(to top,#1a7d31, #c1ffb4);
 	}
 
 /* Reusable nav-style button */
 .nav-button {
 	display:inline-block;
-	background:#28a745;
-	color:#fff;
+	background: linear-gradient(to top,#1a7d31, #c1ffb4);
+	color:#000000;
 	padding:10px 16px;
 	border-radius:8px;
 	text-decoration:none;
@@ -272,14 +302,14 @@ ul.cssmenu li.contact a {
 }
 
 .nav-button:hover {
-	background:#1fce45;
+	background: linear-gradient(to top,#1f8d3a, #d5ffd0);
 	transform: translateY(-2px);
 	box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 	text-decoration:none !important;
 }
 
 .nav-button:active {
-	background:#1e7e34;
+	background: linear-gradient(to top,#14652a, #a6f0a0);
 	transform: translateY(0);
 	box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 	text-decoration:none !important;
@@ -289,11 +319,12 @@ ul.cssmenu li.contact a {
 *	Hover Links
 */
 
+ul.cssmenu li.home a:hover,
 ul.cssmenu li.about_us a:hover,
 ul.cssmenu li.commercial a:hover,
 ul.cssmenu li.services a:hover,
 ul.cssmenu li.contact a:hover {
-	background: #218838;
+	background: linear-gradient(to top,#1f8d3a, #d5ffd0);
 	transform: translateY(-2px);
 	box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 	}
@@ -303,11 +334,12 @@ ul.cssmenu li.contact a:hover {
 *	Clicked Links
 */
 
+ul.cssmenu li.home a:active,
 ul.cssmenu li.about_us a:active,
 ul.cssmenu li.commercial a:active,
 ul.cssmenu li.services a:active,
 ul.cssmenu li.contact a:active {
-	background: #1e7e34;
+	background: linear-gradient(to top,#14652a, #a6f0a0);
 	transform: translateY(0);
 	box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 	}
@@ -400,7 +432,7 @@ ul.cssmenu li.contact a.selected {
 	padding:10px 20px;
 }
 #content_box_commercial h2 {
-	color:#ffffff;
+	color:#000000;
 	font-size:2em;
 	font-weight:bold;
 	margin:0;

@@ -6,7 +6,7 @@
       "charset": "utf-8"
     },
     "styles": [
-      "/public/css/style2.css"
+      "public/css/style2.css"
     ],
     "analytics": {
       "gaAccount": "UA-1811627-18"
@@ -19,7 +19,7 @@
     },
     "topnav": [
       { "text": "404-514-6254" },
-      { "text": "Billing", "href": "/view/billing" },
+      // { "text": "Billing", "href": "/view/billing" },
       { "text": "Contact Us", "href": "/view/contact_us" }
     ],
     "nav": {
@@ -49,7 +49,7 @@
           "label": "Get a Free Estimate"
         }
       ]
-    }
+    },
   };
 
   function renderHeader(data){
@@ -69,16 +69,13 @@
     var logoHref = (data.branding && data.branding.logo && data.branding.logo.href) ? data.branding.logo.href : '/';
     var logoFile = logoSrc.split('/').pop();
     var logoBase = logoFile.replace(/\.[^.]+$/, '');
-    var optimizedPrefix = '/public/images/optimized/' + logoBase + '-150';
+    var logoSize = logoBase === 'logo1' ? '450' : '150';
+    var optimizedPrefix = '/public/images/optimized/' + logoBase + '-' + logoSize;
 
     container.innerHTML = ''+
-      '<span style="float:left"><a href="'+logoHref+'">'+
-        '<picture>'+
-          '<source type="image/avif" srcset="'+optimizedPrefix+'.avif" />'+
-          '<source type="image/webp" srcset="'+optimizedPrefix+'.webp" />'+
-          '<img src="'+logoSrc+'" alt="ProScapes of Atlanta Logo" width="150" height="60" decoding="async" loading="eager" fetchpriority="high" />'+
-        '</picture>'+
-      '</a></span>'+
+      '<div id="header-logo"><a href="'+logoHref+'">'+
+          '<img src="'+logoSrc+'" alt="ProScapes of Atlanta Logo" width="450" height="150" decoding="async" loading="eager" fetchpriority="high" />'+
+      '</a></div>'+
       '<div class="topnav">'+topnav+'</div>'+
       '<div class="clear-right"></div>'+
       '<div class="nav">'+

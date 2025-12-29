@@ -118,3 +118,35 @@ a:active.sample1 {
 	font-size: 11px; 
 	font-family: tahoma; 
 	font-weight: bold; }
+
+/*
+ * Universal button styling to match commercial banner gradient
+ */
+button,
+input[type=submit],
+input[type=button],
+a.button {
+	background: linear-gradient(to top,#1a7d31, #c1ffb4);
+	color:#000000;
+	padding:10px 16px;
+	border:none;
+	border-radius:8px;
+	font-weight:bold;
+	text-decoration:none;
+	cursor:pointer;
+	box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+button:hover,
+input[type=submit]:hover,
+input[type=button]:hover,
+a.button:hover {
+	background: linear-gradient(to top,#1f8d3a, #d5ffd0);
+}
+
+button:active,
+input[type=submit]:active,
+input[type=button]:active,
+a.button:active {
+	background: linear-gradient(to top,#14652a, #a6f0a0);
+}

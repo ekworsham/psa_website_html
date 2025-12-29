@@ -15,6 +15,8 @@
         #container{width:960px;margin:0 auto}
         .container_12{margin:0 auto;width:960px}
         .clear{clear:both}
+		.content-link{display:inline-block;transition:transform 0.2s ease;}
+		.content-link:hover{transform:translateY(-2px);}
     </style>
 
 </head>
@@ -28,7 +30,7 @@
 	<div class="container_12">
 		<div class="grid_9" id="content_box" style="margin-top:1rem;min-height:600px;contain:layout">
 			<div id="content">
-				<h2>Our Company</h2>
+				<h2>Owners</h2>
 				<div class="grid_3" id="about_photos">
 					<figure class="about-photo">
 						<picture>
@@ -36,7 +38,7 @@
 							<source type="image/webp" srcset="/public/images/optimized/john-200.webp 200w, /public/images/optimized/john-400.webp 400w" sizes="200px" />
 							<img src="/public/images/john.webp" alt="John Estes" width="200" height="200" loading="lazy" decoding="async" />
 						</picture>
-						<figcaption>John Estes</figcaption>
+						<figcaption style="text-align:center;font-weight:bold;font-size:1.2em;">John Estes</figcaption>
 					</figure>
 					<figure class="about-photo">
 						<picture>
@@ -44,15 +46,19 @@
 							<source type="image/webp" srcset="/public/images/optimized/keith-200.webp 200w, /public/images/optimized/keith-400.webp 400w" sizes="200px" />
 							<img src="/public/images/keith.webp" alt="Keith Worsham" width="200" height="200" loading="lazy" decoding="async" />
 						</picture>
-						<figcaption>Keith Worsham</figcaption>
+						<figcaption style="text-align:center;font-weight:bold;font-size:1.2em;">Keith Worsham</figcaption>
 					</figure>
 				</div>
 				<p style="text-align:left;">Founded in 2004 by John Estes, ProScapes of Atlanta is dedicated to providing high-quality landscape design, construction, and full-service maintenance solutions.</p>
-				<p style="text-align:left;font-weight:bold;font-size:1.2em;margin-bottom:5px;">Misson Statement</p>
-				<p style="text-align:left;">At ProScapes of Atlanta, our mission is to enhance, protect, and elevate the value of HOA, commercial, and mixed-use communities through consistent, professional landscape management. We are committed to treating every property as our own by delivering dependable service, clear communication, and disciplined execution on every visit.</p>
-				<p style="text-align:left;font-weight:bold;font-size:1.2em;margin-bottom:5px;">Company History</p>
-				<p style="text-align:left;">With roots beginning as a residential landscape maintenance company specializing in plant and lawn care, ProScapes of Atlanta expanded into landscape installation in 2005 and was officially incorporated under its current name. Over the years, the company has grown into an award-winning enterprise, recognized for its exceptional craftsmanship and unwavering commitment to customer satisfaction.</p>
+				
 				<p style="text-align:left;">In 2014, Keith Worsham joined ProScapes of Atlanta as an equal partner, bringing extensive experience in the landscape industry. His career began in 1988. Keith's professional journey—from entry-level positions to partner and owner—has shaped a diverse background and provided him with broad industry expertise. His leadership and strong professional reputation have been instrumental in strengthening ProScapes of Atlanta's HOA and residential services while driving the company's expansion into the commercial sector.</p>
+
+				<p style="text-align:left;font-weight:bold;font-size:1.2em;margin-bottom:5px;">WHERE WE CAME FROM</p>
+				<p style="text-align:left;">With roots beginning as a residential landscape maintenance company specializing in plant and lawn care, ProScapes of Atlanta expanded into landscape installation in 2005 and was officially incorporated under its current name. Over the years, the company has grown into an award-winning enterprise, recognized for its exceptional craftsmanship and unwavering commitment to customer satisfaction.</p>
+
+				<p style="text-align:left;font-weight:bold;font-size:1.2em;margin-bottom:5px;">MISSION STATEMENT</p>
+				<p style="text-align:left;">At ProScapes of Atlanta, our mission is to enhance, protect, and elevate the value of HOA, commercial, and mixed-use communities through consistent, professional landscape management. We are committed to treating every property as our own by delivering dependable service, clear communication, and disciplined execution on every visit.</p>
+
 				<br><p style="text-align:left;">We believe successful communities are built on accountability, proactive care, and long-term stewardship. By partnering closely with property managers and boards, we ensure landscapes are not only well maintained, but thoughtfully managed to reflect pride, safety, and excellence year-round.</p>
 			</div>
 		</div>
@@ -63,8 +69,8 @@
 	<div class="grid_3">&nbsp;</div>
 	<div class="grid_9" id="content_box_commercial" style="min-height:120px;contain:layout">
 		<div id="content">
-			<a href="/view/services"><h2>Looking for Landscape Services?</h2>
-			<p>Proscapes of Atlanta Commercial Services specializes in Office, Industrial, Retail, HOA, and Hotel landscape needs.</p></a>
+			<a class="content-link" href="/view/services"><h2>Landscape Services</h2>
+			<p>Proscapes of Atlanta Commercial Services specializes in Office, Church, Industrial, Retail, HOA, and Hotel landscape needs.</p></a>
 		</div>
 	</div>
 </div> <!-- END container12 -->
