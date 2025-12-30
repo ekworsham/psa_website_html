@@ -720,3 +720,14 @@ input#submit {
 	padding: 200px 0px 0px 0px;
 }
 
+/* Extracted CSS from index.html inline styles */
+/* Critical CSS for above-the-fold content */
+.content-link {
+	display: inline-block;
+	transition: transform 0.2s ease;
+}
+
+.content-link:hover {
+	transform: translateY(-2px);
+}
+
