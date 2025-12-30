@@ -18,9 +18,9 @@
       }
     },
     "topnav": [
-      { "text": "404-514-6254" },
-      // { "text": "Billing", "href": "/view/billing" },
-      { "text": "Contact Us", "href": "/view/contact_us" }
+      // { "text": "404-514-6254" },
+      // // { "text": "Billing", "href": "/view/billing" },
+      // { "text": "Contact Us", "href": "/view/contact_us" }
     ],
     "nav": {
       "items": [
@@ -44,9 +44,21 @@
         },
         {
           "class": "contact",
-          "href": "/view/estimate",
+          "href": "/view/contact_us",
           "title": "Contact",
-          "label": "Get a Free Estimate"
+          "label": "Contact Us"
+        },
+        {
+          "class": "careers",
+          "href": "/view/careers",
+          "title": "Careers",
+          "label": "Career"
+        },
+        {
+          "class": "estimate",
+          "href": "/view/estimate",
+          "title": "Estimate",
+          "label": "Free Estimate"
         }
       ]
     },

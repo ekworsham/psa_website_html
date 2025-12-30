@@ -5,8 +5,8 @@
     <title>ProScapes of Atlanta - Contact Us</title>
     <link rel="preconnect" href="https://ssl.google-analytics.com" crossorigin />
     <link rel="dns-prefetch" href="https://ssl.google-analytics.com" />
-    <link rel="preload" href="/public/css/style2.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-    <noscript><link rel="stylesheet" href="/public/css/style2.css"></noscript>
+    <link rel="preload" href="../../public/css/style2.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="../../public/css/style2.css"></noscript>
     <style>
         body{margin:0;padding:0;font-family:Arial,Helvetica,sans-serif;color:#000}
         #container{width:960px;margin:0 auto}
@@ -15,18 +15,19 @@
     </style>
     <style>
 .contact-wrapper {
-  width: 600px;
-  margin: 20px auto;
+  width: 100%;
+  margin: 0;
 }
 
 .contact-card {
   text-align: left;
-  margin-left: 30px;
+  margin: 0;
   border-radius: 10px;
   background-color: #caedca;
-  width: 450px;
-  padding: 20px 50px;
+  width: 100%;
+  padding: 20px;
   line-height: 1.3em;
+  box-sizing: border-box;
 }
 
 .form-group {
@@ -153,7 +154,7 @@
 <body>
 <div id="container">
 <div id="site-header"></div>
-<script src="/public/components/header.js" async></script>
+<script src="../../public/components/header.js" async></script>
 
 <div class="clear"></div>
 <div class="container_12">
@@ -161,7 +162,8 @@
   <div class="grid_9" id="content_box">
 
       <div class="contact-wrapper">
-        <p style="font-weight:bold; margin-bottom: 1rem;">Our staff is available to meet with you at your property for a free consultation.</p>
+        <h2 class="page-title">CONTACT US</h2>
+        <p class="page-subtitle">Our staff is available to meet with you at your property for a free consultation.</p>
         <div class="contact-card">
           <form name="contactform_general" method="post" action="https://formspree.io/f/xyzwxyzw" onsubmit="return validateForm(event)">
             <input type="hidden" name="form_type" value="general">
@@ -187,7 +189,7 @@
           </form>
         </div>
       </div>
-      <p class="contact-info" style="font-weight:bold; margin-bottom: 1rem;">You can also call <span class="phone">404-514-6254</span> or email us at <a href="mailto:proscapesofatl.kw@gmail.com" class="email">contact@ProScapesOfAtlanta.com</a></p>
+      <!-- <p class="contact-info" style="font-weight:bold; margin-bottom: 1rem;">You can also call <span class="phone">404-514-6254</span> or email us at <a href="mailto:proscapesofatl.kw@gmail.com" class="email">contact@ProScapesOfAtlanta.com</a></p> -->
     </div>
   </div>
 </div> <!-- END container12 -->
@@ -204,7 +206,7 @@
 </div> <!-- END container12 -->
 
 <div id="site-footer"></div>
-<script src="/public/components/footer.js" defer></script>
+<script src="../../public/components/footer.js" defer></script>
 
 </div> <!-- END container -->
 
@@ -225,3 +227,9 @@ function validateForm(event) {
 
 </body>
 </html>
+
+
+
+
+
+

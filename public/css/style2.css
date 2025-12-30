@@ -194,21 +194,12 @@ a:hover h2 {
 }
 
 .nav {
-	margin:0;
+	margin:0 0 1rem 0;
 	padding:0;
 	border-radius: 5px;
 }
 .topnav {
-	float:right;
-	margin:1rem 0 1rem 0;
-	padding:10px;
-	color:#000000;
-	font-weight:bold;
-	font-size:1rem;
-	background: linear-gradient(to top,#1a7d31, #c1ffb4);
-	border-radius: 8px;
-	box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-	transition: background 0.3s, box-shadow 0.2s;
+	display: none;
 }
 .topnav a {
 	color:#000000;
@@ -224,6 +215,10 @@ a:hover h2 {
 ul.cssmenu {
 	list-style: none;
 	padding: 0px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 10px;
 	}
 
 .displace {
@@ -231,8 +226,8 @@ ul.cssmenu {
 	}
 
 ul.cssmenu li {
-	float: left;
-	margin-right: 10px;
+	float: none;
+	margin-right: 0px;
 	}
 
 /* Header spacing tightening */
@@ -242,14 +237,16 @@ ul.cssmenu li {
 	flex-direction: column; 
 	align-items: center; 
 	justify-content: flex-start; 
-	gap: 0.05rem; 
+	gap: 0.05rem;
+	width: auto;
+	max-width: 1000px;
 }
-#header-logo { display:inline-block; margin:0.05rem 0; line-height:0; }
+#header-logo { display:inline-block; margin:0.05rem 0 1rem 0; line-height:0; }
 #header-logo picture, #header-logo img { display:block; }
 
 ul.cssmenu li a {
 	display: block;
-	width: 175px;
+	width: calc(175px - 2rem);
 	height: 50px;
 	background: #28a745;
 	color: #000000;
@@ -272,20 +269,7 @@ ul.cssmenu li a span {
 /*
 *	Normal Links
 */
-ul.cssmenu li.home a,
-ul.cssmenu li.about_us a {
-	background: linear-gradient(to top,#1a7d31, #c1ffb4);
-	}
-
-ul.cssmenu li.commercial a {
-	background: linear-gradient(to top,#1a7d31, #c1ffb4);
-	}
-
-ul.cssmenu li.services a {
-	background: linear-gradient(to top,#1a7d31, #c1ffb4);
-	}
-
-ul.cssmenu li.contact a {
+ul.cssmenu li a {
 	background: linear-gradient(to top,#1a7d31, #c1ffb4);
 	}
 
@@ -358,7 +342,7 @@ ul.cssmenu li.contact a.selected {
 	}
 
 #banner_container {
-	margin:.75rem 0 0 0;
+	margin:0 auto 1rem;
 	display:flex;
 	flex-direction:column;
 	align-items:center;
@@ -374,10 +358,11 @@ ul.cssmenu li.contact a.selected {
 	flex-direction:column;
 	align-items:center;
 	justify-content:center;
+	padding:10px 20px;
 }
 #content {
 	padding:5px;
-	width:660px;
+	width:100%;
 	border:none;
 	outline:none;
 }
@@ -489,7 +474,7 @@ input#submit {
 	position: relative;
 	width: 100%;
 	height: 400px;
-	margin: 0 auto 30px;
+	margin: 0 auto 0;
 	overflow: hidden;
 	border-radius: 8px;
 	box-shadow: 0 4px 12px rgba(0,0,0,0.15);
@@ -581,5 +566,153 @@ input#submit {
 
 .dot:hover {
 	background: rgba(255,255,255,0.9);
+}
+
+/* Text Styling Utilities */
+.text-bold {
+	font-weight: bold;
+}
+
+.text-center-margin {
+	margin-bottom: 1rem;
+	text-align: center;
+}
+
+/* Page Title Styles */
+.page-title {
+	margin-top: 1rem;
+	color: #ff4c00;
+	font-size: 2.3em;
+	font-weight: bold;
+	text-align: center;
+}
+
+/* Page Subtitle */
+.page-subtitle {
+	font-weight: bold;
+	margin-bottom: 1rem;
+	text-align: center;
+	font-size: 1.2em;
+}
+
+/* Centered text with bold and 1.2em */
+.section-heading-bold {
+	text-align: center;
+	font-weight: bold;
+	font-size: 1.2em;
+	margin-bottom: 5px;
+}
+
+/* Left-aligned text */
+.text-left {
+	text-align: left;
+}
+
+/* Left-aligned bold section heading */
+.section-heading-left {
+	text-align: left;
+	font-weight: bold;
+	font-size: 1.2em;
+	margin-bottom: 5px;
+}
+
+/* Figure caption styling */
+.figure-caption {
+	text-align: center;
+	font-weight: bold;
+	font-size: 1.2em;
+}
+
+/* Content box styling */
+#content_box {
+	margin-top: 1rem;
+	height: auto;
+	contain: layout;
+}
+
+/* Commercial content box styling */
+#content_box_commercial {
+	height: auto;
+	contain: layout;
+}
+
+/* Form info box (green background) */
+.form-info-box {
+	text-align: left;
+	margin-left: 30px;
+	border-radius: 10px;
+	background-color: #caedca;
+	width: 450px;
+	padding: 20px 50px;
+	line-height: 1.3em;
+}
+
+/* Wrapper for content sections */
+.content-wrapper {
+	width: 600px;
+	margin: 20px auto;
+}
+
+/* Footer padding */
+.footer-padding {
+	padding: 15px 0px;
+}
+
+/* Header section padding */
+.header-section-padding {
+	padding-left: 25px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-right: 20px;
+}
+
+/* Header section text */
+.header-section-text {
+	font-family: 'arial', arial;
+	font-size: 20px;
+	color: #FFFFFF;
+}
+
+/* Paragraph quote styling */
+.quote-text {
+	font-size: 1.4em;
+	font-weight: bold;
+	width: 600px;
+	margin: 0 auto;
+}
+
+/* Quote attribution */
+.quote-attribution {
+	color: #919191;
+	font-size: 0.9em;
+	text-align: right;
+	margin-bottom: 5px;
+}
+
+/* Contact info styling */
+.contact-info-text {
+	margin: 0;
+}
+
+/* Bold phone number */
+.phone-bold {
+	font-weight: bold;
+	color: #ff4c00;
+}
+
+/* Bold email */
+.email-bold {
+	font-weight: bold;
+}
+
+/* Horizontal header background */
+.header-background-image {
+	background-size: cover;
+	background-position: center;
+}
+
+/* Div padding for content */
+.content-padding-top {
+	padding: 200px 0px 0px 0px;
 }
 
