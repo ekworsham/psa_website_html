@@ -42,8 +42,20 @@
       },
       {
         "class": "contact",
-        "href": "/view/estimate",
+        "href": "/view/contact_us",
         "title": "Contact",
+        "label": "Contact Us"
+      },
+       {
+        "class": "careers",
+        "href": "/view/careers",
+        "title": "Careers",
+        "label": "Careers"
+      },
+       {
+        "class": "estimate",
+        "href": "/view/estimate",
+        "title": "Estimate",
         "label": "Get a Free Estimate"
       }
     ]
