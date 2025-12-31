@@ -82,11 +82,14 @@
     var logoFile = logoSrc.split('/').pop();
     var logoBase = logoFile.replace(/\.[^.]+$/, '');
     var logoSize = logoBase === 'logo1' ? '450' : '150';
-    var optimizedPrefix = '/public/images/optimized/' + logoBase + '-' + logoSize;
 
     container.innerHTML = ''+
       '<div id="header-logo"><a href="'+logoHref+'">'+
-          '<img src="'+logoSrc+'" alt="ProScapes of Atlanta Logo" width="450" height="150" decoding="async" loading="eager" fetchpriority="high" />'+
+          '<picture>'+
+            '<source type="image/avif" srcset="/public/images/optimized/' + logoBase + '-' + logoSize + '.avif" />'+
+            '<source type="image/webp" srcset="/public/images/optimized/' + logoBase + '-' + logoSize + '.webp" />'+
+            '<img src="'+logoSrc+'" alt="ProScapes of Atlanta Logo" width="450" height="150" decoding="async" loading="eager" fetchpriority="high" />'+
+          '</picture>'+
       '</a></div>'+
       '<div class="topnav">'+topnav+'</div>'+
       '<div class="clear-right"></div>'+
