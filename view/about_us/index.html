@@ -5,9 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, viewport-fit=cover">
     <meta http-equiv="Cache-Control" content="max-age=31536000, public">
     <title>ProScapes of Atlanta</title>
-    <link rel="preconnect" href="https://ssl.google-analytics.com" crossorigin />
-    <link rel="dns-prefetch" href="https://ssl.google-analytics.com" />
-    <link rel="preload" href="../../public/css/style2.css" as="style" onload="this.onload=null;this.rel='stylesheet'" fetchpriority="high">
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />    <!-- Google Analytics 4 - Async -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX\"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+    </script>    <link rel="preload" href="../../public/css/style2.css" as="style" onload="this.onload=null;this.rel='stylesheet'" fetchpriority="high">
     <link rel="preload" href="../../public/images/keith.webp" as="image" fetchpriority="high">
     <noscript><link rel="stylesheet" href="../../public/css/style2.css"></noscript>
     <style>

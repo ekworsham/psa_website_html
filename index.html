@@ -7,6 +7,7 @@
 	<link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
 	<link rel="dns-prefetch" href="https://www.googletagmanager.com" />
 	<link rel="preload" href="public/images/home.webp" as="image" type="image/webp" fetchpriority="high" />
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
 	<!-- Critical CSS for above-the-fold content (inline for faster initial render) -->
 	<style>
 	/* Critical CSS - Inline in <head> for above-the-fold content */
@@ -298,31 +299,41 @@
 				<div id="photo_banner">
 					<div class="banner-slide active">
 						<picture>
-							<source type="image/webp" srcset="public/images/home.webp" />
+							<source media="(max-width: 480px)" type="image/webp" srcset="public/images/home.webp 480w" sizes="100vw" />
+							<source media="(max-width: 700px)" type="image/webp" srcset="public/images/home.webp 700w" sizes="100vw" />
+							<source type="image/webp" srcset="public/images/home.webp 1280w" sizes="100vw" />
 							<img src="public/images/home.webp" alt="ProScapes Home" width="700" height="400" loading="eager" decoding="async" fetchpriority="high" />
 						</picture>
 					</div>
 					<div class="banner-slide">
 						<picture>
-							<source type="image/webp" srcset="public/images/home1.webp" />
+							<source media="(max-width: 480px)" type="image/webp" srcset="public/images/home1.webp 480w" sizes="100vw" />
+							<source media="(max-width: 700px)" type="image/webp" srcset="public/images/home1.webp 700w" sizes="100vw" />
+							<source type="image/webp" srcset="public/images/home1.webp 1280w" sizes="100vw" />
 							<img src="public/images/home1.webp" alt="ProScapes Service 1" width="700" height="400" loading="lazy" decoding="async" />
 						</picture>
 					</div>
 					<div class="banner-slide">
 						<picture>
-							<source type="image/webp" srcset="public/images/home2.webp" />
+							<source media="(max-width: 480px)" type="image/webp" srcset="public/images/home2.webp 480w" sizes="100vw" />
+							<source media="(max-width: 700px)" type="image/webp" srcset="public/images/home2.webp 700w" sizes="100vw" />
+							<source type="image/webp" srcset="public/images/home2.webp 1280w" sizes="100vw" />
 							<img src="public/images/home2.webp" alt="ProScapes Service 2" width="700" height="400" loading="lazy" decoding="async" />
 						</picture>
 					</div>
 					<div class="banner-slide">
 						<picture>
-							<source type="image/webp" srcset="public/images/home3.webp" />
+							<source media="(max-width: 480px)" type="image/webp" srcset="public/images/home3.webp 480w" sizes="100vw" />
+							<source media="(max-width: 700px)" type="image/webp" srcset="public/images/home3.webp 700w" sizes="100vw" />
+							<source type="image/webp" srcset="public/images/home3.webp 1280w" sizes="100vw" />
 							<img src="public/images/home3.webp" alt="ProScapes Service 3" width="700" height="400" loading="lazy" decoding="async" />
 						</picture>
 					</div>
 					<div class="banner-slide">
 						<picture>
-							<source type="image/webp" srcset="public/images/home4.webp" />
+							<source media="(max-width: 480px)" type="image/webp" srcset="public/images/home4.webp 480w" sizes="100vw" />
+							<source media="(max-width: 700px)" type="image/webp" srcset="public/images/home4.webp 700w" sizes="100vw" />
+							<source type="image/webp" srcset="public/images/home4.webp 1280w" sizes="100vw" />
 							<img src="public/images/home4.webp" alt="ProScapes Service 4" width="700" height="400" loading="lazy" decoding="async" />
 						</picture>
 					</div>
