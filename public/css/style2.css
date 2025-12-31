@@ -158,7 +158,7 @@ table {
 /* Template Formatting
 ----------------------------------------------------------------------------------------------------*/
 html {
-        background-color: rgb(173, 173, 173);
+        background-color: rgb(223, 222, 222);
 		/* url(/public/images/flowers2.JPEG) no-repeat top center fixed; */
         -webkit-background-size: cover;
         -moz-background-size: cover;
@@ -601,10 +601,8 @@ input#submit {
 
 /* Centered text with bold and 1.2em */
 .section-heading-bold {
-	text-align: center;
 	font-weight: bold;
 	font-size: 1.2em;
-	margin-bottom: 5px;
 }
 
 /* Justified text */
@@ -617,7 +615,7 @@ input#submit {
 	text-align: left;
 	font-weight: bold;
 	font-size: 1.2em;
-	margin-bottom: 5px;
+	margin-bottom: 0;
 }
 
 /* Figure caption styling */
