@@ -10,21 +10,23 @@
         { "label": "Home", "href": "/" },
         { "label": "About Us", "href": "/view/about_us" },
         { "label": "Services", "href": "/view/services" },
+        { "label": "Contact Us", "href": "/view/services" },
+        { "label": "Career", "href": "/view/services" },
         { "label": "Free Estimate", "href": "/view/estimate" },
         // { "label": "Billing", "href": "/view/billing" },
         { "label": "Contact Us", "href": "/view/contact_us" }
       ]
     },
-    "contact": {
-      "company": "ProScapes of Atlanta",
-      "phone": "404-514-6254",
-      "emailLabel": "contact@ProScapesOfAtlanta.com",
-      "emailHref": "mailto:proscapesofatl.kw@gmail.com"
-    },
-    "scripts": {
-      "banner": true,
-      "intervalMs": 5000
-    }
+    // "contact": {
+    //   "company": "ProScapes of Atlanta",
+    //   "phone": "404-514-6254",
+    //   "emailLabel": "contact@ProScapesOfAtlanta.com",
+    //   "emailHref": "mailto:proscapesofatl.kw@gmail.com"
+    // },
+    // "scripts": {
+    //   "banner": true,
+    //   "intervalMs": 5000
+    // }
   };
 
   function renderFooter(data){
@@ -43,9 +45,9 @@
     var linksHtml = links.map(function(l){ return '<a href="' + l.href + '">' + l.label + '</a>'; }).join(' | ');
 
     var contact = data.contact || {};
-    var contactHtml = '<p>' + (contact.company || '') + ' | ' + (contact.phone || '') + ' | <a href="' + (contact.emailHref || '#') + '">' + (contact.emailLabel || '') + '</a>';
+    var contactHtml = contact.company ? '<p>' + contact.company + ' | ' + (contact.phone || '') + ' | <a href="' + (contact.emailHref || '#') + '">' + (contact.emailLabel || '') + '</a>' : '';
 
-    container.innerHTML = linksHtml + '\n' + contactHtml;
+    container.innerHTML = linksHtml + (contactHtml ? '\n' + contactHtml : '');
 
     fragment.appendChild(clearDiv);
     fragment.appendChild(container);

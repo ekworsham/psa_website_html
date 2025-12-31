@@ -163,20 +163,21 @@
 
       <div class="contact-wrapper">
         <h2 class="page-title">GET A FREE ESTIMATE</h2>
-        <h3 class="page-subtitle">Our staff is available to meet with you at your property for a free estimate.</h3>
+        <p class="page-subtitle">Our staff is available to meet with you at your property for a free estimate.</p>
+
         <div class="contact-card">
           <form name="contactform_general" method="post" action="https://formspree.io/f/xregwylj" onsubmit="return validateForm(event)">
             <input type="hidden" name="form_type" value="general">
             <div class="form-group">
-              <label for="general_name">Name <span class="optional">(Optional)</span></label>
-              <input type="text" name="name" id="general_name">
+              <label for="general_name">Name <span class="required">(Required)</span></label>
+              <input type="text" name="name" id="general_name"  required aria-required="true">
             </div>
             <div class="form-group">
-              <label for="general_phone">Phone <span class="optional">(Optional)</span></label>
-              <input type="text" name="phone" id="general_phone">
+              <label for="general_phone">Phone <span class="required">(Required)</span></label>
+              <input type="text" name="phone" id="general_phone"  required aria-required="true">
             </div>
             <div class="form-group">
-              <label for="general_email">Email</label>
+              <label for="general_email">Email <span class="required">(Required)</span></label>
               <input type="email" name="email2" id="general_email" required aria-required="true">
             </div>
             <div class="form-group">
@@ -184,10 +185,11 @@
               <textarea name="message" id="general_message" cols="50" rows="5" required aria-required="true"></textarea>
             </div>
             <div class="form-actions">
-              <input type="submit" value="Send Message" name="submit">
+              <input type="submit" value="Send Message" name="submit" style="font-weight: bold;">
             </div>
           </form>
         </div>
+
       </div>
       <!-- <p class="contact-info" style="font-weight:bold; margin-bottom: 1rem;">You can also call <span class="phone">404-514-6254</span> or email us at <a href="mailto:proscapesofatl.kw@gmail.com" class="email">contact@ProScapesOfAtlanta.com</a></p> -->
     </div>
