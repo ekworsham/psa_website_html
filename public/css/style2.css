@@ -32,6 +32,9 @@ body {
 	padding:0;
 	touch-action: manipulation;
 	-ms-touch-action: manipulation;
+	background: url(../images/backgound.png) no-repeat center center fixed;
+	background-size: cover;
+	min-height: 100vh;
 }
 ol, ul {
 	list-style: none;
@@ -158,12 +161,13 @@ table {
 /* Template Formatting
 ----------------------------------------------------------------------------------------------------*/
 html {
+        background: url(../images/backgound.png) no-repeat center center fixed;
         background-color: rgb(223, 222, 222);
-		/* url(/public/images/flowers2.JPEG) no-repeat top center fixed; */
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
-        background-size: cover;   
+        background-size: cover;
+        min-height: 100vh;
 }
 img {
 	border:0;

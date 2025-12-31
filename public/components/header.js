@@ -14,7 +14,7 @@
     "branding": {
       "logo": {
         "href": "/",
-        "src": "/public/images/logo2.png"
+        "src": "/public/images/logo3.webp"
       }
     },
     "topnav": [
@@ -77,7 +77,7 @@
       return '<li class="'+i.class+'"><a href="'+i.href+'" title="'+i.title+'"><span class="displace">'+i.label+'</span></a></li>';
     }).join('');
     
-    var logoSrc = (data.branding && data.branding.logo && data.branding.logo.src) ? data.branding.logo.src : '/public/images/logo2.png';
+    var logoSrc = (data.branding && data.branding.logo && data.branding.logo.src) ? data.branding.logo.src : '/public/images/logo3.webp';
     var logoHref = (data.branding && data.branding.logo && data.branding.logo.href) ? data.branding.logo.href : '/';
     var logoFile = logoSrc.split('/').pop();
     var logoBase = logoFile.replace(/\.[^.]+$/, '');
