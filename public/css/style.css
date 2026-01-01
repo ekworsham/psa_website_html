@@ -1,152 +1,154 @@
-body	{
-	margin:0px;
-	padding:0px;
-	background-color:#000000;
-	font-family:tahoma;
-	font-size:12px;
-	line-height:15px;						
-	color:#E4E4E4;
-}
-td, font {
-	vertical-align:top;
-	font-size:12px;
-	line-height:15px;
-	font-family:tahoma;
-	color:#E4E4E4;
-}
-.footer {			
-	font-size:10px;
-	line-height:13px;
-	font-family:tahoma;
-	color:#FFFFFF;
-}																									
-a:link {
-	color:#F5D7B3;
-	font-size:13px;
-	font-weight: bold;						
-	text-decoration: none;
-	background-color: transparent
-}
-a:visited {
-	color:#F5D7B3;
-	font-size:13px;
-	font-weight: bold;						
-	text-decoration: none;
-	background-color: transparent
-}
-a:hover {
-	color:#F5F5F5;
-	font-size:13px;
-	font-weight: bold;						
-	text-decoration: underline;
-	background-color: transparent
-}
-a:active {
-	color:#F5F5F5;
-	font-size:13px;
-	font-weight: bold;						
-	text-decoration: none;
-	background-color: transparent
-}
-a:link.sample1 {
-	color: #FFFFFF;
-	text-decoration: underline;
-	font-size:10px;
-	font-weight: bold;
-	background-color: transparent
-}
-a:visited.sample1 {
-	color: #FFFFFF;
-	text-decoration: underline;
-	font-size:10px;
-	font-weight: bold;
-	background-color: transparent
-}
-a:hover.sample1 {
-	color: #E4EEF4;
-	text-decoration: none;
-	font-size:10px;
-	font-weight: bold;
-	background-color: transparent
-}
-a:active.sample1 {
-	color: #FFFFFF;
-	text-decoration: underline;
-	font-size:10px;
-	font-weight: bold;
-	background-color: transparent
-}
-.style1 {
-	color: #828281;
-	font-size: 11px;
-	font-family: tahoma;
-}
-.style2 {
-	color: #4f4f4f;
-	font-size: 11px;
-	font-family: tahoma;
-	text-decoration:none
-}
-.style3 {
-	color: #f7f8f7;
-	font-size: 11px;
-	font-family: tahoma;
-	font-weight: bold;
-}
-.style4 {
-	color: #9b9a9a;
-	font-size: 11px;
-	font-family: tahoma;
-}
-.style5 {
-	color: #B7B7B7;
-	font-size: 11px;
-	font-family: tahoma;
-}
-.style6 {
-	color: #4f49f8;
-	font-size: 11px;
-	font-family: tahoma;
-}
-.style7 {
-	color: #B7B7B7;
-	font-size: 11px;
-	font-family: tahoma;
-}
-.style9 {
-	color: #9b9a9a; 
-	font-size: 11px; 
-	font-family: tahoma; 
-	font-weight: bold; }
+@media only screen and (min-width: 608px) {
+	body	{
+		margin:0px;
+		padding:0px;
+		background-color:#000000;
+		font-family:tahoma;
+		font-size:12px;
+		line-height:15px;						
+		color:#E4E4E4;
+	}
+	td, font {
+		vertical-align:top;
+		font-size:12px;
+		line-height:15px;
+		font-family:tahoma;
+		color:#E4E4E4;
+	}
+	.footer {			
+		font-size:10px;
+		line-height:13px;
+		font-family:tahoma;
+		color:#FFFFFF;
+	}																									
+	a:link {
+		color:#F5D7B3;
+		font-size:13px;
+		font-weight: bold;						
+		text-decoration: none;
+		background-color: transparent
+	}
+	a:visited {
+		color:#F5D7B3;
+		font-size:13px;
+		font-weight: bold;						
+		text-decoration: none;
+		background-color: transparent
+	}
+	a:hover {
+		color:#F5F5F5;
+		font-size:13px;
+		font-weight: bold;						
+		text-decoration: underline;
+		background-color: transparent
+	}
+	a:active {
+		color:#F5F5F5;
+		font-size:13px;
+		font-weight: bold;						
+		text-decoration: none;
+		background-color: transparent
+	}
+	a:link.sample1 {
+		color: #FFFFFF;
+		text-decoration: underline;
+		font-size:10px;
+		font-weight: bold;
+		background-color: transparent
+	}
+	a:visited.sample1 {
+		color: #FFFFFF;
+		text-decoration: underline;
+		font-size:10px;
+		font-weight: bold;
+		background-color: transparent
+	}
+	a:hover.sample1 {
+		color: #E4EEF4;
+		text-decoration: none;
+		font-size:10px;
+		font-weight: bold;
+		background-color: transparent
+	}
+	a:active.sample1 {
+		color: #FFFFFF;
+		text-decoration: underline;
+		font-size:10px;
+		font-weight: bold;
+		background-color: transparent
+	}
+	.style1 {
+		color: #828281;
+		font-size: 11px;
+		font-family: tahoma;
+	}
+	.style2 {
+		color: #4f4f4f;
+		font-size: 11px;
+		font-family: tahoma;
+		text-decoration:none
+	}
+	.style3 {
+		color: #f7f8f7;
+		font-size: 11px;
+		font-family: tahoma;
+		font-weight: bold;
+	}
+	.style4 {
+		color: #9b9a9a;
+		font-size: 11px;
+		font-family: tahoma;
+	}
+	.style5 {
+		color: #B7B7B7;
+		font-size: 11px;
+		font-family: tahoma;
+	}
+	.style6 {
+		color: #4f49f8;
+		font-size: 11px;
+		font-family: tahoma;
+	}
+	.style7 {
+		color: #B7B7B7;
+		font-size: 11px;
+		font-family: tahoma;
+	}
+	.style9 {
+		color: #9b9a9a; 
+		font-size: 11px; 
+		font-family: tahoma; 
+		font-weight: bold; }
 
-/*
- * Universal button styling to match commercial banner gradient
- */
-button,
-input[type=submit],
-input[type=button],
-a.button {
-	background: linear-gradient(to top,#1a7d31, #c1ffb4);
-	color:#000000;
-	padding:10px 16px;
-	border:none;
-	border-radius:8px;
-	font-weight:bold;
-	text-decoration:none;
-	cursor:pointer;
-	box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-}
+	/*
+	* Universal button styling to match commercial banner gradient
+	*/
+	button,
+	input[type=submit],
+	input[type=button],
+	a.button {
+		background: linear-gradient(to top,#1a7d31, #c1ffb4);
+		color:#000000;
+		padding:10px 16px;
+		border:none;
+		border-radius:8px;
+		font-weight:bold;
+		text-decoration:none;
+		cursor:pointer;
+		box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+	}
 
-button:hover,
-input[type=submit]:hover,
-input[type=button]:hover,
-a.button:hover {
-	background: linear-gradient(to top,#1f8d3a, #d5ffd0);
-}
+	button:hover,
+	input[type=submit]:hover,
+	input[type=button]:hover,
+	a.button:hover {
+		background: linear-gradient(to top,#1f8d3a, #d5ffd0);
+	}
 
-button:active,
-input[type=submit]:active,
-input[type=button]:active,
-a.button:active {
-	background: linear-gradient(to top,#14652a, #a6f0a0);
+	button:active,
+	input[type=submit]:active,
+	input[type=button]:active,
+	a.button:active {
+		background: linear-gradient(to top,#14652a, #a6f0a0);
+	}
 }
