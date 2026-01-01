@@ -93,6 +93,10 @@
       '</a></div>'+
       '<div class="topnav">'+topnav+'</div>'+
       '<div class="clear-right"></div>'+
+      '<button class="nav-toggle" type="button" aria-expanded="false" aria-label="Toggle navigation">'+
+        '<span></span><span></span><span></span>'+
+        '<span class="menu-text">Menu</span>'+
+      '</button>'+
       '<div class="nav">'+
         '<ul class="cssmenu">'+navItems+'</ul>'+
       '</div>';
@@ -103,6 +107,14 @@
     if(target){
       target.innerHTML = '';
       target.appendChild(fragment);
+
+      var navToggle = container.querySelector('.nav-toggle');
+      if(navToggle){
+        navToggle.addEventListener('click', function(){
+          var isOpen = container.classList.toggle('nav-open');
+          navToggle.setAttribute('aria-expanded', isOpen);
+        });
+      }
     }
   }
   
