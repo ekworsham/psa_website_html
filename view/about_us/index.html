@@ -18,6 +18,50 @@
     <link rel="preload" href="../../public/images/keith.webp" as="image" fetchpriority="high">
     <link rel="stylesheet" href="../../public/css/about-us.css" />
     <noscript><link rel="stylesheet" href="../../public/css/style2.css"></noscript>
+    <style>
+      .linkedin-tooltip {
+        position: relative;
+        display: inline-block;
+      }
+      .linkedin-tooltip::after {
+        content: attr(data-tooltip);
+        position: absolute;
+        bottom: 125%;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 8px 12px;
+        background-color: #003366;
+        color: white;
+        border-radius: 4px;
+        white-space: nowrap;
+        font-size: 12px;
+        font-weight: 600;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s, visibility 0.3s;
+        z-index: 1;
+        pointer-events: none;
+      }
+      .linkedin-tooltip::before {
+        content: '';
+        position: absolute;
+        bottom: 115%;
+        left: 50%;
+        transform: translateX(-50%);
+        border: 6px solid transparent;
+        border-top-color: #003366;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s, visibility 0.3s;
+        z-index: 1;
+        pointer-events: none;
+      }
+      .linkedin-tooltip:hover::after,
+      .linkedin-tooltip:hover::before {
+        opacity: 1;
+        visibility: visible;
+      }
+    </style>
 
 </head>
 
@@ -38,17 +82,17 @@
 							<picture>
 								<source type="image/avif" srcset="../../public/images/optimized/john-200.avif 200w, ../../public/images/optimized/john-400.avif 400w" sizes="200px" />
 								<source type="image/webp" srcset="../../public/images/optimized/john-200.webp 200w, ../../public/images/optimized/john-400.webp 400w" sizes="200px" />
-								<img src="../../public/images/john.webp" alt="John Estes" width="200" height="200" loading="lazy" decoding="async" />
+								<img src="../../public/images/john.webp" alt="John Estes" width="200" height="200" loading="lazy" decoding="async" style="border: 4px solid #003366; border-radius: 50%;" />
 							</picture>
-							<figcaption class="figure-caption">John Estes <a href="https://www.linkedin.com/in/john-estes-30613544/" target="_blank" style="text-decoration: none;"><span style="color: #0a66c2; font-weight: bold; margin-left: 8px;">in</span></a></figcaption>
+							<figcaption class="figure-caption">John Estes <a href="https://www.linkedin.com/in/john-estes-30613544/" target="_blank" class="linkedin-tooltip" data-tooltip="LinkedIn" style="text-decoration: none; display: inline-block; width: 24px; height: 24px; border: 2px solid #003366; border-radius: 50%; text-align: center; line-height: 20px; margin-left: 8px;"><span style="color: #0a66c2; font-weight: bold; font-size: 12px;">in</span></a></figcaption>
 						</figure>
 						<figure class="about-photo" style="margin-top: .5rem; margin-bottom: .5rem">
 							<picture>
 								<source type="image/avif" srcset="../../public/images/optimized/keith2-200.avif 200w, ../../public/images/optimized/keith2-400.avif 400w" sizes="200px" />
 								<source type="image/webp" srcset="../../public/images/optimized/keith2-200.webp 200w, ../../public/images/optimized/keith2-400.webp 400w" sizes="200px" />
-								<img src="../../public/images/keith2.webp" alt="Keith Worsham" width="200" height="200" loading="lazy" decoding="async" />
+								<img src="../../public/images/keith2.webp" alt="Keith Worsham" width="200" height="200" loading="lazy" decoding="async" style="border: 4px solid #003366; border-radius: 50%;" />
 							</picture>
-							<figcaption class="figure-caption">Keith Worsham <a href="https://www.linkedin.com/in/keith-worsham/" target="_blank" style="text-decoration: none;"><span style="color: #0a66c2; font-weight: bold; margin-left: 8px;">in</span></a></figcaption>
+							<figcaption class="figure-caption">Keith Worsham <a href="https://www.linkedin.com/in/keith-worsham/" target="_blank" class="linkedin-tooltip" data-tooltip="LinkedIn" style="text-decoration: none; display: inline-block; width: 24px; height: 24px; border: 2px solid #003366; border-radius: 50%; text-align: center; line-height: 20px; margin-left: 8px;"><span style="color: #0a66c2; font-weight: bold; font-size: 12px;">in</span></a></figcaption>
 						</figure>
 					</div>
 					<p class="text-clean" style="text-align: justify;">John Estes is the Founder of ProScapes of Atlanta and a respected industry leader with more than 30 years of experience across all sectors of the landscaping industry, including residential, commercial, HOA, and mixed-use properties. His deep, hands-on knowledge spans landscape maintenance, design-build, irrigation, enhancements, and long-term asset protection, providing clients with comprehensive, practical solutions.</p><br>
