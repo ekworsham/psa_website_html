@@ -87,8 +87,6 @@
 
     /* Content Box */
     #content_box {
-        background-color: #ffffff;
-        border-radius: 15px;
         margin: 0 auto;
         display: flex;
         flex-direction: column;
@@ -114,7 +112,18 @@
         padding: 0;
         border-radius: 5px;
     }
-}
+
+    .content-link {
+        display: inline-block;
+        transition: transform 0.2s ease;
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .content-link:hover {
+        transform: translateY(-2px);
+        text-decoration: none;
+    }
 
 /************************************************
 ********* Desktop view (1024px and above) 

@@ -102,17 +102,21 @@
     }
 
     ul.cssmenu li a {
-        display: block;
-        background: linear-gradient(to top, #1a7d31, #c1ffb4);
-        color: #000000;
-        text-align: center;
-        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(180deg, #6fcf97, #2f9e44);
+        color: #fff;
+        font-weight: 600;
         font-size: 16px;
         text-decoration: none;
-        border-radius: 8px;
-        transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
+        border-radius: 999px;
+        padding: 0.4rem 2rem;
+        line-height: 1.2;
+        transition: transform 0.15s ease, box-shadow 0.15s ease;
         touch-action: manipulation;
         -ms-touch-action: manipulation;
+        white-space: nowrap;
     }
 
     ul.cssmenu li a span {
@@ -123,7 +127,7 @@
     ul.cssmenu li a:hover {
         background: linear-gradient(to top, #1f8d3a, #d5ffd0);
         transform: translateY(-2px);
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 20px 8px rgba(0, 0, 0, .6);
         text-decoration: none;
     }
 
