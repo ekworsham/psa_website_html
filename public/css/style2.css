@@ -114,7 +114,7 @@
 	}
 
 	.container_12 .grid_9 {
-		width: 700px;
+		width: 920px;
 	}
 
 	.container_12 .grid_10 {
@@ -235,7 +235,7 @@
 	#content_box_commercial {
 		background: linear-gradient(to top, #1a7d31, #c1ffb4);
 		border-radius: 15px;
-		width: 700px;
+		width: 920px;
 		margin: 0 auto;
 		font-weight: bold;
 		display: flex;
@@ -481,8 +481,17 @@
 		font-size: 1.2em;
 	}
 
+	.service_cards {
+		background-color: rgba(255, 255, 255, 0.5); /* 90% opaque white */
+		border-radius: 12px;
+		padding: 1rem;
+		box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+		margin-bottom: 1rem;
+	}
+
 	/* Left-aligned bold section heading */
 	.section-heading-left {
+		
 		font-size: 1.75rem;
   		font-weight: 700;
   		color: #f26722;
@@ -495,6 +504,8 @@
 		margin-bottom: 0;
 		color: #ff4c00; */
 	}
+
+
 
 	.section-heading-left::after {
 		content: "";

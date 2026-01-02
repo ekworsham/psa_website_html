@@ -193,6 +193,10 @@
 	.nav-toggle .menu-text {
 		display: none;
 	}
+
+	#site-footer .container_12 {
+		width: 960px;
+	}
 }
 
 /**********************************************
