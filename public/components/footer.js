@@ -10,11 +10,11 @@
         { "label": "Home", "href": "/" },
         { "label": "About Us", "href": "/view/about_us" },
         { "label": "Services", "href": "/view/services" },
-        { "label": "Contact Us", "href": "/view/services" },
-        { "label": "Career", "href": "/view/services" },
+        { "label": "Contact Us", "href": "/view/contact_us" },
+        { "label": "Career", "href": "/view/careers" },
         { "label": "Free Estimate", "href": "/view/estimate" },
         // { "label": "Billing", "href": "/view/billing" },
-        { "label": "Contact Us", "href": "/view/contact_us" }
+        // { "label": "Contact Us", "href": "/view/contact_us" }
       ]
     },
     // "contact": {
