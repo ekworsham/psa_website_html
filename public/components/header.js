@@ -79,18 +79,18 @@
       return '<li class="'+i.class+'"><a href="'+i.href+'" title="'+i.title+'"><span class="displace">'+i.label+'</span></a></li>';
     }).join('');
     
-    var logoSrc = (data.branding && data.branding.logo && data.branding.logo.src) ? data.branding.logo.src : '/public/images/logo3.webp';
-    var logoHref = (data.branding && data.branding.logo && data.branding.logo.href) ? data.branding.logo.href : '/';
-    var logoFile = logoSrc.split('/').pop();
-    var logoBase = logoFile.replace(/\.[^.]+$/, '');
-    var logoSize = logoBase === 'logo1' ? '450' : '150';
+    var logoData = data.branding && data.branding.logo ? data.branding.logo : {};
+    var logoHref = logoData.href || '/';
+    var logoSrc = logoData.src || '/public/images/optimized/logo2-150.avif';
+    var logoWebp = logoData.srcWebp || '/public/images/optimized/logo2-150.webp';
+    var logoPng = logoData.srcPng || '/public/images/optimized/logo2-150.png';
 
     container.innerHTML = ''+
       '<div id="header-logo"><a href="'+logoHref+'">'+
           '<picture>'+
-            '<source type="image/avif" srcset="/public/images/optimized/' + logoBase + '-' + logoSize + '.avif" />'+
-            '<source type="image/webp" srcset="/public/images/optimized/' + logoBase + '-' + logoSize + '.webp" />'+
-            '<img src="'+logoSrc+'" alt="ProScapes of Atlanta Logo" width="450" height="150" decoding="async" loading="eager" fetchpriority="high" />'+
+            '<source type="image/avif" srcset="'+logoSrc+'" />'+
+            '<source type="image/webp" srcset="'+logoWebp+'" />'+
+            '<img src="'+logoPng+'" alt="ProScapes of Atlanta Logo" width="150" height="50" decoding="async" loading="eager" fetchpriority="high" />'+
           '</picture>'+
       '</a></div>'+
       '<div class="topnav">'+topnav+'</div>'+
