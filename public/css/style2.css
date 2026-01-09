@@ -1,3 +1,20 @@
+/* Mobile Styles */
+@media only screen and (max-width: 768px) {
+	body {
+		font-size: 10px; /* Adjust font size */
+		line-height: 14px; /* Adjust line height */
+	}
+	/* Additional mobile-specific styles */
+}
+
+/* Tablet Styles */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+	body {
+		font-size: 11px; /* Adjust font size */
+		line-height: 15px; /* Adjust line height */
+	}
+	/* Additional tablet-specific styles */
+}
 /* Style2 - Page-specific utilities and advanced grid system */
 /* Core reset and base styles are now in base.css */
 
@@ -267,26 +284,6 @@
 		transition: box-shadow 0.15s ease;
 	}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	#content_reference {
 		max-height: 1em;
 		padding-bottom: 1rem;
@@ -298,15 +295,17 @@
 		padding: 15px 0 20px 0;
 		text-align: center;
 		color: #f3f3f7;
-		margin: 15px auto 0;
-		width: 900px;
-		border-top-right-radius: 10px;
-		border-top-left-radius: 10px;
+		margin: 15px 0 0 0;
+		width: 100%;
+		max-width: 100%;
+		border-top-right-radius: 0;
+		border-top-left-radius: 0;
 		display: flex;
 		flex-direction: row;
 		align-items: center;
 		justify-content: center;
 		gap: 15px;
+		box-sizing: border-box;
 	}
 
 	#footer a {
@@ -469,8 +468,6 @@
 		color: #ff4c00; */
 	}
 
-
-
 	.section-heading-left::after {
 		content: "";
   		display: block;
@@ -478,7 +475,6 @@
   		height: 3px;
   		background-color: #f26722;
   		margin-top: 0.5rem;
-
 	}
 
 	/* Figure caption styling */
@@ -606,17 +602,18 @@
 		padding: 15px 10px 20px 10px;
 		text-align: center;
 		color: #f3f3f7;
-		margin: 15px auto 0;
-		width: calc(100% - 20px);
-		max-width: 900px;
-		border-top-right-radius: 10px;
-		border-top-left-radius: 10px;
+		margin: 15px 0 0 0;
+		width: 100%;
+		max-width: 100%;
+		border-top-right-radius: 0;
+		border-top-left-radius: 0;
 		display: flex;
 		flex-direction: row;
 		flex-wrap: wrap;
 		align-items: center;
 		justify-content: center;
 		gap: 10px;
+		box-sizing: border-box;
 	}
 
 	#footer a {
