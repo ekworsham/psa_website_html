@@ -136,9 +136,9 @@
 	.service_cards {
 		background-color: rgba(255, 255, 255, 0.5);
 		border-radius: 12px;
-		padding: 1rem;
+		padding: 0.5rem !important;
 		box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
-		margin-bottom: 1rem;
+		margin-bottom: 0.5rem !important;
 		opacity: 0;
 		animation: fadeUp 0.6s ease-out forwards;
 	}
@@ -155,17 +155,27 @@
 		margin: 0 !important;
 		padding: 0 !important;
 		width: 100% !important;
-		display: flex !important;
-		flex-direction: column !important;
-		align-items: center !important;
-		justify-content: center !important;
 	}
 
-	#content h2 {
+	/* Center CTA button on mobile (services page and others) */
+	.cta-button {
+		display: block !important;
+		width: 80% !important;
+		margin-left: auto !important;
+		margin-right: auto !important;
+		margin-top: 1rem !important;
+		margin-bottom: 1rem !important;
+		box-sizing: border-box !important;
 		text-align: center !important;
-		margin-top: 0 !important;
-		margin-bottom: 0.5rem !important;
-		font-size: 1rem !important;
+		white-space: normal !important;
+	}
+
+	/* Ensure inner span text is centered and fills width */
+	.cta-button span {
+		display: block !important;
+		width: 100% !important;
+		text-align: center !important;
+		white-space: normal !important;
 	}
 
 	#content p {
@@ -189,16 +199,18 @@
 	/* Contact form mobile styling */
 	.contact-wrapper {
 		width: 100% !important;
-		padding: 0 !important;
+		padding: 0 0.75rem !important;
 		margin: 0 !important;
 		box-sizing: border-box !important;
+		max-width: 100% !important;
 	}
 
 	.contact-card {
 		width: 100% !important;
-		padding: 0 !important;
+		padding: 0.5rem !important;
 		margin: 0 !important;
 		box-sizing: border-box !important;
+		border-radius: 8px !important;
 	}
 
 	.form-group {
