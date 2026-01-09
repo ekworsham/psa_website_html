@@ -26,9 +26,9 @@
     "branding": {
       "logo": {
         "href": basePath || "/",
-        "src": basePath + "public/images/optimized/logo2-150.avif",
-        "srcWebp": basePath + "public/images/optimized/logo2-150.webp",
-        "srcPng": basePath + "public/images/optimized/logo2-150.png"
+        "src": basePath + "public/images/optimized/headerLogo.avif",
+        "srcWebp": basePath + "public/images/optimized/headerLogo.webp",
+        "srcPng": basePath + "public/images/optimized/headerLogo.png"
       }
     },
     "topnav": [
@@ -102,7 +102,7 @@
           '<picture>'+
             '<source type="image/avif" srcset="'+logoSrc+'" />'+
             '<source type="image/webp" srcset="'+logoWebp+'" />'+
-            '<img src="'+logoPng+'" alt="ProScapes of Atlanta Logo" width="150" height="50" decoding="async" loading="eager" fetchpriority="high" />'+
+            '<img src="'+logoPng+'" alt="ProScapes of Atlanta Logo" width="300" height="100" decoding="async" loading="eager" fetchpriority="high" />'+
           '</picture>'+
       '</a></div>'+
       '<div class="topnav">'+topnav+'</div>'+
