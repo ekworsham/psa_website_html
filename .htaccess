@@ -1,0 +1,93 @@
+# ProScapes of Atlanta - Security and Performance Headers
+
+# This file adds essential security headers to improve Lighthouse Best Practices score
+
+# Enable mod_headers
+
+<IfModule mod_headers.c>
+    # ============================================
+    # SECURITY HEADERS
+    # ============================================
+    
+    # Strict-Transport-Security (HSTS)
+    # Force HTTPS for 1 year, include subdomains, allow preload
+    Header set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+    
+    # Content-Security-Policy (CSP)
+    # Basic CSP that allows content from same origin + necessary third-party services
+    Header set Content-Security-Policy "default-src 'self'; script-src 'self' https://www.googletagmanager.com https://www.google-analytics.com 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com; frame-ancestors 'self';"
+    
+    # Cross-Origin-Opener-Policy (COOP)
+    # Isolate browsing context from cross-origin windows
+    Header set Cross-Origin-Opener-Policy "same-origin"
+    
+    # Cross-Origin-Resource-Policy (CORP)
+    # Control resource sharing across origins
+    Header set Cross-Origin-Resource-Policy "same-origin"
+    
+    # X-Frame-Options (Clickjacking Protection)
+    # Prevent the site from being embedded in iframes (except same-origin)
+    Header set X-Frame-Options "SAMEORIGIN"
+    
+    # X-Content-Type-Options
+    # Prevent MIME type sniffing
+    Header set X-Content-Type-Options "nosniff"
+    
+    # X-XSS-Protection (deprecated but still useful for older browsers)
+    Header set X-XSS-Protection "1; mode=block"
+    
+    # Referrer-Policy
+    # Control how much referrer information is shared
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+    
+    # Permissions-Policy (formerly Feature-Policy)
+    # Restrict access to sensitive browser features
+    Header set Permissions-Policy "geolocation=(), microphone=(), camera=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=()"
+    
+    # ============================================
+    # PERFORMANCE HEADERS
+    # ============================================
+    
+    # Cache-Control for HTML (dynamic content)
+    <FilesMatch "\.html?$">
+        Header set Cache-Control "public, max-age=3600, must-revalidate"
+    </FilesMatch>
+    
+    # Cache-Control for static assets (CSS, JS, images, fonts)
+    <FilesMatch "\.(css|js|jpg|jpeg|png|gif|ico|svg|webp|avif|woff|woff2|ttf|eot)$">
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </FilesMatch>
+    
+    # Remove X-Powered-By header (security through obscurity)
+    Header unset X-Powered-By
+    Header unset Server
+</IfModule>
+
+# ============================================
+
+# GZIP COMPRESSION
+
+# ============================================
+
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json
+    AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
+
+# ============================================
+
+# CHARACTER ENCODING
+
+# ============================================
+
+AddDefaultCharset UTF-8
+AddCharset UTF-8 .html .css .js .json
+
+# ============================================
+
+# ERROR PAGES
+
+# ============================================
+
+ErrorDocument 404 /404.html
+ErrorDocument 500 /500.html

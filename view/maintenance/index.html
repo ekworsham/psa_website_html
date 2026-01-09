@@ -286,7 +286,7 @@ try {
 // Dropdown accordion functionality
 function initializeDropdowns() {
 	const toggles = document.querySelectorAll('.dropdown-toggle');
-	console.log('Found', toggles.length, 'dropdowns');
+
 
 	toggles.forEach((toggle, index) => {
 		// Avoid re-initializing the same toggle multiple times
@@ -305,7 +305,6 @@ function initializeDropdowns() {
 			toggle.addEventListener('click', function(e) {
 				e.preventDefault();
 				e.stopPropagation();
-				console.log('Clicked dropdown', index);
 				toggle.classList.toggle('collapsed');
 				content.classList.toggle('collapsed');
 			});
