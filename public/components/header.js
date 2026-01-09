@@ -1,4 +1,16 @@
 (function(){
+  // Determine the correct base path for assets
+  // For file:// protocol, calculate relative path; for http(s), use absolute
+  var basePath = '';
+  if (window.location.protocol === 'file:') {
+    var depth = window.location.pathname.split('/').filter(function(p) { 
+      return p && !p.match(/\.(html|htm)$/i); 
+    }).length - 1; // -1 because we're already in the root when depth is 0
+    basePath = depth > 0 ? '../'.repeat(depth) : '';
+  } else {
+    basePath = '/';
+  }
+  
   // Inlined header data to avoid additional network request
   var headerData = {
     "meta": {
@@ -13,10 +25,10 @@
     },
     "branding": {
       "logo": {
-        "href": "/",
-        "src": "/public/images/optimized/logo2-150.avif",
-        "srcWebp": "/public/images/optimized/logo2-150.webp",
-        "srcPng": "/public/images/optimized/logo2-150.png"
+        "href": basePath || "/",
+        "src": basePath + "public/images/optimized/logo2-150.avif",
+        "srcWebp": basePath + "public/images/optimized/logo2-150.webp",
+        "srcPng": basePath + "public/images/optimized/logo2-150.png"
       }
     },
     "topnav": [
@@ -28,37 +40,37 @@
       "items": [
         {
           "class": "home",
-          "href": "/index.html",
+          "href": basePath + "index.html",
           "title": "Home",
           "label": "Home"
         },
         {
           "class": "about_us",
-          "href": "/view/about_us",
+          "href": basePath + "view/about_us",
           "title": "About Us",
           "label": "About Us"
         },
         {
           "class": "services",
-          "href": "/view/services",
+          "href": basePath + "view/services",
           "title": "Services",
           "label": "Services"
         },
         {
           "class": "contact",
-          "href": "/view/contact_us",
+          "href": basePath + "view/contact_us",
           "title": "Contact",
           "label": "Contact Us"
         },
         {
           "class": "careers",
-          "href": "/view/careers",
+          "href": basePath + "view/careers",
           "title": "Careers",
           "label": "Career"
         },
         {
           "class": "estimate",
-          "href": "/view/estimate",
+          "href": basePath + "view/estimate",
           "title": "Estimate",
           "label": "Free Estimate"
         }
