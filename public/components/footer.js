@@ -42,7 +42,7 @@
     container.id = (data.classes && data.classes.id) || 'footer';
 
     var links = (data.nav && data.nav.links) || [];
-    var linksHtml = links.map(function(l){ return '<a href="' + l.href + '">' + l.label + '</a>'; }).join(' | ');
+    var linksHtml = links.map(function(l){ return '<a href="' + l.href + '">' + l.label + '</a>'; }).join('');
 
     var contact = data.contact || {};
     var contactHtml = contact.company ? '<p>' + contact.company + ' | ' + (contact.phone || '') + ' | <a href="' + (contact.emailHref || '#') + '">' + (contact.emailLabel || '') + '</a>' : '';
