@@ -172,6 +172,13 @@
 		text-align: center !important;
 	}
 
+	/* Generic: hide banner arrows and dots on mobile when opted-in */
+	.page-banner-clean .banner-prev,
+	.page-banner-clean .banner-next,
+	.page-banner-clean .banner-dots {
+		display: none !important;
+	}
+
 	/* Careers page: hide banner arrows and dots on mobile */
 	.page-careers .banner-prev,
 	.page-careers .banner-next,
