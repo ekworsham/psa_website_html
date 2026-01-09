@@ -4,7 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, viewport-fit=cover">
     <meta http-equiv="Cache-Control" content="max-age=31536000, public">
-    <title>ProScapes of Atlanta</title>
+    <title>ProScapes of Atlanta - About Us</title>
     <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
     <link rel="dns-prefetch" href="https://www.googletagmanager.com" />    <!-- Google Analytics 4 - Async -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX\"></script>
@@ -61,6 +61,43 @@
         opacity: 1;
         visibility: visible;
       }
+
+      /* Dropdown accordion styles (limited to target sections) */
+      .dropdown-toggle {
+        cursor: pointer;
+        user-select: none;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin: 0;
+      }
+
+      .dropdown-toggle::before {
+        content: '▸'; /* collapsed arrow by default */
+        display: inline-block;
+        width: 1rem;
+        font-size: 1rem;
+        flex-shrink: 0;
+        line-height: 1;
+      }
+
+      .dropdown-toggle:not(.collapsed)::before {
+        content: '▼'; /* expanded state */
+      }
+
+      .dropdown-content {
+        display: none; /* hidden by default so content is contained */
+        margin: 0;
+        padding: 0 0 0.5rem 0; /* no top padding, light bottom spacing */
+      }
+
+      .dropdown-content:not(.collapsed) {
+        display: block;
+      }
+
+      .dropdown-content p {
+        margin: 0.5rem 0;
+      }
     </style>
 
 </head>
@@ -105,18 +142,24 @@
 				</div>
 
 				<div class="service_cards">
-					<p class="section-heading-left">WHERE WE CAME FROM</p>
-					<p class="text-clean">Originally established as a residential landscape maintenance company specializing in plant and lawn care, ProScapes of Atlanta expanded into landscape installation services in 2005 and was formally incorporated under its current name. Since then, the company has evolved into an award-winning organization, recognized for exceptional craftsmanship, consistent performance, and an unwavering commitment to customer satisfaction.</p>
+          <h3 class="section-heading-left dropdown-toggle">WHERE WE CAME FROM</h3>
+          <div class="dropdown-content">
+            <p class="text-clean">Originally established as a residential landscape maintenance company specializing in plant and lawn care, ProScapes of Atlanta expanded into landscape installation services in 2005 and was formally incorporated under its current name. Since then, the company has evolved into an award-winning organization, recognized for exceptional craftsmanship, consistent performance, and an unwavering commitment to customer satisfaction.</p>
+          </div>
 				</div>
 
 				<div class="service_cards">
-					<p class="section-heading-left">MISSION STATEMENT</p>
-					<p class="text-clean">At ProScapes of Atlanta, our mission is to enhance, protect, and elevate the value of HOA, commercial, and mixed-use communities through consistent, professional landscape management. We are committed to treating every property as our own by delivering dependable service, proactive communication, and disciplined execution on every visit.</p>
+          <h3 class="section-heading-left dropdown-toggle">MISSION STATEMENT</h3>
+          <div class="dropdown-content">
+            <p class="text-clean">At ProScapes of Atlanta, our mission is to enhance, protect, and elevate the value of HOA, commercial, and mixed-use communities through consistent, professional landscape management. We are committed to treating every property as our own by delivering dependable service, proactive communication, and disciplined execution on every visit.</p>
+          </div>
 				</div>
 
 				<div class="service_cards">
-					<p class="section-heading-left">CORE VALUES</p>
-					<p class="text-clean">We believe successful communities are built on accountability, proactive care, and long-term stewardship. By partnering with property managers and boards, we ensure landscapes are not only well maintained, but thoughtfully managed to reflect pride, safety, and excellence year-round.</p>
+          <h3 class="section-heading-left dropdown-toggle">CORE VALUES</h3>
+          <div class="dropdown-content">
+            <p class="text-clean">We believe successful communities are built on accountability, proactive care, and long-term stewardship. By partnering with property managers and boards, we ensure landscapes are not only well maintained, but thoughtfully managed to reflect pride, safety, and excellence year-round.</p>
+          </div>
 				</div>
 			</div>
 		</div>
@@ -139,6 +182,40 @@
 
 <div id="site-footer"></div>
 <script src="../../public/components/footer.js" defer></script>
+<script>
+// Dropdown accordion functionality scoped to targeted sections
+function initializeDropdowns() {
+  const toggles = document.querySelectorAll('.dropdown-toggle');
+
+  toggles.forEach((toggle, index) => {
+    if (toggle.dataset.dropdownInit === '1') {
+      return;
+    }
+    toggle.dataset.dropdownInit = '1';
+
+    const content = toggle.nextElementSibling;
+    if (content && content.classList.contains('dropdown-content')) {
+      toggle.classList.add('collapsed');
+      content.classList.add('collapsed');
+
+      toggle.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        toggle.classList.toggle('collapsed');
+        content.classList.toggle('collapsed');
+      });
+    }
+  });
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initializeDropdowns);
+} else {
+  initializeDropdowns();
+}
+
+setTimeout(initializeDropdowns, 100);
+</script>
 <script type="text/javascript">
 (function() {
   function loadGA() {

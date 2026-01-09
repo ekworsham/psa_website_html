@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>ProScapes of Atlanta - Install</title>
+    <title>ProScapes of Atlanta - Services</title>
     <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
     <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
     <link rel="stylesheet" href="/public/css/base.css" />
@@ -13,6 +13,76 @@
         #container{width:960px;margin:0 auto}
         .container_12{margin:0 auto;width:960px}
         .clear{clear:both}
+        
+        /* CTA Button - matching header nav buttons */
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(180deg, #6fcf97, #2f9e44);
+            color: #fff !important;
+            font-weight: 600;
+            font-size: 16px;
+            text-decoration: none !important;
+            border-radius: 999px;
+            padding: 0.8rem 2.5rem;
+            line-height: 1.2;
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+            touch-action: manipulation;
+            -ms-touch-action: manipulation;
+            white-space: nowrap;
+            margin: 1rem 0;
+        }
+        
+        .cta-button span {
+            display: block;
+            text-indent: 0;
+        }
+        
+        .cta-button:hover {
+            background: linear-gradient(to top, #1f8d3a, #d5ffd0);
+            transform: translateY(-2px);
+            box-shadow: 0 20px 8px rgba(0, 0, 0, .6);
+            text-decoration: none !important;
+        }
+
+		/* Dropdown accordion styles (aligned with install/maintenance) */
+		.dropdown-toggle {
+			cursor: pointer;
+			user-select: none;
+			display: flex;
+			align-items: center;
+			gap: 0.5rem;
+			margin: 0;
+		}
+        
+		.dropdown-toggle::before {
+			content: '▸'; /* collapsed arrow by default */
+			display: inline-block;
+			width: 1rem;
+			font-size: 1rem;
+			flex-shrink: 0;
+			line-height: 1;
+		}
+
+		.dropdown-toggle:not(.collapsed)::before {
+			content: '▼'; /* expanded state */
+		}
+        
+		.dropdown-content {
+			display: none; /* hidden by default so content is contained */
+			margin: 0;
+			padding: 0 0 0.5rem 0; /* no top padding, slight bottom spacing */
+		}
+
+		/* show content only when not collapsed */
+		.dropdown-content:not(.collapsed) {
+			display: block;
+		}
+
+		.dropdown-content p {
+			margin: 0.5rem 0;
+		}
     </style>
     <!-- Google Analytics 4 - Async -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
@@ -42,20 +112,14 @@
 				</div>
 				<div class="banner-slide">
 					<picture>
+						<source type="image/webp" srcset="../../public/images/services5.webp" />
+						<img src="../../public/images/services5.webp" alt="Service 5" width="700" height="400" loading="lazy" decoding="async" />
+					</picture>
+				</div>
+				<div class="banner-slide">
+					<picture>
 						<source type="image/webp" srcset="../../public/images/services1.webp" />
 						<img src="../../public/images/services1.webp" alt="Service 1" width="700" height="400" loading="lazy" decoding="async" />
-					</picture>
-				</div>
-				<div class="banner-slide">
-					<picture>
-						<source type="image/webp" srcset="../../public/images/services2.webp" />
-						<img src="../../public/images/services2.webp" alt="Service 2" width="700" height="400" loading="lazy" decoding="async" />
-					</picture>
-				</div>
-				<div class="banner-slide">
-					<picture>
-						<source type="image/webp" srcset="../../public/images/services3.webp" />
-						<img src="../../public/images/services3.webp" alt="Service 3" width="700" height="400" loading="lazy" decoding="async" />
 					</picture>
 				</div>
 				<div class="banner-slide">
@@ -66,16 +130,19 @@
 				</div>
 				<div class="banner-slide">
 					<picture>
-						<source type="image/webp" srcset="../../public/images/services5.webp" />
-						<img src="../../public/images/services5.webp" alt="Service 5" width="700" height="400" loading="lazy" decoding="async" />
+						<source type="image/webp" srcset="../../public/images/flowers3.webp" />
+						<img src="../../public/images/flowers3.webp" alt="Service 3" width="700" height="400" loading="lazy" decoding="async" />
 					</picture>
 				</div>
 				<div class="banner-slide">
 					<picture>
-						<source type="image/webp" srcset="../../public/images/services6.webp" />
-						<img src="../../public/images/services6.webp" alt="Service 6" width="700" height="400" loading="lazy" decoding="async" />
+						<source type="image/webp" srcset="../../public/images/services2.webp" />
+						<img src="../../public/images/services2.webp" alt="Service 2" width="700" height="400" loading="lazy" decoding="async" />
 					</picture>
 				</div>
+			
+				
+
 				<button class="banner-prev" onclick="changeBannerSlide(-1)">❮</button>
 				<button class="banner-next" onclick="changeBannerSlide(1)">❯</button>
 				<div class="banner-dots">
@@ -106,32 +173,34 @@
 			</div>
 
 			<div class="service_cards">
-				<p class="section-heading-left">Landscape Maintenance</p>
-				<p class="text-clean">ProScapes of Atlanta delivers proactive, detail-driven landscape maintenance designed to protect and enhance the long-term value of each property we serve. Our approach emphasizes consistency, communication, and accountability—ensuring every visit is performed to a clearly defined standard. Clients can expect well-trained crews, professional equipment, and a comprehensive scope of services that includes turf care, pruning, seasonal enhancements, and site cleanliness. Each property is managed with a tailored plan that reflects its unique needs, usage, and aesthetic goals.</p><br>
+				<h3 class="section-heading-left dropdown-toggle">Landscape Maintenance</h3>
+				<div class="dropdown-content">
+					<p class="text-clean">ProScapes of Atlanta delivers proactive, detail-driven landscape maintenance designed to protect and enhance the long-term value of each property we serve. Our approach emphasizes consistency, communication, and accountability—ensuring every visit is performed to a clearly defined standard. Clients can expect well-trained crews, professional equipment, and a comprehensive scope of services that includes turf care, pruning, seasonal enhancements, and site cleanliness. Each property is managed with a tailored plan that reflects its unique needs, usage, and aesthetic goals.</p>
 
-				<p class="text-clean">Beyond routine service, ProScapes of Atlanta is committed to being a responsive, solutions-oriented partner. We conduct regular site evaluations, provide transparent reporting, and proactively identify opportunities to improve safety, appearance, and plant health. Our team works closely with property managers, HOAs, and ownership groups to ensure expectations are met, issues are addressed promptly, and the landscape consistently represents the quality and professionalism of the community or commercial environment.</p>
-				<p class="section-heading-button">
-					<a href="/view/maintenance/" class="nav-button">Learn more</a>
-				</p>
+					<p class="text-clean">Beyond routine service, ProScapes of Atlanta is committed to being a responsive, solutions-oriented partner. We conduct regular site evaluations, provide transparent reporting, and proactively identify opportunities to improve safety, appearance, and plant health. Our team works closely with property managers, HOAs, and ownership groups to ensure expectations are met, issues are addressed promptly, and the landscape consistently represents the quality and professionalism of the community or commercial environment.</p>
+					<p class="section-heading-button">
+						<a href="/view/maintenance/" class="nav-button">Learn more</a>
+					</p>
+				</div>
 			</div>
 
 			<div class="service_cards">
-				<p class="section-heading-left">Landscape Design | Build | Install</p>
-				<p class="text-clean">ProScapes of Atlanta provides comprehensive design, build, and installation services that transform outdoor spaces into functional, visually compelling environments. From initial concept through final installation, our team collaborates closely with clients to understand goals, budget, and long-term maintenance considerations. Each project is thoughtfully planned and executed, incorporating quality materials, proven construction methods, and industry best practices to ensure durability, compliance, and lasting visual impact.</p><br>
+				<h3 class="section-heading-left dropdown-toggle">Landscape Design | Build | Install</h3>
+				<div class="dropdown-content">
+					<p class="text-clean">ProScapes of Atlanta provides comprehensive design, build, and installation services that transform outdoor spaces into functional, visually compelling environments. From initial concept through final installation, our team collaborates closely with clients to understand goals, budget, and long-term maintenance considerations. Each project is thoughtfully planned and executed, incorporating quality materials, proven construction methods, and industry best practices to ensure durability, compliance, and lasting visual impact.</p>
 
-				<p class="text-clean">Our experienced professionals manage every phase of the process with precision and accountability, maintaining clear communication and adherence to schedules. Whether enhancing an existing landscape or creating a new outdoor environment, clients can expect innovative design solutions, seamless project coordination, and a finished product that elevates property value while aligning with the overall character and purpose of the site. </p>  
-				<p class="section-heading-button">
-					<a href="/view/install" class="nav-button">Learn more</a>
-				</p>
+					<p class="text-clean">Our experienced professionals manage every phase of the process with precision and accountability, maintaining clear communication and adherence to schedules. Whether enhancing an existing landscape or creating a new outdoor environment, clients can expect innovative design solutions, seamless project coordination, and a finished product that elevates property value while aligning with the overall character and purpose of the site.</p>
+					<p class="section-heading-button">
+						<a href="/view/install" class="nav-button">Learn more</a>
+					</p>
+				</div>
 			</div>
 
-			<p style="text-align: center;"><a href="/view/contact_us">
-			  <picture>
-			    <source type="image/avif" srcset="../../public/images/optimized/contactus_estimate-300.avif 300w, ../../public/images/optimized/contactus_estimate-600.avif 600w" sizes="(max-width: 700px) 100vw, 600px" />
-			    <source type="image/webp" srcset="../../public/images/optimized/contactus_estimate-300.webp 300w, ../../public/images/optimized/contactus_estimate-600.webp 600w" sizes="(max-width: 700px) 100vw, 600px" />
-			    <img src="../../public/images/optimized/contactus_estimate-600.avif" alt="Contact Us for Free Estimate" loading="lazy" decoding="async" style="width: 400px; height: auto; background: transparent;" />
-			  </picture>
-			</a></p>
+			<p style="text-align: center;">
+				<a href="/view/contact_us" class="cta-button">
+					<span>Contact Us for a Free Estimate</span>
+				</a>
+			</p>
 		</div>
 	</div>
 </div> <!-- END container12 -->
@@ -160,6 +229,11 @@ function currentBannerSlide(n) {
 function showBannerSlides(n) {
 	let slides = document.getElementsByClassName("banner-slide");
 	let dots = document.getElementsByClassName("dot");
+
+	// If there are no slides/dots on this page, safely exit
+	if (!slides || slides.length === 0 || !dots) {
+		return;
+	}
 	
 	if (n > slides.length) { bannerSlideIndex = 1; }
 	if (n < 1) { bannerSlideIndex = slides.length; }
@@ -176,6 +250,12 @@ function showBannerSlides(n) {
 }
 
 function startBannerAutoPlay() {
+	// Only start autoplay if slides exist
+	const slides = document.getElementsByClassName("banner-slide");
+	if (!slides || slides.length === 0) {
+		return;
+	}
+
 	bannerAutoPlayTimeout = setTimeout(() => {
 		bannerSlideIndex++;
 		showBannerSlides(bannerSlideIndex);
@@ -183,9 +263,54 @@ function startBannerAutoPlay() {
 	}, 5000);
 }
 
-// Initialize carousel immediately
-showBannerSlides(bannerSlideIndex);
-startBannerAutoPlay();
+// Initialize carousel immediately (only if present)
+try {
+	showBannerSlides(bannerSlideIndex);
+	startBannerAutoPlay();
+} catch (e) {
+	// No-op if carousel markup isn't present
+}
+
+// Dropdown accordion functionality
+function initializeDropdowns() {
+	const toggles = document.querySelectorAll('.dropdown-toggle');
+	console.log('Found', toggles.length, 'dropdowns');
+
+	toggles.forEach((toggle, index) => {
+		// Avoid re-initializing the same toggle multiple times
+		if (toggle.dataset.dropdownInit === '1') {
+			return;
+		}
+		toggle.dataset.dropdownInit = '1';
+
+		const content = toggle.nextElementSibling;
+
+		if (content && content.classList.contains('dropdown-content')) {
+			// Initialize collapsed by default; click will expand
+			toggle.classList.add('collapsed');
+			content.classList.add('collapsed');
+
+			toggle.addEventListener('click', function(e) {
+				e.preventDefault();
+				e.stopPropagation();
+				console.log('Clicked dropdown', index);
+				toggle.classList.toggle('collapsed');
+				content.classList.toggle('collapsed');
+			});
+		}
+	});
+}
+
+// Try multiple ways to ensure script runs
+if (document.readyState === 'loading') {
+	document.addEventListener('DOMContentLoaded', initializeDropdowns);
+} else {
+	// DOM is already ready
+	initializeDropdowns();
+}
+
+// Also try a small delay as fallback
+setTimeout(initializeDropdowns, 100);
 </script>
 </body>
 </html>

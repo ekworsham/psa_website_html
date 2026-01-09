@@ -2,89 +2,219 @@
 <html lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Landscape Maintenance</title>
+    <title>ProScapes of Atlanta - Maintenance</title>
     <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
     <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-    <!-- Google Analytics 4 - Async -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-    <link rel="stylesheet" href="../../public/css/base.css" />
-    <link rel="preload" href="../../public/css/style2.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-    <noscript><link rel="stylesheet" href="../../public/css/style2.css"></noscript>
+    <link rel="stylesheet" href="/public/css/base.css" />
+    <link rel="preload" href="/public/css/style2.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="/public/css/style2.css"></noscript>
     <style>
         body{margin:0;padding:0;font-family:Arial,Helvetica,sans-serif;color:#000}
         #container{width:960px;margin:0 auto}
         .container_12{margin:0 auto;width:960px}
         .clear{clear:both}
+        
+        /* CTA Button - matching header nav buttons */
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(180deg, #6fcf97, #2f9e44);
+            color: #fff !important;
+            font-weight: 600;
+            font-size: 16px;
+            text-decoration: none !important;
+            border-radius: 999px;
+            padding: 0.8rem 2.5rem;
+            line-height: 1.2;
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+            touch-action: manipulation;
+            -ms-touch-action: manipulation;
+            white-space: nowrap;
+            margin: 1rem 0;
+        }
+        
+        .cta-button span {
+            display: block;
+            text-indent: 0;
+        }
+        
+        .cta-button:hover {
+            background: linear-gradient(to top, #1f8d3a, #d5ffd0);
+            transform: translateY(-2px);
+            box-shadow: 0 20px 8px rgba(0, 0, 0, .6);
+            text-decoration: none !important;
+        }
+
+		/* Dropdown accordion styles (match install page) */
+		.dropdown-toggle {
+			cursor: pointer;
+			user-select: none;
+			display: flex;
+			align-items: center;
+			gap: 0.5rem;
+			margin: 0;
+		}
+        
+		.dropdown-toggle::before {
+			content: '▸'; /* collapsed arrow by default */
+			display: inline-block;
+			width: 1rem;
+			font-size: 1rem;
+			flex-shrink: 0;
+			line-height: 1;
+		}
+
+		.dropdown-toggle:not(.collapsed)::before {
+			content: '▼'; /* expanded state */
+		}
+        
+		.dropdown-content {
+			display: none; /* hidden by default so content is contained */
+			margin: 0;
+			padding: 0 0 0.5rem 0; /* no top padding, light bottom spacing */
+		}
+
+		/* show content only when not collapsed */
+		.dropdown-content:not(.collapsed) {
+			display: block;
+		}
+
+		.dropdown-content p {
+			margin: 0.5rem 0;
+		}
     </style>
-    <script type="text/javascript">
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-XXXXXXXXXX');
-</script>
+    <!-- Google Analytics 4 - Async -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+    </script>
 </head>
 
 <body>
+<div id="container">
+		<div id="site-header"></div>
+		<script src="../../public/components/header.js" async></script>
+
+		<div class="clear"></div>
+		<main>
+	<!-- <div class="container_12">
+		<div class="grid_9" id="banner_container" style="width:960px;">
+			<div id="photo_banner">
+				<div class="banner-slide active">
+					<picture>
+						<source type="image/webp" srcset="../../public/images/services.webp" />
+						<img src="../../public/images/services.webp" alt="ProScapes Services" width="700" height="400" loading="eager" decoding="async" fetchpriority="high" />
+					</picture>
+				</div>
+				<div class="banner-slide">
+					<picture>
+						<source type="image/webp" srcset="../../public/images/services5.webp" />
+						<img src="../../public/images/services5.webp" alt="Service 5" width="700" height="400" loading="lazy" decoding="async" />
+					</picture>
+				</div>
+				<div class="banner-slide">
+					<picture>
+						<source type="image/webp" srcset="../../public/images/services1.webp" />
+						<img src="../../public/images/services1.webp" alt="Service 1" width="700" height="400" loading="lazy" decoding="async" />
+					</picture>
+				</div>
+				<div class="banner-slide">
+					<picture>
+						<source type="image/webp" srcset="../../public/images/services4.webp" />
+						<img src="../../public/images/services4.webp" alt="Service 4" width="700" height="400" loading="lazy" decoding="async" />
+					</picture>
+				</div>
+				<div class="banner-slide">
+					<picture>
+						<source type="image/webp" srcset="../../public/images/flowers3.webp" />
+						<img src="../../public/images/flowers3.webp" alt="Service 3" width="700" height="400" loading="lazy" decoding="async" />
+					</picture>
+				</div>
+				<div class="banner-slide">
+					<picture>
+						<source type="image/webp" srcset="../../public/images/services2.webp" />
+						<img src="../../public/images/services2.webp" alt="Service 2" width="700" height="400" loading="lazy" decoding="async" />
+					</picture>
+				</div>
+			
+				
+
+				<button class="banner-prev" onclick="changeBannerSlide(-1)">❮</button>
+				<button class="banner-next" onclick="changeBannerSlide(1)">❯</button>
+				<div class="banner-dots">
+					<span class="dot active" onclick="currentBannerSlide(0)"></span>
+					<span class="dot" onclick="currentBannerSlide(1)"></span>
+					<span class="dot" onclick="currentBannerSlide(2)"></span>
+					<span class="dot" onclick="currentBannerSlide(3)"></span>
+					<span class="dot" onclick="currentBannerSlide(4)"></span>
+					<span class="dot" onclick="currentBannerSlide(5)"></span>
+					<span class="dot" onclick="currentBannerSlide(6)"></span>
+				</div>
+			</div>
+		</div>
+	</div>  -->
+	<!-- END container12 -->
+
 <div id="container">
 <div id="site-header"></div>
 <script src="../../public/components/header.js" async></script>
 
 <div class="clear"></div>
-
 <div class="container_12">
-  <div class="grid_3">&nbsp;</div>
-    
-  <div class="grid_9" id="content_box">
-    <div id="content">
-      <h2 class="page-title">Landscape Maintenance</h2>
-      <p>Our maintenance division is the backbone of ProScapes of Atlanta. We pride ourselves on having the highest quality maintenance and maintaining a low cost to our clients</p>
-      
-      <div style="width:600px; margin:20px auto;">
-        <p class="form-info-box"> 
-          PROSCAPES MAINTENANCE CONTRACTS OFFER<br>&#8226;
-          50 Week Seasonal Services<br>&#8226; 
-          Turf Mowing, Edging and Trimming<br>&#8226; 
-          Site Blowing<br>&#8226;
-          Shrub Pruning and Shearing<br>&#8226;
-          Irrigation System Management<br>&#8226;
-          Tree Pruning - below ten (10) Feet<br>&#8226;
-          Debris/Trash Removal
-        </p>
-      </div>
+	<div class="grid_3">&nbsp;</div>
+	<div class="grid_9" id="content_box">
+		<div id="content">
+			<div class="service_cards">
+				<h2 class="page-title">LANDSCAPE MAINTNENCE</h2>
+				<h3 class="page-subtitle">Our maintenance is the backbone of ProScapes of Atlanta. We pride ourselves on having the highest quality maintenance and maintaining a low cost to our clients specializes in Office, Church, Industrial, Retail, HOA, and Hotel landscape management needs.</h3>
+			</div>
 
-       <div style="width:600px; margin:20px auto;">
-        <p class="form-info-box"> 
-          CONSIDERATIONS FOR OPTIONAL SERVICES<br>Work performed upon approval<br/>&#8226;
-          Tree and Shrub Pest Control<br/>&#8226; 
-          Tree Pruning - above ten (10) Feet<br>&#8226;
-          Turf Chemcial Programs<br>&#8226;
-          Irrigation System Repairs/Modifications<br>&#8226;
-          Seasonal Color<br>&#8226;
-          Mulch Applications<br>&#8226;
-          Detention/Retention Pond analysis and Maintenance
-        </p>
-      </div>      
+			<div class="service_cards">
+				<h3 class="section-heading-left dropdown-toggle">PROSCAPES MAINTENANCE CONTRACT</h3>
+				<div class="dropdown-content">
+					<p class="text-clean">
+						&#8226; 50 Week Seasonal Services<br>
+						&#8226; Turf Mowing, Edging and Trimming<br>
+						&#8226; Site Blowing<br>
+						&#8226; Shrub Pruning and Shearing<br>
+						&#8226; Irrigation System Management<br>
+						&#8226; Tree Pruning - below ten (10) Feet<br>
+						&#8226; Debris/Trash Removal
+					</p>
+				</div>
 
-      <p class="section-heading-left">Total Property Management</p>
-      <p class="text-left">Let us bring the areas of improvement to your attention instead of the other way around. Our professionals are trained to spot erosion, contamination and other problems before they're huge headaches that will eat away at your bottom line.</p>
-      
-      <p class="text-bold">Our staff is available to meet with you at your property for a free consultation.</p>
-              
-      <div style="width:600px; margin:20px auto;">
-        <div style="text-align:left;margin-left:30px;border-radius:10px;background-color:#caedca;width:450px;padding:20px 50px;line-height:1.3em;">
-        <form name="contactform_general" method="post" action="https://formspree.io/f/xyzwxyzw" onsubmit="return validateForm(event)">
-          <p><label for="name">Name <span style="font-weight:normal;font-size:.8em;">(Optional)</span></label><br/>
-          <input type="text" name="name" id="name"></p>
-          <p><label for="phone">Phone <span style="font-weight:normal;font-size:.8em;">(Optional)</span></label><br/>
-          <input type="tel" name="phone" id="phone"></p>
-          <p><label for="email2">Email</label><br/><input type="email" name="email2" id="email2" required></p>
-          <p><label for="message">Message</label><br/><textarea name="message" id="message" cols="50" rows="5" required></textarea></p>
-          <input type="submit" value="Send Message" name="submit">              
-        </form>
-        </div>
-      </div>
-    </div>
-  </div>
+				<h3 class="section-heading-left dropdown-toggle">CONSIDERATIONS FOR OPTIONAL SERVICES</h3>
+				<div class="dropdown-content">
+					<p class="text-clean">
+						Work performed upon approval:<br>
+						&#8226; Tree and Shrub Pest Control<br/>
+						&#8226; Tree Pruning - above ten (10) Feet<br>
+						&#8226; Turf Chemcial Programs<br>
+						&#8226; Irrigation System Repairs<br>
+						&#8226; Seasonal Color<br>
+						&#8226; Mulch Applications<br>
+						&#8226; Detention/Retention Pond analysis and Maintenance
+					</p>
+				</div>
+
+				<h3 class="section-heading-left dropdown-toggle">Total Property Management</h3>
+				<div class="dropdown-content">
+					<p class="text-clean">
+						Let us bring the areas of improvement to your attention instead of the other way around. Our professionals are trained to spot problems before they're huge headaches that will eat away at your bottom line
+					</p>
+				</div>
+
+			<p style="text-align: center;">
+				<a href="/view/contact_us" class="cta-button">
+					<span>Contact Us for a Free Maintenanace Estimate</span>
+				</a>
+			</p>
+		</div>
+	</div>
 </div> <!-- END container12 -->
 
 <div id="site-footer"></div>
@@ -93,18 +223,106 @@
 </div> <!-- END container -->
 
 <script>
+let bannerSlideIndex = 1;
+let bannerAutoPlayTimeout;
 
-function validateForm(event) {
-  const email = document.getElementById('email2').value;
-  const message = document.getElementById('message').value;
-  
-  if (!email || !message.trim()) {
-    alert('Email and Message are required fields.');
-    event.preventDefault();
-    return false;
-  }
-  return true;
+function changeBannerSlide(n) {
+	clearTimeout(bannerAutoPlayTimeout);
+	showBannerSlides(bannerSlideIndex += n);
+	startBannerAutoPlay();
 }
+
+function currentBannerSlide(n) {
+	clearTimeout(bannerAutoPlayTimeout);
+	showBannerSlides(bannerSlideIndex = n + 1);
+	startBannerAutoPlay();
+}
+
+function showBannerSlides(n) {
+	let slides = document.getElementsByClassName("banner-slide");
+	let dots = document.getElementsByClassName("dot");
+
+	// If there are no slides/dots on this page, safely exit
+	if (!slides || slides.length === 0 || !dots) {
+		return;
+	}
+	
+	if (n > slides.length) { bannerSlideIndex = 1; }
+	if (n < 1) { bannerSlideIndex = slides.length; }
+	
+	for (let i = 0; i < slides.length; i++) {
+		slides[i].classList.remove("active");
+	}
+	for (let i = 0; i < dots.length; i++) {
+		dots[i].classList.remove("active");
+	}
+	
+	slides[bannerSlideIndex - 1].classList.add("active");
+	dots[bannerSlideIndex - 1].classList.add("active");
+}
+
+function startBannerAutoPlay() {
+	// Only start autoplay if slides exist
+	const slides = document.getElementsByClassName("banner-slide");
+	if (!slides || slides.length === 0) {
+		return;
+	}
+
+	bannerAutoPlayTimeout = setTimeout(() => {
+		bannerSlideIndex++;
+		showBannerSlides(bannerSlideIndex);
+		startBannerAutoPlay();
+	}, 5000);
+}
+
+// Initialize carousel immediately (only if present)
+try {
+	showBannerSlides(bannerSlideIndex);
+	startBannerAutoPlay();
+} catch (e) {
+	// No-op if carousel markup isn't present
+}
+
+// Dropdown accordion functionality
+function initializeDropdowns() {
+	const toggles = document.querySelectorAll('.dropdown-toggle');
+	console.log('Found', toggles.length, 'dropdowns');
+
+	toggles.forEach((toggle, index) => {
+		// Avoid re-initializing the same toggle multiple times
+		if (toggle.dataset.dropdownInit === '1') {
+			return;
+		}
+		toggle.dataset.dropdownInit = '1';
+
+		const content = toggle.nextElementSibling;
+
+		if (content && content.classList.contains('dropdown-content')) {
+			// Initialize collapsed by default; click will expand
+			toggle.classList.add('collapsed');
+			content.classList.add('collapsed');
+
+			toggle.addEventListener('click', function(e) {
+				e.preventDefault();
+				e.stopPropagation();
+				console.log('Clicked dropdown', index);
+				toggle.classList.toggle('collapsed');
+				content.classList.toggle('collapsed');
+			});
+		}
+	});
+}
+
+// Try multiple ways to ensure script runs
+if (document.readyState === 'loading') {
+	document.addEventListener('DOMContentLoaded', initializeDropdowns);
+} else {
+	// DOM is already ready
+	initializeDropdowns();
+}
+
+// Also try a small delay as fallback
+setTimeout(initializeDropdowns, 100);
 </script>
 </body>
 </html>

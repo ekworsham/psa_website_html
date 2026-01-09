@@ -36,6 +36,24 @@
         display: block;
     }
 
+    /* Make the logo slide smaller and centered */
+    .logo-slide {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .logo-slide picture,
+    .logo-slide img {
+        width: auto;
+        max-width: 70%;
+        max-height: 70%;
+        height: auto;
+        object-fit: contain;
+        margin: 0 auto;
+        display: block;
+    }
+
     .banner-dots {
         position: absolute;
         bottom: 15px;
@@ -124,7 +142,7 @@
         transform: translateY(-2px);
         text-decoration: none;
     }
-
+}
 /************************************************
 ********* Desktop view (1024px and above) 
 *************************************************/
