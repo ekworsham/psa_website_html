@@ -14,7 +14,9 @@
     "branding": {
       "logo": {
         "href": "/",
-        "src": "/public/images/logo2 (1).webp"
+        "src": "/public/images/optimized/logo2-150.avif",
+        "srcWebp": "/public/images/optimized/logo2-150.webp",
+        "srcPng": "/public/images/optimized/logo2-150.png"
       }
     },
     "topnav": [
