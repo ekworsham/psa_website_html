@@ -93,9 +93,9 @@
     
     var logoData = data.branding && data.branding.logo ? data.branding.logo : {};
     var logoHref = logoData.href || '/';
-    var logoSrc = logoData.src || '/public/images/optimized/logo2-150.avif';
-    var logoWebp = logoData.srcWebp || '/public/images/optimized/logo2-150.webp';
-    var logoPng = logoData.srcPng || '/public/images/optimized/logo2-150.png';
+    var logoSrc = logoData.src || '/public/images/optimized/headerLogo.avif';
+    var logoWebp = logoData.srcWebp || '/public/images/optimized/headerLogo.webp';
+    var logoPng = logoData.srcPng || '/public/images/optimized/headerLogo.png';
 
     container.innerHTML = ''+
       '<div id="header-logo"><a href="'+logoHref+'">'+
