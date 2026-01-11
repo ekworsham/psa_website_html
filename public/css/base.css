@@ -100,6 +100,7 @@
     ul.cssmenu li {
         float: none;
         margin-right: 0;
+        list-style: none;
     }
 
     ul.cssmenu li a {

@@ -14,7 +14,6 @@
         { "label": "Career", "href": "/view/careers" },
         { "label": "Free Estimate", "href": "/view/estimate" },
         // { "label": "Billing", "href": "/view/billing" },
-        // { "label": "Contact Us", "href": "/view/contact_us" }
       ]
     },
     // "contact": {
@@ -46,8 +45,10 @@
 
     var contact = data.contact || {};
     var contactHtml = contact.company ? '<p>' + contact.company + ' | ' + (contact.phone || '') + ' | <a href="' + (contact.emailHref || '#') + '">' + (contact.emailLabel || '') + '</a>' : '';
+    var copyrightHtml = '<p class="footer-copyright">&copy; 2026 ProScapes of Atlanta, LLC.<br> All Rights Reserved.</p>';
+    var linksLabel = '<p class="footer-links-label">Links:</p>';
 
-    container.innerHTML = linksHtml + (contactHtml ? '\n' + contactHtml : '');
+    container.innerHTML = linksLabel + linksHtml + (contactHtml ? '\n' + contactHtml : '') + '\n' + copyrightHtml;
 
     fragment.appendChild(clearDiv);
     fragment.appendChild(container);
