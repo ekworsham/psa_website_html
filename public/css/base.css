@@ -176,13 +176,13 @@
 	}
 
 	#site-header .container_12 {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: flex-start;
-		gap: 0.05rem;
-		width: auto;
-		max-width: 1000px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 0.05rem;
+        width: 960px;
+        max-width: 960px;
 	}
 
 	ul.cssmenu li a {

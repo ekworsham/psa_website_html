@@ -159,16 +159,24 @@
 	}
 
 	#content_box {
-		width: 55rem;
+		max-width: 55rem;
+		width: 100%;
 	}
 
 	.service_cards {
-		width: 55rem;
+		width: 100%;
+		max-width: 55rem;
 		margin: 0 auto;
 	}
 
 	.container_12 {
 		width: 55rem;
+		margin: 0 auto;
+	}
+
+	#content {
+		width: 100%;
+		max-width: 55rem;
 		margin: 0 auto;
 	}
 }
