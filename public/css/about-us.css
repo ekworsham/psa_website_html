@@ -19,4 +19,31 @@
         color: #ff4c00;
         font-weight: bold;
     }
+
+    /* Laptop/desktop: align bios to the right of the owner photos */
+    .owners-layout {
+        display: grid;
+        grid-template-columns: 260px 1fr;
+        align-items: flex-start;
+        gap: 24px;
+    }
+
+    .owners-layout #about_photos {
+        float: none;
+        margin: 0;
+        width: 100%;
+        max-width: 260px;
+    }
+
+    .owners-text {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .owners-text .text-clean {
+        margin: 0;
+        padding: 0;
+        max-width: none;
+    }
 }

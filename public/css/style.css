@@ -6,6 +6,17 @@
 		line-height: 14px; /* Adjust line height */
 	}
 	/* Additional mobile-specific styles */
+	/* Mobile nav links */
+	a:link,
+	a:visited,
+	a:active {
+		border-radius: 10px;
+	}
+
+	a:hover {
+		border-radius: 10px;
+		box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+	}
 }
 
 /* Tablet Styles */
@@ -37,39 +48,40 @@
 		font-family:tahoma;
 		color:#E4E4E4;
 	}
-	.footer {			
-		font-size:10px;
-		line-height:13px;
-		font-family:tahoma;
-		color:#FFFFFF;
-	}																									
+																										
 	a:link {
 		color:#F5D7B3;
 		font-size:13px;
 		font-weight: bold;						
 		text-decoration: none;
-		background-color: transparent
+		background-color: transparent;
+		border-radius: 10px;
 	}
 	a:visited {
 		color:#F5D7B3;
 		font-size:13px;
 		font-weight: bold;						
 		text-decoration: none;
-		background-color: transparent
+		background-color: transparent;
+		border-radius: 10px;
 	}
 	a:hover {
 		color:#F5F5F5;
 		font-size:13px;
 		font-weight: bold;						
 		text-decoration: underline;
-		background-color: transparent
+		background-color: transparent;
+		border-radius: 10px;
+		box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
 	}
 	a:active {
 		color:#F5F5F5;
 		font-size:13px;
 		font-weight: bold;						
 		text-decoration: none;
-		background-color: transparent
+		background-color: transparent;
+		border-radius: 10px;
+		box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
 	}
 	a:link.sample1 {
 		color: #FFFFFF;
