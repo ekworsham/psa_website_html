@@ -92,6 +92,17 @@
 			height: auto;
 			display: block;
 		}
+		
+		/* Remove bullet points from banner dots */
+		.banner-dots {
+			list-style: none;
+			display: none;
+		}
+		
+		.banner-dots .dot {
+			list-style: none;
+			display: none;
+		}
     </style>
     <!-- Google Analytics 4 - Async -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
@@ -130,20 +141,20 @@
 				</div>
 				<div class="banner-slide">
 					<picture>
-						<source type="image/webp" srcset="../../public/images/services1.webp" />
-						<img src="../../public/images/services1.webp" alt="Service 1" width="700" height="400" loading="lazy" decoding="async" />
+					<source type="image/webp" srcset="../../public/images/optimized/home.avif" />
+					<img src="../../public/images/optimized/home.avif" alt="Service 1" width="700" height="400" loading="lazy" decoding="async" />
 					</picture>
 				</div>
 				<div class="banner-slide">
 					<picture>
-						<source type="image/webp" srcset="../../public/images/services4.webp" />
-						<img src="../../public/images/services4.webp" alt="Service 4" width="700" height="400" loading="lazy" decoding="async" />
+						<source type="image/webp" srcset="../../public/images/optimized/detention_clean.webp" />
+						<img src="../../public/images/optimized/detention_clean.webp" alt="Service 4" width="700" height="400" loading="lazy" decoding="async" />
 					</picture>
 				</div>
 				<div class="banner-slide">
 					<picture>
-						<source type="image/webp" srcset="../../public/images/flowers3.webp" />
-						<img src="../../public/images/flowers3.webp" alt="Service 3" width="700" height="400" loading="lazy" decoding="async" />
+						<source type="image/webp" srcset="../../public/images/optimized/set_flowers.webp" />
+						<img src="../../public/images/optimized/set_flowers.webp"  alt="Service 3" width="700" height="400" loading="lazy" decoding="async" />
 					</picture>
 				</div>
 				<div class="banner-slide">
@@ -153,8 +164,6 @@
 					</picture>
 				</div>
 			
-				
-
 				<button class="banner-prev" onclick="changeBannerSlide(-1)">❮</button>
 				<button class="banner-next" onclick="changeBannerSlide(1)">❯</button>
 				<div class="banner-dots">

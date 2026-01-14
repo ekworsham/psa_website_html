@@ -84,6 +84,15 @@
 		.dropdown-content p {
 			margin: 0.5rem 0;
 		}
+
+		/* Desktop-only spacing tweaks for irrigation and seasonal color paragraphs */
+		@media (min-width: 768px) {
+			#irr_text,
+			#sc_text {
+				margin-top: 0;
+				padding-top: 0;
+			}
+		}
     </style>
     <!-- Google Analytics 4 - Async -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
@@ -191,22 +200,22 @@
 			<div class="service_cards">
 				<h3 class="section-heading-left dropdown-toggle">Irrigation & Drainage</h3>
 				<div class="dropdown-content">
-					<p class="text-clean">Our services include system design, installation, upgrade to save money and repairs. From a simple fix to a complete landscape install, we have you covered.</p><br>
+					<p class="text-clean">Our services include system design, installation, upgrade to save money and repairs. From a simple fix to a complete landscape install, we have you covered.</p>
 					 
-					<p>We offer a wide range of erosion repair and prevention solutions for communities, commerical properties and HOA's to restore damage and mitigate future damage. Our mission is to help clients restore damage, avoid future damage, increse real estate value, protect you landscape and improve the natural ecosystem. </p>
+					<p class="text-clean" id="irr_text">We offer a wide range of erosion repair and prevention solutions for communities, commerical properties and HOA's to restore damage and mitigate future damage. Our mission is to help clients restore damage, avoid future damage, increse real estate value, protect you landscape and improve the natural ecosystem. </p>
 				</div>
 			</div>
 			
 			<div class="service_cards">
 				<h3 class="section-heading-left dropdown-toggle">Landscape Seasonal Color</h3>
 				<div class="dropdown-content">
-					<p class="text-clean">You will be thrilled with a ProScapes of Atlanta designed and professionally installed seasonal color display. Seasonal color installation is provided through our Landscape Installation Division, ensuring each annual bed is thoughtfully designed, properly installed, and positioned for maximum visual impact.</p><br>
-					<p>Ongoing seasonal color maintenance—including fertilization and deadheading—is delivered as part of our Landscape Maintenance Program, ensuring your annual color beds remain vibrant, healthy, and visually striking throughout the season. Please visist our Landscape Maintenance Service for details.</p>
+					<p class="text-clean">You will be thrilled with a ProScapes of Atlanta designed and professionally installed seasonal color display. Seasonal color installation is provided through our Landscape Installation Division, ensuring each annual bed is thoughtfully designed, properly installed, and positioned for maximum visual impact.</p>
+					<p class="text-clean" id="sc_text">Ongoing seasonal color maintenance—including fertilization and deadheading—is delivered as part of our Landscape Maintenance Program, ensuring your annual color beds remain vibrant, healthy, and visually striking throughout the season. Please visist our Landscape Maintenance Service for details.</p>
 				</div>
 			</div>
 
 			<div class="service_cards">
-				<h3 class="section-heading-left dropdown-toggle">Retention/Detention Pond Inspection</h3>
+				<h3 class="section-heading-left dropdown-toggle">Retention / Detention Pond Inspection</h3>
 				<div class="dropdown-content">
 					<p class="text-clean"> 
 						We provide detailed analysis of your retention/detention ponds' condition that will outline compliance and maintenance strategies. With a commitment to providing evaluations of potential pond problems and offering solutions.
