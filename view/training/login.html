@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, viewport-fit=cover">
+    <meta name="description" content="ProScapes of Atlanta - Employee Training Portal Login" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta name="robots" content="noindex, nofollow">
+    <title>ProScapes Training Portal - Login</title>
+    <link rel="stylesheet" href="../../public/css/base.css" />
+    <link rel="stylesheet" href="../../public/css/training.css" />
+</head>
+<body class="login-page">
+    <div class="login-container">
+        <div class="login-header">
+            <h1>🌿 ProScapes Training</h1>
+            <p>Employee Portal Login</p>
+        </div>
+
+        <div id="alertBox" class="alert"></div>
+
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input 
+                    type="text" 
+                    id="username" 
+                    name="username" 
+                    required 
+                    autocomplete="username"
+                    placeholder="Enter your username"
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <div class="password-wrapper">
+                    <input 
+                        type="password" 
+                        id="password" 
+                        name="password" 
+                        required 
+                        autocomplete="current-password"
+                        placeholder="Enter your password"
+                    >
+                    <button type="button" class="toggle-password" id="togglePassword">
+                        👁️
+                    </button>
+                </div>
+            </div>
+
+            <div class="remember-me">
+                <input type="checkbox" id="rememberMe" name="rememberMe">
+                <label for="rememberMe">Remember me for 30 days</label>
+            </div>
+
+            <button type="submit" class="login-btn" id="loginBtn">
+                Sign In
+            </button>
+        </form>
+
+        <div class="forgot-password">
+            <a href="#" id="forgotPasswordLink">Forgot your password?</a>
+        </div>
+    </div>
+
+    <script>
+        // Simple client-side authentication (for demo - use server-side in production)
+        const VALID_CREDENTIALS = {
+            // Demo credentials - Replace with server-side authentication
+            'admin': 'admin123',
+            'employee': 'employee123',
+            'trainer': 'trainer123'
+        };
+
+        const loginForm = document.getElementById('loginForm');
+        const alertBox = document.getElementById('alertBox');
+        const togglePasswordBtn = document.getElementById('togglePassword');
+        const passwordInput = document.getElementById('password');
+        const usernameInput = document.getElementById('username');
+        const rememberMeCheckbox = document.getElementById('rememberMe');
+        const forgotPasswordLink = document.getElementById('forgotPasswordLink');
+
+        // Toggle password visibility
+        togglePasswordBtn.addEventListener('click', () => {
+            const type = passwordInput.type === 'password' ? 'text' : 'password';
+            passwordInput.type = type;
+            togglePasswordBtn.textContent = type === 'password' ? '👁️' : '🙈';
+        });
+
+        // Show alert function
+        function showAlert(message, type = 'error') {
+            alertBox.textContent = message;
+            alertBox.className = `alert alert-${type} show`;
+            setTimeout(() => {
+                alertBox.classList.remove('show');
+            }, 5000);
+        }
+
+        // Check if user is already logged in
+        function checkExistingSession() {
+            const sessionToken = localStorage.getItem('trainingSessionToken');
+            const sessionExpiry = localStorage.getItem('trainingSessionExpiry');
+            
+            if (sessionToken && sessionExpiry) {
+                const now = new Date().getTime();
+                if (now < parseInt(sessionExpiry)) {
+                    // Valid session exists, redirect to training portal
+                    window.location.href = 'index.html';
+                } else {
+                    // Session expired, clear storage
+                    localStorage.removeItem('trainingSessionToken');
+                    localStorage.removeItem('trainingSessionExpiry');
+                }
+            }
+        }
+
+        // Create session
+        function createSession(username, rememberMe) {
+            const token = btoa(username + ':' + Date.now());
+            const expiryDays = rememberMe ? 30 : 1;
+            const expiry = new Date().getTime() + (expiryDays * 24 * 60 * 60 * 1000);
+            
+            localStorage.setItem('trainingSessionToken', token);
+            localStorage.setItem('trainingSessionExpiry', expiry);
+            localStorage.setItem('trainingUsername', username);
+        }
+
+        // Handle form submission
+        loginForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const username = usernameInput.value.trim();
+            const password = passwordInput.value;
+            const rememberMe = rememberMeCheckbox.checked;
+            
+            // Disable button during processing
+            const loginBtn = document.getElementById('loginBtn');
+            loginBtn.disabled = true;
+            loginBtn.textContent = 'Signing in...';
+            
+            // Simulate server delay
+            await new Promise(resolve => setTimeout(resolve, 800));
+            
+            // SIMPLE CLIENT-SIDE VALIDATION (Demo only)
+            // In production, send credentials to server for validation
+            if (VALID_CREDENTIALS[username] && VALID_CREDENTIALS[username] === password) {
+                createSession(username, rememberMe);
+                showAlert('Login successful! Redirecting...', 'success');
+                
+                setTimeout(() => {
+                    window.location.href = 'index.html';
+                }, 1000);
+            } else {
+                showAlert('Invalid username or password. Please try again.', 'error');
+                loginBtn.disabled = false;
+                loginBtn.textContent = 'Sign In';
+            }
+        });
+
+        // Forgot password handler
+        forgotPasswordLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            showAlert('Please contact your administrator for password reset.', 'success');
+        });
+
+        // Check for existing session on page load
+        checkExistingSession();
+
+        // Security: Clear sensitive form data on page unload
+        window.addEventListener('beforeunload', () => {
+            if (!rememberMeCheckbox.checked) {
+                passwordInput.value = '';
+            }
+        });
+    </script>
+</body>
+</html>

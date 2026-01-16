@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, viewport-fit=cover">
+    <meta name="description" content="ProScapes of Atlanta - Employee Training Portal" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="robots" content="noindex, nofollow">
+    <title>ProScapes Training Portal</title>
+    <link rel="stylesheet" href="../../public/css/base.css" />
+    <link rel="stylesheet" href="../../public/css/training.css" />
+</head>
+<body class="portal-page">
+    <div class="container">
+        <div class="header">
+            <h1>🌿 ProScapes Training Portal</h1>
+            <div class="user-info">
+                <span class="welcome-text">Welcome, <strong id="usernameDisplay">Employee</strong></span>
+                <button class="logout-btn" id="logoutBtn">Logout</button>
+            </div>
+        </div>
+
+        <div id="protectedContent" class="protected-content">
+            <h2 style="color: #333; margin-bottom: 20px;">Available Training Modules</h2>
+            
+            <div class="training-grid">
+                <div class="training-card">
+                    <span class="status not-started">Not Started</span>
+                    <h3>Safety Protocols</h3>
+                    <p>Learn essential safety procedures for landscaping operations, equipment handling, and emergency responses.</p>
+                    <button class="access-btn" onclick="alert('Training module would open here')">Start Training</button>
+                </div>
+
+                <div class="training-card">
+                    <span class="status in-progress">In Progress</span>
+                    <h3>Equipment Operation</h3>
+                    <p>Master the proper operation and maintenance of landscaping equipment and machinery.</p>
+                    <button class="access-btn" onclick="alert('Training module would open here')">Continue Training</button>
+                </div>
+
+                <div class="training-card">
+                    <span class="status completed">Completed</span>
+                    <h3>Customer Service</h3>
+                    <p>Develop professional communication skills and learn best practices for client interactions.</p>
+                    <button class="access-btn" onclick="alert('Training module would open here')">Review Training</button>
+                </div>
+
+                <div class="training-card">
+                    <span class="status not-started">Not Started</span>
+                    <h3>Plant Identification</h3>
+                    <p>Identify common plants, trees, and shrubs used in commercial landscaping projects.</p>
+                    <button class="access-btn" onclick="alert('Training module would open here')">Start Training</button>
+                </div>
+
+                <div class="training-card">
+                    <span class="status not-started">Not Started</span>
+                    <h3>Irrigation Systems</h3>
+                    <p>Understand irrigation system installation, maintenance, and troubleshooting techniques.</p>
+                    <button class="access-btn" onclick="alert('Training module would open here')">Start Training</button>
+                </div>
+
+                <div class="training-card">
+                    <span class="status in-progress">In Progress</span>
+                    <h3>Chemical Safety</h3>
+                    <p>Learn proper handling, application, and safety procedures for landscaping chemicals.</p>
+                    <button class="access-btn" onclick="alert('Training module would open here')">Continue Training</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Check authentication status
+        function checkAuth() {
+            const sessionToken = localStorage.getItem('trainingSessionToken');
+            const sessionExpiry = localStorage.getItem('trainingSessionExpiry');
+            const username = localStorage.getItem('trainingUsername');
+            
+            if (!sessionToken || !sessionExpiry) {
+                // No session, redirect to login
+                window.location.href = 'login.html';
+                return false;
+            }
+            
+            const now = new Date().getTime();
+            if (now >= parseInt(sessionExpiry)) {
+                // Session expired
+                clearSession();
+                window.location.href = 'login.html';
+                return false;
+            }
+            
+            // Valid session, show content
+            document.getElementById('protectedContent').classList.add('visible');
+            if (username) {
+                document.getElementById('usernameDisplay').textContent = username;
+            }
+            
+            return true;
+        }
+
+        // Clear session
+        function clearSession() {
+            localStorage.removeItem('trainingSessionToken');
+            localStorage.removeItem('trainingSessionExpiry');
+            localStorage.removeItem('trainingUsername');
+        }
+
+        // Logout handler
+        document.getElementById('logoutBtn').addEventListener('click', () => {
+            if (confirm('Are you sure you want to logout?')) {
+                clearSession();
+                window.location.href = 'login.html';
+            }
+        });
+
+        // Session timeout warning (5 minutes before expiry)
+        function setupSessionWarning() {
+            const sessionExpiry = parseInt(localStorage.getItem('trainingSessionExpiry'));
+            const now = new Date().getTime();
+            const timeUntilExpiry = sessionExpiry - now;
+            const warningTime = timeUntilExpiry - (5 * 60 * 1000); // 5 minutes before expiry
+            
+            if (warningTime > 0) {
+                setTimeout(() => {
+                    if (confirm('Your session will expire in 5 minutes. Would you like to extend it?')) {
+                        // Extend session by 1 hour
+                        const newExpiry = new Date().getTime() + (60 * 60 * 1000);
+                        localStorage.setItem('trainingSessionExpiry', newExpiry);
+                        setupSessionWarning(); // Setup new warning
+                    }
+                }, warningTime);
+            }
+        }
+
+        // Initialize page
+        if (checkAuth()) {
+            setupSessionWarning();
+        }
+
+        // Prevent back button after logout
+        window.addEventListener('pageshow', (event) => {
+            if (event.persisted) {
+                checkAuth();
+            }
+        });
+    </script>
+</body>
+</html>
