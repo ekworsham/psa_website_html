@@ -25,7 +25,7 @@
     },
     "branding": {
       "logo": {
-        "href": basePath || "/",
+        "href": basePath + "view/training/login.html",
         "src": basePath + "public/images/optimized/headerLogo.avif",
         "srcWebp": basePath + "public/images/optimized/headerLogo.webp",
         "srcPng": basePath + "public/images/optimized/headerLogo.png"
