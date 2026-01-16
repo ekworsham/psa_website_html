@@ -7,9 +7,9 @@
 // Database credentials
 define('DB_HOST', 'localhost');
 define('DB_PORT', '3306');
-define('DB_NAME', 'proscape_training');
-define('DB_USER', 'root'); // Change to your database username
-define('DB_PASS', '');     // Change to your database password
+define('DB_NAME', 'cpses_proscape_training'); // Verify this name in your hosting panel
+define('DB_USER', 'cpses_pr81k8qx4vs');
+define('DB_PASS', 'ProPass3374!'); // ADD YOUR DATABASE PASSWORD HERE
 
 // Create database connection
 function getDBConnection() {
