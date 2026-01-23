@@ -128,36 +128,47 @@
         }
 
         // Handle form submission
-        loginForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            
-            const username = usernameInput.value.trim();
-            const password = passwordInput.value;
-            const rememberMe = rememberMeCheckbox.checked;
-            
-            // Disable button during processing
-            const loginBtn = document.getElementById('loginBtn');
-            loginBtn.disabled = true;
-            loginBtn.textContent = 'Signing in...';
-            
-            // Simulate server delay
-            await new Promise(resolve => setTimeout(resolve, 800));
-            
-            // SIMPLE CLIENT-SIDE VALIDATION (Demo only)
-            // In production, send credentials to server for validation
-            if (VALID_CREDENTIALS[username] && VALID_CREDENTIALS[username] === password) {
-                createSession(username, rememberMe);
+    loginForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const username = usernameInput.value.trim();
+        const password = passwordInput.value;
+        const rememberMe = rememberMeCheckbox.checked;
+
+        const loginBtn = document.getElementById('loginBtn');
+        loginBtn.disabled = true;
+        loginBtn.textContent = 'Signing in...';
+
+        try {
+            const response = await fetch('api/login.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ username, password })
+            });
+
+            const result = await response.json();
+
+            if (result.success) {
+                createSession(result.username, rememberMe);
                 showAlert('Login successful! Redirecting...', 'success');
-                
                 setTimeout(() => {
                     window.location.href = 'index.html';
                 }, 1000);
             } else {
-                showAlert('Invalid username or password. Please try again.', 'error');
+                showAlert(result.error || 'Invalid username or password.', 'error');
                 loginBtn.disabled = false;
                 loginBtn.textContent = 'Sign In';
             }
-        });
+        } catch (error) {
+            console.error('Login error:', error);
+            showAlert('Server error. Please try again later.', 'error');
+            loginBtn.disabled = false;
+            loginBtn.textContent = 'Sign In';
+        }
+    });
+
 
         // Forgot password handler
         forgotPasswordLink.addEventListener('click', (e) => {

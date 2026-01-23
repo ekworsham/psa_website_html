@@ -54,10 +54,10 @@ if (!$db) {
 }
 
 try {
-    // Query user by work_email or first_name (you can customize this)
+    // Query user by username, email, or full name
     $stmt = $db->prepare("
         SELECT * FROM users 
-        WHERE (work_email = :username OR CONCAT(first_name, ' ', last_name) = :username)
+        WHERE (username = :username OR work_email = :username OR CONCAT(first_name, ' ', last_name) = :username)
         AND employee_status = 'Full-Time'
         LIMIT 1
     ");
@@ -71,29 +71,11 @@ try {
         exit();
     }
     
-    // Check password
-    // NOTE: Currently users table doesn't have a password field
-    // You'll need to add one and hash passwords properly
-    
-    // For now, using a simple check (TEMPORARY - NOT SECURE)
-    // You should add a 'password_hash' column to your users table
-    if (!isset($user['password_hash'])) {
-        // If no password field exists, use temporary password based on email
-        // This is just for demonstration - DO NOT USE IN PRODUCTION
-        $tempPassword = 'temp123'; // Default password for all users
-        
-        if ($password !== $tempPassword) {
-            http_response_code(401);
-            echo json_encode(['error' => 'Invalid username or password']);
-            exit();
-        }
-    } else {
-        // Verify hashed password
-        if (!password_verify($password, $user['password_hash'])) {
-            http_response_code(401);
-            echo json_encode(['error' => 'Invalid username or password']);
-            exit();
-        }
+    // Verify password hash
+    if (empty($user['password_hash']) || !password_verify($password, $user['password_hash'])) {
+        http_response_code(401);
+        echo json_encode(['error' => 'Invalid username or password']);
+        exit();
     }
     
     // Create session
