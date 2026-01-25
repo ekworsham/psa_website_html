@@ -181,6 +181,11 @@
 	}
 }
 
+/* Hide banner pagination dots on pages opting for a clean banner */
+.page-banner-clean .banner-dots {
+	display: none !important;
+}
+
 /**********************************************
 **** Tablet view (608px - 1023px) 
 **********************************************/
