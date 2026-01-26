@@ -5,7 +5,7 @@
  */
 
 // Database credentials
-define('DB_HOST', 'power.nsjet.com');
+define('DB_HOST', '67.23.226.189');
 define('DB_PORT', '3306');
 define('DB_NAME', 'proscape_training'); // Verify this name in your hosting panel
 define('DB_USER', 'proscape_kworsham');
