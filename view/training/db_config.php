@@ -8,7 +8,7 @@
 define('DB_HOST', '67.23.226.189');
 define('DB_PORT', '3306');
 define('DB_NAME', 'proscape_training'); // Verify this name in your hosting panel
-define('DB_USER', 'proscape_kworsham');
+define('DB_USER', 'worsham.keith');
 define('DB_PASS', 'ProPass82!'); // ADD YOUR DATABASE PASSWORD HERE
 
 // Create database connection
