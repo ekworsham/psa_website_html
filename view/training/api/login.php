@@ -54,16 +54,16 @@ if (!$db) {
 }
 
 try {
-    // Query user by username, email, or full name
-    $stmt = $db->prepare("
-        SELECT * FROM users 
-        WHERE (username = :username OR work_email = :username OR CONCAT(first_name, ' ', last_name) = :username)
-        AND employee_status = 'Full-Time'
-        LIMIT 1
-    ");
-    
-    $stmt->execute(['username' => $username]);
-    $user = $stmt->fetch();
+
+        // Query user by username or work_email only (remove full name for security)
+        $stmt = $db->prepare("
+            SELECT * FROM users 
+            WHERE (username = :username OR work_email = :username)
+            AND employee_status = 'Full-Time'
+            LIMIT 1
+        ");
+        $stmt->execute(['username' => $username]);
+        $user = $stmt->fetch();
     
     if (!$user) {
         http_response_code(401);
@@ -79,26 +79,27 @@ try {
     }
     
     // Create session
+
     $_SESSION['user_id'] = $user['id'] ?? null;
-    $_SESSION['username'] = $user['first_name'] . ' ' . $user['last_name'];
+    $_SESSION['username'] = $user['username'];
     $_SESSION['email'] = $user['work_email'];
     $_SESSION['job_title'] = $user['job_title'];
     $_SESSION['division'] = $user['division'];
     $_SESSION['session_start'] = time();
-    
+
     // Generate session token
     $token = bin2hex(random_bytes(32));
     $_SESSION['token'] = $token;
-    
+
     // Log successful login (optional)
     error_log("User logged in: " . $user['work_email']);
-    
+
     // Return success response
     http_response_code(200);
     echo json_encode([
         'success' => true,
         'token' => $token,
-        'username' => $_SESSION['username'],
+        'username' => $user['username'],
         'email' => $user['work_email'],
         'job_title' => $user['job_title'],
         'division' => $user['division']

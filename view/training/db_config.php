@@ -8,8 +8,8 @@
 define('DB_HOST', 'localhost');
 define('DB_PORT', '3306');
 define('DB_NAME', 'proscape_training');
-define('DB_USER', 'proscape_kworsham');
-define('DB_PASS', 'ProPass82!');
+define('DB_USER', 'worsham.keith');
+define('DB_PASS', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi');
 
 // Create database connection
 function getDBConnection() {
