@@ -3,10 +3,28 @@
   // For file:// protocol, calculate relative path; for http(s), use absolute
   var basePath = '';
   if (window.location.protocol === 'file:') {
-    var depth = window.location.pathname.split('/').filter(function(p) { 
-      return p && !p.match(/\.(html|htm)$/i); 
-    }).length - 1; // -1 because we're already in the root when depth is 0
-    basePath = depth > 0 ? '../'.repeat(depth) : '';
+    // Count directory depth: split path, remove file name, count remaining dirs
+    var pathParts = window.location.pathname.split('/').filter(function(p) { return p.length > 0; });
+    // Remove the filename (last part)
+    var dirDepth = pathParts.length - 1;
+    // We need to go up to the root (psa_website_html), which is at index position 5 for nested pages
+    // For /path/to/psa_website_html/view/careers/index.html: we're 2 levels deep (view/careers)
+    // Count how many levels up from current file to project root
+    var projectRootIndex = -1;
+    for (var i = pathParts.length - 1; i >= 0; i--) {
+      if (pathParts[i] === 'psa_website_html') {
+        projectRootIndex = i;
+        break;
+      }
+    }
+    // Calculate distance from current directory to project root
+    if (projectRootIndex >= 0) {
+      var currentDirIndex = pathParts.length - 2; // -2 because we exclude filename
+      var depth = currentDirIndex - projectRootIndex;
+      basePath = depth > 0 ? '../'.repeat(depth) : '';
+    } else {
+      basePath = '';
+    }
   } else {
     basePath = '/';
   }
