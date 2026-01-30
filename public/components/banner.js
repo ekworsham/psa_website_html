@@ -5,6 +5,7 @@
 
 	let bannerSlideIndex = 1;
 	let bannerAutoPlayTimeout;
+	let bannerInitTriggered = false;
 
 	function changeBannerSlide(n) {
 		clearTimeout(bannerAutoPlayTimeout);
@@ -38,6 +39,16 @@
 		if (dots && dots.length >= bannerSlideIndex) {
 			dots[bannerSlideIndex - 1].classList.add("active");
 		}
+		
+		// Preload next slide's image
+		const nextSlideIndex = bannerSlideIndex % slides.length;
+		const nextSlide = slides[nextSlideIndex];
+		if (nextSlide) {
+			const img = nextSlide.querySelector('img');
+			if (img && img.loading === 'lazy') {
+				img.loading = 'eager';
+			}
+		}
 	}
 
 	function startBannerAutoPlay() {
@@ -54,14 +65,39 @@
 	window.changeBannerSlide = changeBannerSlide;
 	window.currentBannerSlide = currentBannerSlide;
 
-	// Initialize carousel when ready
+	// Initialize carousel on next available opportunity
+	// Use requestIdleCallback if available to defer after FCP, fallback to small timeout
 	if (document.readyState === 'loading') {
 		document.addEventListener('DOMContentLoaded', function() {
-			showBannerSlides(bannerSlideIndex);
-			startBannerAutoPlay();
+			if (!bannerInitTriggered) {
+				bannerInitTriggered = true;
+				if (typeof requestIdleCallback !== 'undefined') {
+					requestIdleCallback(() => {
+						showBannerSlides(bannerSlideIndex);
+						startBannerAutoPlay();
+					}, { timeout: 3000 });
+				} else {
+					setTimeout(() => {
+						showBannerSlides(bannerSlideIndex);
+						startBannerAutoPlay();
+					}, 100);
+				}
+			}
 		});
 	} else {
-		showBannerSlides(bannerSlideIndex);
-		startBannerAutoPlay();
+		if (!bannerInitTriggered) {
+			bannerInitTriggered = true;
+			if (typeof requestIdleCallback !== 'undefined') {
+				requestIdleCallback(() => {
+					showBannerSlides(bannerSlideIndex);
+					startBannerAutoPlay();
+				}, { timeout: 3000 });
+			} else {
+				setTimeout(() => {
+					showBannerSlides(bannerSlideIndex);
+					startBannerAutoPlay();
+				}, 100);
+			}
+		}
 	}
-})();
+})

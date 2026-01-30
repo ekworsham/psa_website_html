@@ -5,31 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Join the ProScapes of Atlanta team. We're hiring landscape professionals for maintenance, installation, and irrigation positions in Metro Atlanta." />
     <title>ProScapes of Atlanta - Careers</title>
+    <!-- Resource Hints for Performance -->
     <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
     <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-    <!-- Google Analytics 4 - Async -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX', {
-        'anonymize_ip': true,
-        'cookie_flags': 'SameSite=Lax;Secure'
-    });
-    </script>
-    <link rel="stylesheet" href="../../public/css/base.css" />
-    <link rel="preload" href="../../public/css/style2.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-    <link rel="stylesheet" href="../../public/css/home.css" />
-    <noscript><link rel="stylesheet" href="../../public/css/style2.css"></noscript>
+    <!-- Preload critical resources -->
+    <link rel="preload" href="../../public/images/optimized/headerLogo.avif" as="image" type="image/avif" fetchpriority="high" />
+    <link rel="preload" href="../../public/images/career2a.webp" as="image" type="image/webp" fetchpriority="high" imagesrcset="../../public/images/career2a.webp 700w" imagesizes="700px" />
+    <link rel="preload" href="../../public/components/header.js" as="script" />
+    <!-- Only preload banner.js on desktop to reduce mobile parse time -->
+    <link rel="preload" href="../../public/components/banner.js" as="script" media="(min-width: 769px)" />
+    <!-- Critical CSS Inlined for First Paint -->
     <style>
-        body{margin:0;padding:0;font-family:Arial,Helvetica,sans-serif;color:#000}
+        /* Critical Above-the-Fold CSS */
+        *{margin:0;padding:0;box-sizing:border-box}
+        html{background-color:#dfdedf;background-image:url('../../public/images/optimized/backgound-1280.avif');background-size:cover;background-attachment:fixed;min-height:100vh}
+        body{line-height:1;color:#000;font-family:Arial,Helvetica,sans-serif;font-display:swap;margin:0;padding:0;touch-action:manipulation}
         .clear{clear:both}
+        #site-header{margin:0;padding:0}
+        #header-logo{display:inline-block;margin:0.05rem 0 1rem 0;line-height:0}
+        #header-logo picture,#header-logo img{display:block;filter:drop-shadow(0px 4px 8px rgba(0,0,0,0.5)) drop-shadow(0px 2px 4px rgba(0,0,0,0.3))}
+        ul.cssmenu{list-style:none;padding:0;display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+        #banner_container{margin:0 auto 1rem;display:flex;flex-direction:column;align-items:center;justify-content:center;contain:layout style paint}
+        #photo_banner{position:relative;overflow:hidden;border-radius:10px;width:700px;height:400px;max-width:100%;box-sizing:border-box;contain:layout style paint}
+        .banner-slide{display:none;width:100%;height:100%;contain:layout}
+        .banner-slide.active{display:block}
+        .banner-slide picture{display:contents}
+        .banner-slide img,.banner-slide picture{width:100%;height:100%;object-fit:cover;display:block}
+        .container_12{max-width:1200px;margin:0 auto;padding:0 15px;contain:layout style paint}
+        .grid_9{width:100%;max-width:900px;margin:0 auto;contain:layout style}
     </style>
+    <!-- Async load non-critical CSS -->
+    <link rel="preload" href="../../public/css/base.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="../../public/css/base.css" /></noscript>
+    <link rel="preload" href="../../public/css/home.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="../../public/css/home.css" /></noscript>
+    <link rel="preload" href="../../public/css/style2.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="../../public/css/style2.css" /></noscript>
+    <!-- Page-specific styles -->
     <style>
 .contact-wrapper {
   width: 100%;
   margin: 0;
+}
+
+/* Desktop only: defer form rendering */
+@media (min-width: 769px) {
+  .contact-wrapper {
+    content-visibility: auto;
+    contain-intrinsic-size: 1px 400px;
+  }
 }
 
 .contact-card {
@@ -135,46 +159,104 @@
 .page-careers .dot {
   display: none !important;
 }
+
+/* Desktop: Banner button optimizations */
+@media (min-width: 769px) {
+  .banner-prev,
+  .banner-next {
+    will-change: transform;
+    transition: opacity 0.2s ease;
+  }
+  #photo_banner {
+    will-change: contents;
+  }
+}
+
+/* CLS Prevention - Containment for layout stability */
+#container {
+  contain: layout style;
+}
+
+.contact-wrapper {
+  contain: layout style paint;
+}
+
+.contact-card {
+  contain: layout style paint;
+}
+
+.form-group {
+  contain: layout style;
+}
     </style>
-    <script type="text/javascript">
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-XXXXXXXXXX');
-</script>
+    <!-- Google Analytics 4 - Deferred to improve LCP -->
+    <script>
+    // Defer GTM until page is interactive
+    window.addEventListener('load', function() {
+        var gtmScript = document.createElement('script');
+        gtmScript.async = true;
+        gtmScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX';
+        document.head.appendChild(gtmScript);
+        
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX', {
+            'anonymize_ip': true,
+            'cookie_flags': 'SameSite=Lax;Secure'
+        });
+    });
+    
+    // Enable bfcache (back/forward cache) by cleaning up on page hide
+    window.addEventListener('pagehide', function(event) {
+        if (event.persisted) {
+            // Page is being put into bfcache, clean up resources
+            clearTimeout(bannerAutoPlayTimeout);
+        }
+    });
+    
+    // Restore on page show from bfcache
+    window.addEventListener('pageshow', function(event) {
+        if (event.persisted) {
+            // Page restored from bfcache, resume carousel
+            showBannerSlides(bannerSlideIndex);
+            startBannerAutoPlay();
+        }
+    });
+    </script>
 </head>
 
 <body class="page-careers page-banner-clean">
 <div id="container">
 <div id="site-header"></div>
-<script src="../../public/components/header.js" async></script>
+<script src="../../public/components/header.js" defer></script>
 
 <div class="clear"></div>
 <div class="container_12">
-	<div class="grid_9" id="banner_container">
-		<div id="photo_banner">
+	<div class="grid_9" id="banner_container" style="min-height:400px">
+		<div id="photo_banner" style="width:700px;height:400px">
 			<div class="banner-slide active">
 					<picture>
 						<source type="image/webp" srcset="../../public/images/career2a.webp" />
-						<img src="../../public/images/career2a.webp" alt="ProScapes Services" width="700" height="400" loading="eager" decoding="async" fetchpriority="high" />
+						<img src="../../public/images/career2a.webp" alt="ProScapes Careers" width="700" height="400" loading="eager" decoding="sync" fetchpriority="high" style="object-fit: cover; object-position: center; contain: layout style paint;" />
 					</picture>
 				</div>
-        <div class="banner-slide active">
+        <div class="banner-slide">
 					<picture>
 						<source type="image/webp" srcset="../../public/images/career4.webp" />
-						<img src="../../public/images/career4.webp" alt="ProScapes Services" width="700" height="400" loading="eager" decoding="async" fetchpriority="high" />
+						<img src="../../public/images/career4.webp" alt="ProScapes Team" width="700" height="400" loading="lazy" decoding="async" style="object-fit: cover; object-position: center;" />
 					</picture>
 				</div>
-            <div class="banner-slide active">
+            <div class="banner-slide">
 					<picture>
 						<source type="image/webp" srcset="../../public/images/career1.webp" />
-						<img src="../../public/images/career1.webp" alt="ProScapes Services" width="700" height="400" loading="eager" decoding="async" fetchpriority="high" />
+						<img src="../../public/images/career1.webp" alt="Landscape Professionals" width="700" height="400" loading="lazy" decoding="async" style="object-fit: cover; object-position: center;" />
 					</picture>
 				</div>
-      <div class="banner-slide active">
+      <div class="banner-slide">
           <picture>
             <source type="image/webp" srcset="../../public/images/career5.webp" />
-            <img src="../../public/images/career5.webp" alt="ProScapes Services" width="700" height="400" loading="eager" decoding="async" fetchpriority="high" />
+            <img src="../../public/images/career5.webp" alt="Join Our Team" width="700" height="400" loading="lazy" decoding="async" style="object-fit: cover; object-position: center;" />
           </picture>
         </div>
     </div>
@@ -249,52 +331,7 @@
 </div> <!-- END container -->
 
 <script>
-
-let bannerSlideIndex = 1;
-let bannerAutoPlayTimeout;
-
-function changeBannerSlide(n) {
-	clearTimeout(bannerAutoPlayTimeout);
-	showBannerSlides(bannerSlideIndex += n);
-	startBannerAutoPlay();
-}
-
-function currentBannerSlide(n) {
-	clearTimeout(bannerAutoPlayTimeout);
-	showBannerSlides(bannerSlideIndex = n + 1);
-	startBannerAutoPlay();
-}
-
-function showBannerSlides(n) {
-	let slides = document.getElementsByClassName("banner-slide");
-	let dots = document.getElementsByClassName("dot");
-	
-	if (n > slides.length) { bannerSlideIndex = 1; }
-	if (n < 1) { bannerSlideIndex = slides.length; }
-	
-	for (let i = 0; i < slides.length; i++) {
-		slides[i].classList.remove("active");
-	}
-	for (let i = 0; i < dots.length; i++) {
-		dots[i].classList.remove("active");
-	}
-	
-	slides[bannerSlideIndex - 1].classList.add("active");
-	dots[bannerSlideIndex - 1].classList.add("active");
-}
-
-function startBannerAutoPlay() {
-	bannerAutoPlayTimeout = setTimeout(() => {
-		bannerSlideIndex++;
-		showBannerSlides(bannerSlideIndex);
-		startBannerAutoPlay();
-	}, 5000);
-}
-
-// Initialize carousel immediately
-showBannerSlides(bannerSlideIndex);
-startBannerAutoPlay();
-
+// Form validation
 function validateForm(event) {
   const email = document.getElementById('general_email').value;
   const message = document.getElementById('general_message').value;
@@ -306,8 +343,16 @@ function validateForm(event) {
   }
   return true;
 }
+
+// bfcache support - clean up on navigation away
+let bannerAutoPlayTimeout;
+window.addEventListener('pagehide', function(event) {
+  if (event.persisted) {
+    clearTimeout(bannerAutoPlayTimeout);
+  }
+});
 </script>
-<script src="../../public/components/banner.js" defer></script>
+<!-- Load banner.js as defer to prevent render blocking, but it won't execute carousel until requestIdleCallback allows --><script src="../../public/components/banner.js" defer></script>
 
 </body>
 </html>
