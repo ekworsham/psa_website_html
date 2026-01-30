@@ -1,3 +1,11 @@
+/* Remove logo shadow for training login page as well */
+.login-header img {
+    box-shadow: none !important;
+}
+/* Remove logo shadow for training pages only */
+#site-header img {
+    box-shadow: none !important;
+}
 /* ================================
    ProScapes Training Portal Styles
    ================================ */

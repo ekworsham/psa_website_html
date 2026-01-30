@@ -11,16 +11,13 @@
     <link rel="stylesheet" href="../../public/css/training.css" />
 </head>
 <body class="portal-page">
-    <div class="container">
-        <div class="header">
-            <a href="../../index.html" style="text-decoration: none; color: inherit; display: inline-block;">
-                <h1>🌿 ProScapes Training Portal</h1>
-            </a>
-            <div class="user-info">
+        <div class="container">
+            <div id="site-header"></div>
+            <script src="../../public/components/header.js" defer></script>
+            <div class="user-info" style="margin-top: 10px; text-align: right;">
                 <span class="welcome-text">Welcome, <strong id="usernameDisplay">Employee</strong></span>
                 <button class="logout-btn" id="logoutBtn">Logout</button>
             </div>
-        </div>
 
         <div id="protectedContent" class="protected-content">
             <h2 style="color: #333; margin-bottom: 20px;">Available Training Modules</h2>
