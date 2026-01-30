@@ -48,12 +48,14 @@
     # PERFORMANCE HEADERS
     # ============================================
     
-    # Cache-Control for HTML (dynamic content)
+    # Cache-Control for HTML (no cache for dynamic updates)
     <FilesMatch "\.html?$">
-        Header set Cache-Control "public, max-age=3600, must-revalidate"
+        Header set Cache-Control "no-cache, no-store, must-revalidate"
+        Header set Pragma "no-cache"
+        Header set Expires "0"
     </FilesMatch>
     
-    # Cache-Control for static assets (CSS, JS, images, fonts)
+    # Cache-Control for static assets (CSS, JS, images, fonts) - 1 year cache
     <FilesMatch "\.(css|js|jpg|jpeg|png|gif|ico|svg|webp|avif|woff|woff2|ttf|eot)$">
         Header set Cache-Control "public, max-age=31536000, immutable"
     </FilesMatch>
@@ -61,19 +63,74 @@
     # Remove X-Powered-By header (security through obscurity)
     Header unset X-Powered-By
     Header unset Server
+    
+    # Remove ETags for better caching
+    Header unset ETag
+</IfModule>
+
+# Disable ETags
+
+FileETag None
+
+# ============================================
+
+# EXPIRES HEADERS (Leverage Browser Caching)
+
+# ============================================
+
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresDefault "access plus 1 month"
+    
+    # HTML
+    ExpiresByType text/html "access plus 0 seconds"
+    
+    # CSS and JavaScript
+    ExpiresByType text/css "access plus 1 year"
+    ExpiresByType application/javascript "access plus 1 year"
+    ExpiresByType application/x-javascript "access plus 1 year"
+    
+    # Images
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/jpg "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/avif "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType image/x-icon "access plus 1 year"
+    
+    # Fonts
+    ExpiresByType font/ttf "access plus 1 year"
+    ExpiresByType font/otf "access plus 1 year"
+    ExpiresByType font/woff "access plus 1 year"
+    ExpiresByType font/woff2 "access plus 1 year"
+    ExpiresByType application/font-woff "access plus 1 year"
 </IfModule>
 
 # ============================================
 
-# GZIP COMPRESSION
+# GZIP COMPRESSION (Enhanced)
 
 # ============================================
 
 <IfModule mod_deflate.c>
-    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json
+    # Compress text-based content types
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json application/x-javascript
+    # Compress SVG
     AddOutputFilterByType DEFLATE image/svg+xml
+    # Compress font files
+    AddOutputFilterByType DEFLATE application/font-woff application/font-woff2 font/woff font/woff2 application/vnd.ms-fontobject
+    
+    # Pre-compressed files
+    AddEncoding gzip .gz
+    AddType text/html .gz
+    
+    # Compression level (1-9, higher = better compression but slower)
+    <IfModule mod_deflate.c>
+        DeflateCompressionLevel 6
+    </IfModule>
 </IfModule>
-
 # ============================================
 
 # CHARACTER ENCODING

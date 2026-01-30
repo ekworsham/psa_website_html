@@ -9,10 +9,32 @@
 	<meta http-equiv="Referrer" content="strict-origin-when-cross-origin">
 	<meta name="format-detection" content="telephone=no">
     <title>ProScapes of Atlanta</title>
+	<!-- Resource Hints for Performance -->
 	<link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
 	<link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-	<link rel="prefetch" href="public/images/optimized/CollinsFront-1280.avif" as="image" type="image/avif" />
+	<!-- Preload critical resources -->
 	<link rel="preload" href="public/images/optimized/headerLogo.avif" as="image" type="image/avif" fetchpriority="high" />
+	<link rel="preload" href="public/images/optimized/CollinsFront-1280.avif" as="image" type="image/avif" />
+	<link rel="preload" href="public/components/header.js" as="script" />
+	<!-- Critical CSS Inlined for First Paint -->
+	<style>
+		/* Critical Above-the-Fold CSS */
+		*{margin:0;padding:0;box-sizing:border-box}
+		html{background-color:#dfdedf;background-image:url('public/images/optimized/backgound-1280.avif');background-size:cover;background-attachment:fixed;min-height:100vh}
+		body{line-height:1;color:#000;font-family:Arial,Helvetica,sans-serif;font-display:swap;margin:0;padding:0;touch-action:manipulation}
+		.clear{clear:both}
+		#site-header{margin:0;padding:0}
+		#header-logo{display:inline-block;margin:0.05rem 0 1rem 0;line-height:0}
+		#header-logo picture,#header-logo img{display:block;filter:drop-shadow(0px 4px 8px rgba(0,0,0,0.5)) drop-shadow(0px 2px 4px rgba(0,0,0,0.3))}
+		ul.cssmenu{list-style:none;padding:0;display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+		#banner_container{margin:0 auto 1rem;display:flex;flex-direction:column;align-items:center;justify-content:center}
+		#photo_banner{position:relative;overflow:hidden;border-radius:10px;width:700px;height:400px}
+		.banner-slide{display:none;width:100%;height:100%}
+		.banner-slide.active{display:block}
+		.banner-slide img,.banner-slide picture{width:100%;height:100%;object-fit:cover;display:block}
+		.container_12{max-width:1200px;margin:0 auto;padding:0 15px}
+		.grid_9{width:100%;max-width:900px;margin:0 auto}
+	</style>
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
 	<script>
 	window.dataLayer = window.dataLayer || [];
@@ -23,12 +45,12 @@
 		'cookie_flags': 'SameSite=Lax;Secure'
 	});
 	</script>
-	<!-- Base styles - common across all pages -->
-	<link rel="stylesheet" href="public/css/base.css" />
-	<!-- Home page specific styles -->
-	<link rel="stylesheet" href="public/css/home.css" />
-	<!-- Defer non-critical stylesheet for better rendering performance -->
-	<link rel="stylesheet" href="public/css/style2.css" media="print" onload="this.media='all'; this.onload=null;" />
+	<!-- Async load non-critical CSS -->
+	<link rel="preload" href="public/css/base.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+	<noscript><link rel="stylesheet" href="public/css/base.css" /></noscript>
+	<link rel="preload" href="public/css/home.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+	<noscript><link rel="stylesheet" href="public/css/home.css" /></noscript>
+	<link rel="preload" href="public/css/style2.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
 	<noscript><link rel="stylesheet" href="public/css/style2.css" /></noscript>
 </head>
 
@@ -40,8 +62,8 @@
 		<div class="clear"></div>
 		
 		<div class="container_12">
-		<div class="grid_9" id="banner_container">
-				<div id="photo_banner">
+		<div class="grid_9" id="banner_container" style="min-height:400px">
+				<div id="photo_banner" style="width:700px;height:400px">
 					<div class="banner-slide active">
 						<picture>
 							<source media="(max-width: 400px)" type="image/avif" srcset="public/images/optimized/CollinsFront-400.avif" />
@@ -136,14 +158,5 @@
 	<div id="site-footer"></div>
 	<script src="public/components/footer.js" defer></script>
 	<script src="public/components/banner.js" defer></script>
-
-	<!-- Google Analytics 4 - Async -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-	<script>
-	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	gtag('js', new Date());
-	gtag('config', 'G-XXXXXXXXXX');
-	</script>
 </body>
 </html>

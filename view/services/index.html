@@ -5,15 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Comprehensive commercial landscape services including maintenance, design-build, installation, irrigation, and enhancements for HOA, office, retail, and commercial properties." />
     <title>ProScapes of Atlanta - Services</title>
+    <!-- Resource Hints for Performance -->
     <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
     <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-    <link rel="stylesheet" href="/public/css/base.css" />
-    <link rel="stylesheet" href="/public/css/home.css" />
-    <link rel="preload" href="/public/css/style2.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-    <noscript><link rel="stylesheet" href="/public/css/style2.css"></noscript>
+    <!-- Preload critical resources -->
+    <link rel="preload" href="/public/images/optimized/headerLogo.avif" as="image" type="image/avif" fetchpriority="high" />
+    <link rel="preload" href="../../public/images/services.webp" as="image" type="image/webp" />
+    <link rel="preload" href="../../public/components/header.js" as="script" />
+    <!-- Critical CSS Inlined for First Paint -->
     <style>
-        body{margin:0;padding:0;font-family:Arial,Helvetica,sans-serif;color:#000}
+        /* Critical Above-the-Fold CSS */
+        *{margin:0;padding:0;box-sizing:border-box}
+        html{background-color:#dfdedf;background-image:url('../../public/images/optimized/backgound-1280.avif');background-size:cover;background-attachment:fixed;min-height:100vh}
+        body{line-height:1;color:#000;font-family:Arial,Helvetica,sans-serif;font-display:swap;margin:0;padding:0;touch-action:manipulation}
         .clear{clear:both}
+        #site-header{margin:0;padding:0}
+        #header-logo{display:inline-block;margin:0.05rem 0 1rem 0;line-height:0}
+        #header-logo picture,#header-logo img{display:block;filter:drop-shadow(0px 4px 8px rgba(0,0,0,0.5)) drop-shadow(0px 2px 4px rgba(0,0,0,0.3))}
+        ul.cssmenu{list-style:none;padding:0;display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+        #banner_container{margin:0 auto 1rem;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:400px;contain:layout}
+        #photo_banner{position:relative;overflow:hidden;border-radius:10px;width:700px;height:400px;max-width:100%;box-sizing:border-box}
+        .banner-slide{display:none;width:100%;height:100%}
+        .banner-slide.active{display:block}
+        .banner-slide img,.banner-slide picture{width:100%;height:100%;object-fit:cover;display:block}
+        .container_12{max-width:1200px;margin:0 auto;padding:0 15px}
+        .grid_9{width:100%;max-width:900px;margin:0 auto}
+    </style>
+    <!-- Async load non-critical CSS -->
+    <link rel="preload" href="/public/css/base.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="/public/css/base.css" /></noscript>
+    <link rel="preload" href="/public/css/home.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="/public/css/home.css" /></noscript>
+    <link rel="preload" href="/public/css/style2.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="/public/css/style2.css" /></noscript>
+    <!-- Page-specific styles -->
+    <style>
         
         /* CTA Button - matching header nav buttons */
         .cta-button {
@@ -28,7 +54,7 @@
             border-radius: 999px;
             padding: 0.8rem 2.5rem;
             line-height: 1.2;
-            transition: transform 0.15s ease, box-shadow 0.15s ease;
+            transition: transform 0.1s ease;will-change:transform;
             touch-action: manipulation;
             -ms-touch-action: manipulation;
             white-space: nowrap;
@@ -43,7 +69,6 @@
         .cta-button:hover {
             background: linear-gradient(to top, #1f8d3a, #d5ffd0);
             transform: translateY(-2px);
-            box-shadow: 0 20px 8px rgba(0, 0, 0, .6);
             text-decoration: none !important;
         }
 
@@ -55,6 +80,7 @@
 			align-items: center;
 			gap: 0.5rem;
 			margin: 0;
+			padding: 1rem 0.5rem;
 		}
         
 		.dropdown-toggle::before {
@@ -73,7 +99,8 @@
 		.dropdown-content {
 			display: none; /* hidden by default so content is contained */
 			margin: 0;
-			padding: 0 0 0.5rem 0; /* no top padding, slight bottom spacing */
+			padding: 0 0.5rem 0.5rem 0.5rem; /* consistent padding */
+			contain: layout style; /* prevent layout thrashing */
 		}
 
 		/* show content only when not collapsed */
@@ -83,6 +110,12 @@
 
 		.dropdown-content p {
 			margin: 0.5rem 0;
+		}
+		
+		.dropdown-content picture,
+		.dropdown-content img {
+			display: block;
+			max-width: 100%;
 		}
 
 		/* Responsive Image Styling */
@@ -96,23 +129,66 @@
 		/* Remove bullet points from banner dots */
 		.banner-dots {
 			list-style: none;
-			display: none;
+			visibility: hidden;
+			position: absolute;
+			width: 0;
+			height: 0;
+			overflow: hidden;
 		}
 		
 		.banner-dots .dot {
 			list-style: none;
-			display: none;
+			visibility: hidden;
+		}
+		
+		/* Mobile optimization - reduce padding on touch devices */
+		@media (max-width: 768px) {
+			.cta-button {
+				font-size: 14px;
+				padding: 0.6rem 2rem;
+			}
+		}
+		
+		/* Below-the-fold optimizations for reduced CLS and faster rendering */
+		.service_cards {
+			content-visibility: auto;
+			contain: layout style paint;
+			contain-intrinsic-size: 1px 600px;
+		}
+		
+		/* Container CLS prevention */
+		.container_12 {
+			contain: layout style paint;
+		}
+		
+		#container {
+			contain: layout style;
+		}
+		
+		#banner_container {
+			contain: layout style paint;
+		}
+		
+		.dropdown-content {
+			contain: content;
 		}
     </style>
-    <!-- Google Analytics 4 - Async -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <!-- Google Analytics 4 - Deferred to improve LCP -->
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX', {
-        'anonymize_ip': true,
-        'cookie_flags': 'SameSite=Lax;Secure'
+    // Defer GTM until page is interactive
+    window.addEventListener('load', function() {
+        var gtmScript = document.createElement('script');
+        gtmScript.async = true;
+        gtmScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX';
+        document.head.appendChild(gtmScript);
+        
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX', {
+            'anonymize_ip': true,
+            'cookie_flags': 'SameSite=Lax;Secure'
+        });
     });
     </script>
 </head>
@@ -120,47 +196,53 @@
 <body class="page-banner-clean">
 <div id="container">
 		<div id="site-header"></div>
-		<script src="../../public/components/header.js" async></script>
+		<script src="../../public/components/header.js" defer></script>
 
 		<div class="clear"></div>
 		<main>
 	<div class="container_12">
-		<div class="grid_9" id="banner_container">
-			<div id="photo_banner">
+		<div class="grid_9" id="banner_container" style="min-height:400px">
+			<div id="photo_banner" style="width:700px;height:400px;max-width:100%;box-sizing:border-box">
 				<div class="banner-slide active">
 					<picture>
-						<source type="image/webp" srcset="../../public/images/services.webp" />
-						<img src="../../public/images/services.webp" alt="ProScapes Services" width="700" height="400" loading="eager" decoding="async" fetchpriority="high" />
+						<source type="image/avif" srcset="../../public/images/optimized/residential-700.avif" />
+						<source type="image/webp" srcset="../../public/images/optimized/residential-700.webp" />
+						<img src="../../public/images/optimized/residential-700.webp" alt="ProScapes Services" width="700" height="400" loading="eager" decoding="async" fetchpriority="high" />
 					</picture>
 				</div>
 				<div class="banner-slide">
 					<picture>
-						<source type="image/webp" srcset="../../public/images/services5.webp" />
-						<img src="../../public/images/services5.webp" alt="Service 5" width="700" height="400" loading="lazy" decoding="async" />
+						<source type="image/avif" srcset="../../public/images/optimized/flowers3-700.avif" />
+						<source type="image/webp" srcset="../../public/images/optimized/flowers3-700.webp" />
+						<img src="../../public/images/optimized/flowers3-700.webp" alt="Service 5" width="700" height="400" loading="lazy" decoding="async" />
 					</picture>
 				</div>
 				<div class="banner-slide">
 					<picture>
-					<source type="image/webp" srcset="../../public/images/optimized/home.avif" />
-					<img src="../../public/images/optimized/home.avif" alt="Service 1" width="700" height="400" loading="lazy" decoding="async" />
+					<source type="image/avif" srcset="../../public/images/optimized/home.avif" />
+					<source type="image/webp" srcset="../../public/images/optimized/home.webp" />
+					<img src="../../public/images/optimized/home.webp" alt="Service 1" width="700" height="400" loading="lazy" decoding="async" />
 					</picture>
 				</div>
 				<div class="banner-slide">
 					<picture>
+						<source type="image/avif" srcset="../../public/images/optimized/detention_clean.avif" />
 						<source type="image/webp" srcset="../../public/images/optimized/detention_clean.webp" />
 						<img src="../../public/images/optimized/detention_clean.webp" alt="Service 4" width="700" height="400" loading="lazy" decoding="async" />
 					</picture>
 				</div>
 				<div class="banner-slide">
 					<picture>
+						<source type="image/avif" srcset="../../public/images/optimized/set_flowers1.avif" />
 						<source type="image/webp" srcset="../../public/images/optimized/set_flowers.webp" />
-						<img src="../../public/images/optimized/set_flowers.webp"  alt="Service 3" width="700" height="400" loading="lazy" decoding="async" />
+						<img src="../../public/images/optimized/set_flowers.webp" alt="Service 3" width="700" height="400" loading="lazy" decoding="async" />
 					</picture>
 				</div>
 				<div class="banner-slide">
 					<picture>
-						<source type="image/webp" srcset="../../public/images/services2.webp" />
-						<img src="../../public/images/services2.webp" alt="Service 2" width="700" height="400" loading="lazy" decoding="async" />
+						<source type="image/avif" srcset="../../public/images/optimized/CollinsInstall-700.avif" />
+						<source type="image/webp" srcset="../../public/images/optimized/CollinsInstall-700.webp" />
+						<img src="../../public/images/optimized/CollinsInstall-700.webp" alt="Service 2" width="700" height="400" loading="lazy" decoding="async" />
 					</picture>
 				</div>
 			
@@ -192,8 +274,8 @@
 				<h3 class="section-heading-left dropdown-toggle">Landscape Maintenance</h3>
 				<div class="dropdown-content">
 					<picture>
-						<source type="image/webp" srcset="../../public/images/landscapeMaint.webp" />
-						<img src="../../public/images/optimized/services1.webp" alt="Service 1"  loading="lazy" decoding="async" style="display:block;margin:0 auto; margin-top: 10px; max-width: 100%; width: 100%; height: auto;" />
+						<source type="image/webp" srcset="../../public/images/services1.webp" />
+						<img src="../../public/images/services1.webp" alt="Landscape Maintenance" width="700" height="467" loading="lazy" decoding="async" style="display:block;margin:0 auto;margin-top:10px;max-width:100%;width:100%;height:auto" />
 					</picture>
 					<p class="text-clean">ProScapes of Atlanta provides proactive commercial landscape maintenance that protects long-term property value. Our detail-driven approach emphasizes consistency, communication, and accountability—delivering reliable turf care, pruning, seasonal color, and site cleanliness through tailored service plans.</p>
 
@@ -208,8 +290,9 @@
 				<h3 class="section-heading-left dropdown-toggle">Landscape Design | Build | Install</h3>
 				<div class="dropdown-content">
 					<picture>
+						<source type="image/avif" srcset="../../public/images/optimized/install.avif" />
 						<source type="image/webp" srcset="../../public/images/optimized/install.webp" />
-						<img src="../../public/images/optimized/install.webp" alt="Service 1" loading="lazy" decoding="async" style="display:block;margin:0 auto; margin-top: 10px; max-width: 100%; width: 100%; height: auto;" />
+						<img src="../../public/images/optimized/install.webp" alt="Design Build Install" width="700" height="467" loading="lazy" decoding="async" style="display:block;margin:0 auto; margin-top: 10px; max-width: 100%; width: 100%; height: auto;" />
 					</picture>
 					<p class="text-clean">ProScapes of Atlanta delivers full-service landscape design, construction, and installation. From concept to completion, we create functional, visually impactful outdoor environments using quality materials, proven methods, and industry best practices.</p>
 
