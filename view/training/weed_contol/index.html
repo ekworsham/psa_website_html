@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="description"
+    content="ProScapes of Atlanta - Weed Control and Policing Training"
+  >
+
+  <title>ProScapes | Weed Control & Policing Training</title>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- =====================================================
+       PROSCAPES TRAINING PORTAL CARD
+       ===================================================== -->
+
+  <div class="portal-card">
+
+    <!-- HEADER -->
+    <header class="portal-header">
+
+      <img
+        class="portal-logo"
+        src="proscapes-logo.png"
+        alt="ProScapes of Atlanta"
+      >
+
+      <h1 class="portal-title">
+        🌱 Weed Control &amp; Policing Training
+      </h1>
+
+      <p class="portal-subtitle">
+        Employee Training Portal
+      </p>
+
+    </header>
+
+
+    <!-- ===================================================
+         COURSE PROGRESS
+         =================================================== -->
+
+    <div class="course-progress">
+
+      <div class="progress-row">
+
+        <span>Course Progress</span>
+
+        <strong id="progressPercent">0%</strong>
+
+      </div>
+
+      <div class="progress-track">
+
+        <div
+          id="progressBar"
+          class="progress-bar">
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- ===================================================
+         TRAINING AREA
+         =================================================== -->
+
+    <main class="main">
+
+
+      <!-- =================================================
+           HIDDEN TOPIC NAVIGATION
+
+           We keep this in the HTML because script.js
+           uses #topicNav. CSS will hide it.
+
+           The employee will progress using Previous / Next.
+           ================================================= -->
+
+      <aside
+        class="sidebar"
+        aria-label="Training navigation">
+
+        <nav id="topicNav"></nav>
+
+      </aside>
+
+
+      <!-- =================================================
+           MOBILE PROGRESS
+           ================================================= -->
+
+      <div class="mobile-progress">
+
+        <span id="mobileTopic">
+          Topic 1 of 6
+        </span>
+
+      </div>
+
+
+      <!-- =================================================
+           WELCOME SCREEN
+           ================================================= -->
+
+      <section
+        id="welcomeScreen"
+        class="screen">
+
+        <div class="welcome-content">
+
+          <h2>
+            Weed Control &amp; Policing
+          </h2>
+
+          <p class="lead">
+            Interactive training for weed control,
+            chemical safety, first aid, and site policing.
+          </p>
+
+
+          <!-- TRAINING OBJECTIVES -->
+
+          <div class="objective-grid">
+            <div class="objective-card">
+              <span>01</span>
+              <strong>Recognize</strong>
+              <p>
+                Understand why weeds, trash, sticks, and debris matter to the
+                appearance of a property.
+              </p>
+            </div>
+
+            <div class="objective-card">
+              <span>02</span>
+              <strong>Control</strong>
+              <p>
+                Learn the appropriate weed-control methods and who is permitted
+                to apply chemicals.
+              </p>
+            </div>
+
+            <div class="objective-card">
+              <span>03</span>
+              <strong>Protect</strong>
+              <p>
+                Follow label directions and the safety procedures covered in
+                the training.
+              </p>
+            </div>
+
+            <div class="objective-card">
+              <span>04</span>
+              <strong>First Aid</strong>
+              <p>
+                Know the correct first-aid procedures for pesticide exposure
+                and when to seek medical help.
+              </p>
+            </div>
+
+            <div class="objective-card">
+              <span>05</span>
+              <strong>Police Site</strong>
+              <p>
+                Keep the property clean while performing other landscape tasks
+                and work as a team.
+              </p>
+            </div>
+
+            <div class="objective-card">
+              <span>06</span>
+              <strong>Complete</strong>
+              <p>
+                Review the ProScapes standard and complete the final
+                training acknowledgment.
+              </p>
+            </div>
+
+          </div>
+       
+          <!-- START -->
+
+          <button
+            id="startBtn"
+            class="btn btn-primary">
+
+            Start Training
+            <span>→</span>
+
+          </button>
+
+        </div>
+
+      </section>
+
+
+      <!-- =================================================
+           TRAINING SCREEN
+           ================================================= -->
+
+      <section
+        id="trainingScreen"
+        class="screen hidden">
+
+
+        <!-- TOPIC HEADER -->
+
+        <div class="topic-header">
+
+          <div>
+
+            <span
+              id="topicKicker"
+              class="eyebrow">
+            </span>
+
+            <h2 id="topicTitle"></h2>
+
+          </div>
+
+        </div>
+
+
+        <!-- =================================================
+             TRAINING CONTENT
+             ================================================= -->
+
+        <article
+          id="contentArea"
+          class="content-card">
+        </article>
+
+
+        <!-- =================================================
+             KNOWLEDGE CHECK
+             ================================================= -->
+
+        <section
+          id="quizArea"
+          class="quiz-card hidden">
+
+          <div class="quiz-heading">
+
+            <div>
+
+              <span class="eyebrow">
+                KNOWLEDGE CHECK
+              </span>
+
+              <h3 id="quizTitle">
+                Check Your Understanding
+              </h3>
+
+            </div>
+
+
+            <div
+              id="quizScoreBadge"
+              class="score-badge">
+            </div>
+
+          </div>
+
+
+          <div id="quizQuestions"></div>
+
+
+          <div
+            id="quizFeedback"
+            class="quiz-feedback hidden">
+          </div>
+
+
+          <button
+            id="submitQuizBtn"
+            class="btn btn-primary">
+
+            Submit Knowledge Check
+
+          </button>
+
+        </section>
+
+
+        <!-- =================================================
+             FINAL ACKNOWLEDGEMENT
+             ================================================= -->
+
+        <section
+          id="ackArea"
+          class="ack-card hidden">
+
+          <span class="eyebrow">
+            FINAL ACKNOWLEDGEMENT
+          </span>
+
+          <h3>
+            Training Completion Acknowledgement
+          </h3>
+
+          <p>
+            I have read and fully understand the weed control
+            and policing requirements, and I certify that I am
+            able to perform these duties.
+          </p>
+
+
+          <label class="check-row">
+
+            <input
+              type="checkbox"
+              id="ackCheckbox">
+
+            <span>
+              I acknowledge that I have completed and understand
+              this training.
+            </span>
+
+          </label>
+
+
+          <button
+            id="completeBtn"
+            class="btn btn-success"
+            disabled>
+
+            Complete Training
+
+          </button>
+
+        </section>
+
+
+        <!-- =================================================
+             PREVIOUS / NEXT
+             ================================================= -->
+
+        <div class="navigation">
+
+          <button
+            id="prevBtn"
+            class="btn btn-secondary">
+
+            ← Previous
+
+          </button>
+
+
+          <button
+            id="nextBtn"
+            class="btn btn-primary">
+
+            Next →
+
+          </button>
+
+        </div>
+
+      </section>
+
+
+      <!-- =================================================
+           COMPLETION SCREEN
+           ================================================= -->
+
+      <section id="completionScreen" class="screen hidden">
+        <div class="completion-card certificate-card">
+
+          <div class="certificate-top">
+            <div class="completion-icon">✓</div>
+            <span class="eyebrow">TRAINING COMPLETE</span>
+          </div>
+
+          <div class="certificate-line"></div>
+
+          <h1>Certificate of Completion</h1>
+
+          <p class="certificate-subtitle">
+            Congratulations!
+          </p>
+
+          <p class="certificate-message">
+            You have successfully completed the
+            <strong>ProScapes of Atlanta Weed Control &amp; Policing Training.</strong>
+          </p>
+
+          <div class="completion-badge">
+            <strong>100%</strong>
+            <span>COMPLETE</span>
+          </div>
+
+          <div class="completion-details">
+
+            <div>
+              <span>Employee</span>
+              <strong id="completionName">Employee</strong>
+            </div>
+
+            <div>
+              <span>Course</span>
+              <strong>Weed Control &amp; Policing</strong>
+            </div>
+
+            <div>
+              <span>Status</span>
+              <strong>Completed</strong>
+            </div>
+
+          </div>
+
+          <div class="certificate-footer">
+            <span>ProScapes of Atlanta</span>
+            <span>Employee Training Portal</span>
+          </div>
+
+          <button id="restartBtn" class="btn btn-secondary">
+            Review Training
+          </button>
+
+        </div>
+      </section>
+
+    </main>
+
+
+    <!-- ===================================================
+         FOOTER
+         =================================================== -->
+
+    <footer class="footer">
+
+      <span>
+        ProScapes of Atlanta
+      </span>
+
+      <span>
+        Weed Control &amp; Policing Training
+      </span>
+
+    </footer>
+
+  </div>
+
+
+  <!-- JAVASCRIPT -->
+
+  <script src="script.js"></script>
+
+</body>
+</html>
