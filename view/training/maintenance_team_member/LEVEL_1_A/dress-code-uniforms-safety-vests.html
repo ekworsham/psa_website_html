@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dress Code/Uniforms/Safety Vests | LEVEL 1 - A</title>
+    <link rel="stylesheet" href="../../../../public/css/base.css">
+    <link rel="stylesheet" href="../../../../public/css/training.css">
+</head>
+<body class="portal-page">
+    <div class="container">
+        <div class="training-card" style="max-width:600px;margin:40px auto;">
+            <div class="login-header" style="text-align:center;margin-bottom:18px;">
+                <a href="index.html" class="access-btn" style="background:transparent;box-shadow:none;padding:0;display:inline-block;margin-bottom:10px;">
+                    <picture>
+                        <source type="image/avif" srcset="../../../../public/images/optimized/headerLogo.avif">
+                        <source type="image/webp" srcset="../../../../public/images/optimized/headerLogo.webp">
+                        <img src="../../../../public/images/optimized/headerLogo.png" alt="ProScapes of Atlanta" style="max-width: 300px; height: auto; margin: 0 auto; display: block; padding: 4px; box-shadow: 0 4px 16px rgba(0,0,0,0.35);">
+                    </picture>
+                </a>
+                <h1 style="font-size:2.1rem;">🌿 ProScapes Training</h1>
+                <p style="color:#555;">LEVEL 1 - A | Dress Code/Uniforms/Safety Vests</p>
+            </div>
+            <h2 style="margin-bottom: 10px;">Dress Code/Uniforms/Safety Vests</h2>
+            <p style="line-height:1.7;text-align:left;white-space:normal;">
+                <strong>Purpose:</strong> PSA is committed to maintaining a professional and safe work environment. A consistent dress code and
+                uniform policy help ensure employee safety, promote team unity, and uphold our company’s professional
+                image. This policy outlines the expectations for appropriate work attire.<br><br>
+                <strong>Dress Code Guidelines:</strong><br>
+                1. <strong>Uniform Requirement:</strong> Employees are required to wear the designated company safety uniform
+                during work hours. This includes:<br>
+                - Company-branded safety vests (provided by the company)<br>
+                - Durable work pants or shorts (as approved by management)<br>
+                - Hiking/work boots preferred with slip-resistant for safety<br><br>
+                2. <strong>Personal Grooming:</strong> Employees should maintain a neat and clean appearance while on duty. Clothing must be clean, in good condition, and free from excessive wear and tear.<br><br>
+                3. <strong>Protective Gear:</strong> Employees working in hazardous areas must wear the appropriate personal protective equipment (PPE), including gloves, safety glasses, and high-visibility vests as required.<br><br>
+                4. <strong>Considerations:</strong>  Employees are encouraged to dress appropriately for the weather while adhering to safety and uniform requirements. Outerwear (coats) worn during colder month
+                covered with vests.<br><br>
+                5. <strong>Prohibited Attire:</strong> The following clothing items are not permitted:<br>
+                - Open-toed shoes or sandals<br>
+                - Clothing with offensive or inappropriate graphics or language<br>
+                - Excessively baggy or tight-fitting clothing that poses a safety hazard<br>
+                - Jewelry that may interfere with work or pose a safety risk<br><br>
+
+                <strong>Exceptions &amp; Special Considerations:</strong><br><br>
+                -Employees with religious or medical requirements for attire should discuss accommodations with management.,br>
+                -Office staff may follow a business casual dress code unless otherwise required to wear company uniforms.<br><br>              <strong>Policy Enforcement:</strong>
+                Failure to comply with the dress code policy may result in corrective action, including verbal or written
+                warnings. Repeated violations may lead to further disciplinary action. By adhering to this dress code
+                policy, employees contribute to a professional, safe, and cohesive work environment.<br><br>
+
+                <strong>OPTIONAL UNIFORMS AVAILIBLE AT EMPLOYEE COST:</strong><br>
+                
+                <strong>-SUMMER-UNIT COST EACH:</strong><br>
+                ◽Shirts $28.00<br>
+                ◽Shorts $35.00<br>
+                ◽Pants $35.00<br>
+                ◽Hat $12.00<br>
+                ◽Raincoat $40.00<br> 
+
+                <strong>-WINTER-UNIT COST EACH:</strong><br>
+                ◽Shirts $30.00<br> 
+                ◽Pants $40.00<br> 
+                ◽Sweatshirt $55.00<br> 
+                ◽Hat $12.00<br> 
+
+                <strong>-GENERAL:</strong><br>
+                ◽Belt $12.00<br>
+                ◽Safety Glasses $10.00<br>
+                ◽Gloves $10.00<br><br>
+                <strong style="color:#666; line-height:1.7; text-align:left; white-space:normal; margin-top:4px;">Acknowledgment:</strong>
+                    <div style="color:#666; line-height:1.7; text-align:left; white-space:normal; margin-top:4px;">All employees are required to read, understand, and check the 'I agree' button belong, confirming they agree to comply with this policy as part of ProScapes of Atlanta’s training.<br><br>I have read and understand the ProScapes of Atlanta Dress Code/Uniforms/Safety Vests Policy. I agree to follow all requirements outlined above and understand that failure to do so may result in disciplinary action up to and including termination.
+                    </div>  
+            </p>
+            <div style="margin:18px 0 12px;text-align:center;">
+                <label style="display:inline-flex;align-items:center;gap:10px;font-weight:600;cursor:pointer;">
+                    <input type="checkbox" id="agreeAcknowledgement" name="agreeAcknowledgement">
+                    <span>I agree</span>
+                </label>
+            </div>
+            <div id="acknowledgementStatus" style="min-height:1.4em;margin-bottom:14px;text-align:center;font-size:0.95rem;color:#2f6b2f;"></div>
+            <a href="index.html" class="access-btn" style="width:auto;display:inline-block;">&larr; Back to Level Menu</a>
+        </div>
+    </div>
+
+    <script>
+        const acknowledgementCheckbox = document.getElementById('agreeAcknowledgement');
+        const acknowledgementStatus = document.getElementById('acknowledgementStatus');
+        const acknowledgementKey = 'level-1-a-dress-code-uniforms-safety-vests';
+        const acknowledgementLabel = 'Dress Code/Uniforms/Safety Vests';
+
+        function setStatus(message, isError = false) {
+            acknowledgementStatus.textContent = message;
+            acknowledgementStatus.style.color = isError ? '#b00020' : '#2f6b2f';
+        }
+
+        async function saveAcknowledgement() {
+            setStatus('Saving acknowledgement...');
+
+            try {
+                const response = await fetch('../../api/save_acknowledgement.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    credentials: 'same-origin',
+                    body: JSON.stringify({
+                        item_key: acknowledgementKey,
+                        item_label: acknowledgementLabel,
+                        page_path: window.location.pathname,
+                        acknowledged_value: acknowledgementCheckbox.checked ? 1 : 0
+                    })
+                });
+
+                const responseText = await response.text();
+                let data;
+
+                try {
+                    data = JSON.parse(responseText);
+                } catch (parseError) {
+                    data = {
+                        success: false,
+                        error: 'Unexpected server response.',
+                        details: responseText
+                    };
+                }
+
+                if (!response.ok || !data.success) {
+                    const errorMessage = data.details
+                        ? `${data.error || 'Unable to save acknowledgement.'} (${data.details})`
+                        : (data.error || 'Unable to save acknowledgement.');
+                    setStatus(errorMessage, true);
+                    acknowledgementCheckbox.checked = false;
+                    return;
+                }
+
+                setStatus(data.message || 'Acknowledgement saved.');
+            } catch (error) {
+                console.error('Acknowledgement save error:', error);
+                setStatus('Connection error. Please try again.', true);
+                acknowledgementCheckbox.checked = false;
+            }
+        }
+
+        acknowledgementCheckbox.addEventListener('change', () => {
+            if (acknowledgementCheckbox.checked) {
+                saveAcknowledgement();
+            } else {
+                acknowledgementStatus.textContent = '';
+            }
+        });
+    </script>
+</body>
+</html>
